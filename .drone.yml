@@ -1,0 +1,37 @@
+kind: pipeline
+name: build-test-and-publish
+
+steps:
+- name: build-test-and-publish
+  image: mcr.microsoft.com/dotnet/sdk:5.0
+  environment:
+    NUGET_SERVER_ADRESS:
+      from_secret: NUGET_SERVER_ADRESS
+    NUGET_SERVER_KEY:
+      from_secret: NUGET_SERVER_KEY
+  commands:
+    - sed -i 's/>1.0.0</>${DRONE_TAG}</g' Dysnomia.Common.SteamWebAPI/Dysnomia.Common.SteamWebAPI.csproj
+    - perl -0pe 's/ReleaseNotes></ReleaseNotes>${DRONE_COMMIT_MESSAGE}</g' Dysnomia.Common.SteamWebAPI/Dysnomia.Common.SteamWebAPI.csproj
+    - dotnet build Dysnomia.Common.SteamWebAPI.sln -c Release
+    - dotnet pack Dysnomia.Common.SteamWebAPI.sln -c Release
+    - dotnet nuget push -s $NUGET_SERVER_ADRESS -k $NUGET_SERVER_KEY $(ls /drone/src/Dysnomia.Common.SteamWebAPI/bin/Release/*.nupkg | head -1)
+
+- name: discord
+  pull: default
+  image: appleboy/drone-discord
+  settings:
+    webhook_id:
+      from_secret: WEBHOOK_ID
+    webhook_token:
+      from_secret: WEBHOOK_TOKEN
+    message: >
+      {{#success build.status}}
+        Build **{{repo.name}}** for tag **${DRONE_TAG}** succeeded.
+      {{else}}
+        Build **{{repo.name}}** for tag **${DRONE_TAG}** failed.
+      {{/success}}
+  when:
+    status: 
+    - changed
+    - failure
+    - success
