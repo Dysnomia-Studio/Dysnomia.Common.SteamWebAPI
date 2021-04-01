@@ -5,7 +5,7 @@
 
 
 # Dysnomia.Common.SteamWebAPI
-A C# library to easily get data from Steam Web API
+A C# library to easily get data from Steam Web API.
 
 ## Who are you ?
 My name is Axel "Elanis" Soupé, I'm a French developer, and this is my company's repository. You can find more info on Dysnomia on its official website: https://dysnomia.studio.
