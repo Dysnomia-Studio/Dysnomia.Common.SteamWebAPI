@@ -43,18 +43,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="key">Steamworks Web API publisher authentication key.</param>
 		/// <param name="appid">The App ID to get the depot versions for.</param>
 		/// <returns></returns>
-		public async Task<string> GetAppDepotVersions(string key, uint appid) {
-			using (HttpClient httpClient = new HttpClient()) {
-
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"https://partner.steam-api.com/ISteamApps/GetAppDepotVersions/v1/?key={0}&appid={1}",
-						key, appid
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+		public async Task<Dictionary<string, object>> GetAppDepotVersions(string key, uint appid) {
+			return (await this.Get<AppDepotVersions>(
+				string.Format(
+					"https://partner.steam-api.com/ISteamApps/GetAppDepotVersions/v1/?key={0}&appid={1}",
+					key, appid
+				)
+			)).depots;
 		}
 
 		/// <summary>

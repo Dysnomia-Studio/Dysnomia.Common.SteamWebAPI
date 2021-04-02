@@ -110,5 +110,44 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
 			Assert.True(false, "Should have thrown");
 		}
+
+		[Fact]
+		public async Task GetAppDepotVersions_OK() {
+			try {
+				var res = await steamAppsQuerier.GetAppDepotVersions(PUBLISHER_KEY, PUBLISHER_APPID);
+
+				Assert.True(res.Count > 0);
+			} catch (Exception e) {
+				Assert.True(false, e.Message);
+			}
+		}
+
+		[Fact]
+		public async Task GetAppDepotVersions_NOK_KEY() {
+			try {
+				await steamAppsQuerier.GetAppDepotVersions(PUBLISHER_INVALID_KEY, PUBLISHER_APPID);
+			} catch (ForbiddenException) {
+				Assert.True(true);
+				return;
+			} catch (Exception e) {
+				Assert.True(false, e.Message);
+			}
+
+			Assert.True(false, "Should have thrown");
+		}
+
+		[Fact]
+		public async Task GetAppDepotVersions_NOK_APPID() {
+			try {
+				await steamAppsQuerier.GetAppDepotVersions(PUBLISHER_KEY, TF2_APPID);
+			} catch (ForbiddenException) {
+				Assert.True(true);
+				return;
+			} catch (Exception e) {
+				Assert.True(false, e.Message);
+			}
+
+			Assert.True(false, "Should have thrown");
+		}
 	}
 }
