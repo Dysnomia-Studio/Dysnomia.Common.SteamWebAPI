@@ -13,12 +13,12 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The App ID to get the betas of.</param>
 		/// <returns></returns>
 		public async Task<Dictionary<string, AppBetasBranch>> GetAppBetas(string key, uint appid) {
-			return (await this.Get<AppBetas>(
+			return (await this.Get<SteamAPIResponse<AppBetas>>(
 				string.Format(
 					"https://partner.steam-api.com/ISteamApps/GetAppBetas/v1/?key={0}&appid={1}",
 					key, appid
 				)
-			)).betas;
+			)).response.betas;
 		}
 
 		/// <summary>
@@ -29,12 +29,12 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="count">The number of builds to retrieve, the default is 10.</param>
 		/// <returns></returns>
 		public async Task<Dictionary<string, AppBuild>> GetAppBuilds(string key, uint appid, uint count = 10) {
-			return (await this.Get<AppBuilds>(
+			return (await this.Get<SteamAPIResponse<AppBuilds>>(
 				string.Format(
 					"https://partner.steam-api.com/ISteamApps/GetAppBuilds/v1/?key={0}&appid={1}&count={2}",
 					key, appid, count
 				)
-			)).builds;
+			)).response.builds;
 		}
 
 		/// <summary>
@@ -44,25 +44,22 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The App ID to get the depot versions for.</param>
 		/// <returns></returns>
 		public async Task<Dictionary<string, object>> GetAppDepotVersions(string key, uint appid) {
-			return (await this.Get<AppDepotVersions>(
+			return (await this.Get<SteamAPIResponse<AppDepotVersions>>(
 				string.Format(
 					"https://partner.steam-api.com/ISteamApps/GetAppDepotVersions/v1/?key={0}&appid={1}",
 					key, appid
 				)
-			)).depots;
+			)).response.depots;
 		}
 
 		/// <summary>
 		/// Gets the complete list of public apps.
 		/// </summary>
 		/// <returns></returns>
-		public async Task<string> GetAppList() {
-			using (HttpClient httpClient = new HttpClient()) {
+		public async Task<IList<AppListItem>> GetAppList() {
+			var test = await this.Get<AppListRoot>("https://api.steampowered.com/ISteamApps/GetAppList/v2/");
 
-				var response = await httpClient.GetAsync("https://api.steampowered.com/ISteamApps/GetAppList/v2/");
-
-				return await response.Content.ReadAsStringAsync();
-			}
+			return (await this.Get<AppListRoot>("https://api.steampowered.com/ISteamApps/GetAppList/v2/")).applist.apps;
 		}
 
 		/// <summary>

@@ -4,7 +4,6 @@ using System.Text.Json;
 using System.Threading.Tasks;
 
 using Dysnomia.Common.SteamWebAPI.Exceptions;
-using Dysnomia.Common.SteamWebAPI.Models;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	public class SteamWebAPIQuerier {
@@ -21,7 +20,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 
 				await this.ThrowAPIErrors(response);
 
-				return JsonSerializer.Deserialize<SteamAPIResponse<T>>(await response.Content.ReadAsStringAsync()).response;
+				return JsonSerializer.Deserialize<T>(await response.Content.ReadAsStringAsync());
 			}
 		}
 	}

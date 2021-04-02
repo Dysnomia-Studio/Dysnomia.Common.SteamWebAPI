@@ -149,5 +149,12 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
 			Assert.True(false, "Should have thrown");
 		}
+
+		[Fact]
+		public async Task GetAppList() {
+			var res = await steamAppsQuerier.GetAppList();
+
+			Assert.True(res.Count > 0);
+		}
 	}
 }
