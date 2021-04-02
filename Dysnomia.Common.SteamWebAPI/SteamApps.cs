@@ -1,5 +1,8 @@
 ﻿using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
+
+using Dysnomia.Common.SteamWebAPI.Models;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	public class SteamApps : SteamWebAPIQuerier {
@@ -9,7 +12,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="key">Steamworks Web API publisher authentication key.</param>
 		/// <param name="appid">The App ID to get the betas of.</param>
 		/// <returns></returns>
-		public async Task<string> GetAppBetas(string key, uint appid) {
+		public async Task<AppBetas> GetAppBetas(string key, uint appid) {
 			var response = await this.Get(
 				string.Format(
 					"https://partner.steam-api.com/ISteamApps/GetAppBetas/v1/?key={0}&appid={1}",
@@ -17,7 +20,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				)
 			);
 
-			return await response.Content.ReadAsStringAsync();
+			return JsonSerializer.Deserialize<SteamAPIResponse<AppBetas>>(await response.Content.ReadAsStringAsync()).response;
 		}
 
 		/// <summary>

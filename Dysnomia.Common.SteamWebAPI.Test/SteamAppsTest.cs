@@ -23,11 +23,10 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetAppBetas_OK() {
 			try {
 				var res = await steamAppsQuerier.GetAppBetas(PUBLISHER_KEY, PUBLISHER_APPID);
+				Assert.True(res.betas.Count > 0);
 			} catch (Exception e) {
 				Assert.True(false, e.Message);
 			}
-
-			Assert.True(true);
 		}
 
 		[Fact]
