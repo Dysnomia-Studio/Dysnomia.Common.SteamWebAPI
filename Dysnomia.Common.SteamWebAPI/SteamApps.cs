@@ -30,18 +30,15 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The App ID to get the betas of.</param>
 		/// <param name="count">The number of builds to retrieve, the default is 10.</param>
 		/// <returns></returns>
-		public async Task<string> GetAppBuilds(string key, uint appid, uint count = 10) {
-			using (HttpClient httpClient = new HttpClient()) {
+		public async Task<AppBuilds> GetAppBuilds(string key, uint appid, uint count = 10) {
+			var response = await this.Get(
+				string.Format(
+					"https://partner.steam-api.com/ISteamApps/GetAppBuilds/v1/?key={0}&appid={1}&count={2}",
+					key, appid, count
+				)
+			);
 
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"https://partner.steam-api.com/ISteamApps/GetAppBuilds/v1/?key={0}&appid={1}&count={2}",
-						key, appid, count
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+			return JsonSerializer.Deserialize<SteamAPIResponse<AppBuilds>>(await response.Content.ReadAsStringAsync()).response;
 		}
 
 		/// <summary>

@@ -33,7 +33,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetAppBetas_NOK_KEY() {
 			try {
 				await steamAppsQuerier.GetAppBetas(PUBLISHER_INVALID_KEY, PUBLISHER_APPID);
-			} catch (ForbiddenException e) {
+			} catch (ForbiddenException) {
 				Assert.True(true);
 				return;
 			} catch (Exception e) {
@@ -47,7 +47,57 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetAppBetas_NOK_APPID() {
 			try {
 				await steamAppsQuerier.GetAppBetas(PUBLISHER_KEY, TF2_APPID);
-			} catch (ForbiddenException e) {
+			} catch (ForbiddenException) {
+				Assert.True(true);
+				return;
+			} catch (Exception e) {
+				Assert.True(false, e.Message);
+			}
+
+			Assert.True(false, "Should have thrown");
+		}
+
+		[Fact]
+		public async Task GetAppBuilds_OK() {
+			try {
+				var res = await steamAppsQuerier.GetAppBuilds(PUBLISHER_KEY, PUBLISHER_APPID);
+				var test = "";
+				// Assert.True(res.betas.Count > 0);
+			} catch (Exception e) {
+				Assert.True(false, e.Message);
+			}
+		}
+
+		[Fact]
+		public async Task GetAppBuilds_OK_With_Count() {
+			try {
+				var res = await steamAppsQuerier.GetAppBuilds(PUBLISHER_KEY, PUBLISHER_APPID, 5);
+				// Check count
+				// Assert.True(res.betas.Count > 0);
+			} catch (Exception e) {
+				Assert.True(false, e.Message);
+			}
+		}
+
+		[Fact]
+		public async Task GetAppBuilds_NOK_KEY() {
+			try {
+				await steamAppsQuerier.GetAppBuilds(PUBLISHER_INVALID_KEY, PUBLISHER_APPID);
+			} catch (ForbiddenException) {
+				Assert.True(true);
+				return;
+			} catch (Exception e) {
+				Assert.True(false, e.Message);
+			}
+
+			Assert.True(false, "Should have thrown");
+		}
+
+		[Fact]
+		public async Task GetAppBuilds_NOK_APPID() {
+			try {
+				await steamAppsQuerier.GetAppBuilds(PUBLISHER_KEY, TF2_APPID);
+			} catch (ForbiddenException) {
 				Assert.True(true);
 				return;
 			} catch (Exception e) {
