@@ -1,5 +1,5 @@
-﻿using System.Net.Http;
-using System.Text.Json;
+﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 using Dysnomia.Common.SteamWebAPI.Models;
@@ -12,15 +12,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="key">Steamworks Web API publisher authentication key.</param>
 		/// <param name="appid">The App ID to get the betas of.</param>
 		/// <returns></returns>
-		public async Task<AppBetas> GetAppBetas(string key, uint appid) {
-			var response = await this.Get(
+		public async Task<Dictionary<string, AppBetasBranch>> GetAppBetas(string key, uint appid) {
+			return (await this.Get<AppBetas>(
 				string.Format(
 					"https://partner.steam-api.com/ISteamApps/GetAppBetas/v1/?key={0}&appid={1}",
 					key, appid
 				)
-			);
-
-			return JsonSerializer.Deserialize<SteamAPIResponse<AppBetas>>(await response.Content.ReadAsStringAsync()).response;
+			)).betas;
 		}
 
 		/// <summary>
@@ -30,15 +28,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The App ID to get the betas of.</param>
 		/// <param name="count">The number of builds to retrieve, the default is 10.</param>
 		/// <returns></returns>
-		public async Task<AppBuilds> GetAppBuilds(string key, uint appid, uint count = 10) {
-			var response = await this.Get(
+		public async Task<Dictionary<string, AppBuild>> GetAppBuilds(string key, uint appid, uint count = 10) {
+			return (await this.Get<AppBuilds>(
 				string.Format(
 					"https://partner.steam-api.com/ISteamApps/GetAppBuilds/v1/?key={0}&appid={1}&count={2}",
 					key, appid, count
 				)
-			);
-
-			return JsonSerializer.Deserialize<SteamAPIResponse<AppBuilds>>(await response.Content.ReadAsStringAsync()).response;
+			)).builds;
 		}
 
 		/// <summary>

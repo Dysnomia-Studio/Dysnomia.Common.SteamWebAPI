@@ -1,8 +1,10 @@
 ﻿using System.Net;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 using Dysnomia.Common.SteamWebAPI.Exceptions;
+using Dysnomia.Common.SteamWebAPI.Models;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	public class SteamWebAPIQuerier {
@@ -13,13 +15,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 			}
 		}
 
-		protected async Task<HttpResponseMessage> Get(string url) {
+		protected async Task<T> Get<T>(string url) {
 			using (HttpClient httpClient = new HttpClient()) {
 				var response = await httpClient.GetAsync(url);
 
 				await this.ThrowAPIErrors(response);
 
-				return response;
+				return JsonSerializer.Deserialize<SteamAPIResponse<T>>(await response.Content.ReadAsStringAsync()).response;
 			}
 		}
 	}

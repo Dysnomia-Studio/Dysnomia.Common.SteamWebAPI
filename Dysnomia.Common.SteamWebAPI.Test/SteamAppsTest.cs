@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 using Dysnomia.Common.SteamWebAPI.Exceptions;
@@ -23,7 +24,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetAppBetas_OK() {
 			try {
 				var res = await steamAppsQuerier.GetAppBetas(PUBLISHER_KEY, PUBLISHER_APPID);
-				Assert.True(res.betas.Count > 0);
+
+				Assert.True(res.Count > 0);
 			} catch (Exception e) {
 				Assert.True(false, e.Message);
 			}
@@ -61,8 +63,9 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetAppBuilds_OK() {
 			try {
 				var res = await steamAppsQuerier.GetAppBuilds(PUBLISHER_KEY, PUBLISHER_APPID);
-				var test = "";
-				// Assert.True(res.betas.Count > 0);
+
+				Assert.True(res.Count > 0);
+				Assert.True(res.First().Value.depots.Count <= 10);
 			} catch (Exception e) {
 				Assert.True(false, e.Message);
 			}
@@ -72,8 +75,9 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetAppBuilds_OK_With_Count() {
 			try {
 				var res = await steamAppsQuerier.GetAppBuilds(PUBLISHER_KEY, PUBLISHER_APPID, 5);
-				// Check count
-				// Assert.True(res.betas.Count > 0);
+
+				Assert.True(res.Count > 0);
+				Assert.True(res.First().Value.depots.Count <= 5);
 			} catch (Exception e) {
 				Assert.True(false, e.Message);
 			}
