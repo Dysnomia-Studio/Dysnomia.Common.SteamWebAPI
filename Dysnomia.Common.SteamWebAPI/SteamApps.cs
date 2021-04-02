@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SteamWebAPI {
-	public class SteamApps {
+	public class SteamApps : SteamWebAPIQuerier {
 		/// <summary>
 		/// Gets all of the beta branches for the specified application.
 		/// </summary>
@@ -10,17 +10,14 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The App ID to get the betas of.</param>
 		/// <returns></returns>
 		public async Task<string> GetAppBetas(string key, uint appid) {
-			using (HttpClient httpClient = new HttpClient()) {
+			var response = await this.Get(
+				string.Format(
+					"https://partner.steam-api.com/ISteamApps/GetAppBetas/v1/?key={0}&appid={1}",
+					key, appid
+				)
+			);
 
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"https://partner.steam-api.com/ISteamApps/GetAppBetas/v1/?key={0}&appid={1}",
-						key, appid
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+			return await response.Content.ReadAsStringAsync();
 		}
 
 		/// <summary>
