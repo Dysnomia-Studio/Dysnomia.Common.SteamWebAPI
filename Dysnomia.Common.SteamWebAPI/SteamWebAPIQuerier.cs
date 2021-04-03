@@ -9,8 +9,14 @@ namespace Dysnomia.Common.SteamWebAPI {
 	public class SteamWebAPIQuerier {
 		protected async Task ThrowAPIErrors(HttpResponseMessage response) {
 			switch (response.StatusCode) {
-				case HttpStatusCode.Forbidden:
+				case HttpStatusCode.Forbidden: // 403
 					throw new ForbiddenException(await response.Content.ReadAsStringAsync());
+
+				case HttpStatusCode.InternalServerError: // 500
+				case HttpStatusCode.BadGateway: // 502
+				case HttpStatusCode.ServiceUnavailable: // 503
+				case HttpStatusCode.GatewayTimeout: // 504
+					throw new InternalServerErrorException(await response.Content.ReadAsStringAsync());
 			}
 		}
 
