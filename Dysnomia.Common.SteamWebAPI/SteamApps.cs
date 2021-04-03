@@ -160,18 +160,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// </summary>
 		/// <param name="addr">IP or IP:queryport to list</param>
 		/// <returns></returns>
-		public async Task<string> GetServersAtAddress(string addr) {
-			using (HttpClient httpClient = new HttpClient()) {
-
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"https://api.steampowered.com/ISteamApps/GetServersAtAddress/v1/?addr={0}",
-						addr
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+		public async Task<IList<SteamServersAtAddressItem>> GetServersAtAddress(string addr) {
+			return (await this.Get<SteamAPIResponse<SteamServersAtAddress>>(
+				string.Format(
+					"https://api.steampowered.com/ISteamApps/GetServersAtAddress/v1/?addr={0}",
+					addr
+				)
+			)).response.servers;
 		}
 
 		/// <summary>
@@ -186,11 +181,12 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<string> SetAppBuildLive(string key, uint appid, uint buildid, string betakey, string description = "") {
 			using (HttpClient httpClient = new HttpClient()) {
 
-				var response = await httpClient.GetAsync(
+				var response = await httpClient.PostAsync(
 					string.Format(
 						"https://partner.steam-api.com/ISteamApps/SetAppBuildLive/v1/?key={0}&=appid{1}&buildid={2}&betakey={3}&description={4}",
 						key, appid, buildid, betakey, description
-					)
+					),
+					new StringContent("")
 				);
 
 				return await response.Content.ReadAsStringAsync();

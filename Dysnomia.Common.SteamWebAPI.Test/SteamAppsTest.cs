@@ -171,5 +171,12 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 				await steamAppsQuerier.GetServerList(PUBLISHER_INVALID_KEY);
 			});
 		}
+
+		[Fact]
+		public async Task GetServersAtAddress() {
+			var res = await steamAppsQuerier.GetServersAtAddress("146.66.152.1"); // 146.66.152.0/24 are EU West CSGO server located in Luxembourg
+
+			Assert.True(res.Count >= 0);
+		}
 	}
 }
