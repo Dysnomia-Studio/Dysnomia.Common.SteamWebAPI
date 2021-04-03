@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -104,18 +105,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="key">Steamworks Web API publisher authentication key.</param>
 		/// <param name="type_filter">Optional comma separated list of types to filter on</param>
 		/// <returns></returns>
-		public async Task<string> GetPartnerAppListForWebAPIKey(string key, string type_filter) {
-			using (HttpClient httpClient = new HttpClient()) {
-
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"https://partner.steam-api.com/ISteamApps/GetPartnerAppListForWebAPIKey/v1/?key={0}&type_filter={1}",
-						key, type_filter
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+		public async Task<IEnumerable<PartnerAppListAppItem>> GetPartnerAppListForWebAPIKey(string key, string type_filter = "") {
+			return (await this.Get<PartnerAppListRoot>(
+				string.Format(
+					"https://partner.steam-api.com/ISteamApps/GetPartnerAppListForWebAPIKey/v1/?key={0}&type_filter={1}",
+					key, type_filter
+				)
+			)).applist.apps.app.Where((val) => val != null); // Where() is needed because Steam returns [null] when filter is invalid ...
 		}
 
 		/// <summary>

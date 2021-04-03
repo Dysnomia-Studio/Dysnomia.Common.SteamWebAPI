@@ -103,5 +103,33 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetCheatingReports_OK() {
 			await steamAppsQuerier.GetCheatingReports(PUBLISHER_KEY, PUBLISHER_APPID, new DateTime(2020, 01, 01), DateTime.Now, true, true);
 		}
+
+		[Fact]
+		public async Task GetPartnerAppListForWebAPIKey_OK_NoFilter() {
+			var res = (await steamAppsQuerier.GetPartnerAppListForWebAPIKey(PUBLISHER_KEY)).ToList();
+
+			Assert.True(res.Count >= 0);
+		}
+
+		[Fact]
+		public async Task GetPartnerAppListForWebAPIKey_OK_ValidFilter() {
+			var res = (await steamAppsQuerier.GetPartnerAppListForWebAPIKey(PUBLISHER_KEY, "demo")).ToList();
+
+			Assert.True(res.Count >= 0);
+		}
+
+		[Fact]
+		public async Task GetPartnerAppListForWebAPIKey_OK_InvalidFilter() {
+			var res = (await steamAppsQuerier.GetPartnerAppListForWebAPIKey(PUBLISHER_KEY, "invalid")).ToList();
+
+			Assert.True(res.Count == 0);
+		}
+
+		[Fact]
+		public async Task GetPartnerAppListForWebAPIKey_NOK_KEY() {
+			await Assert.ThrowsAsync<ForbiddenException>(async () => {
+				await steamAppsQuerier.GetPartnerAppListForWebAPIKey(PUBLISHER_INVALID_KEY);
+			});
+		}
 	}
 }
