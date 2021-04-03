@@ -136,28 +136,23 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="filter">Query filter string</param>
 		/// <param name="limit">Limit number of servers in the response</param>
 		/// <returns></returns>
-		public async Task<string> GetServerList(string key, string filter = null, uint? limit = null) {
-			using (HttpClient httpClient = new HttpClient()) {
-
-				string filterStr = "";
-				if (filter != null) {
-					filterStr = "&filter=" + filter;
-				}
-
-				string limitStr = "";
-				if (limit != null) {
-					limitStr = "&limit=" + limit;
-				}
-
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"https://partner.steam-api.com/ISteamApps/GetServerList/v1/?key={0}{1}{2}",
-						key, filterStr, limitStr
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
+		public async Task<ServerList> GetServerList(string key, string filter = null, uint? limit = null) {
+			string filterStr = "";
+			if (filter != null) {
+				filterStr = "&filter=" + filter;
 			}
+
+			string limitStr = "";
+			if (limit != null) {
+				limitStr = "&limit=" + limit;
+			}
+
+			return (await this.Get<ServerList>(
+				string.Format(
+					"https://partner.steam-api.com/ISteamApps/GetServerList/v1/?key={0}{1}{2}",
+					key, filterStr, limitStr
+				)
+			));
 		}
 
 		/// <summary>

@@ -159,5 +159,17 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 				await steamAppsQuerier.GetPlayersBanned(PUBLISHER_KEY, TF2_APPID);
 			});
 		}
+
+		[Fact]
+		public async Task GetServerList_OK() {
+			await steamAppsQuerier.GetServerList(PUBLISHER_KEY);
+		}
+
+		[Fact]
+		public async Task GetServerList_NOK_KEY() {
+			await Assert.ThrowsAsync<ForbiddenException>(async () => {
+				await steamAppsQuerier.GetServerList(PUBLISHER_INVALID_KEY);
+			});
+		}
 	}
 }
