@@ -120,18 +120,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="key">Steamworks Web API publisher authentication key.</param>
 		/// <param name="appid">AppID of game</param>
 		/// <returns></returns>
-		public async Task<string> GetPlayersBanned(string key, uint appid) {
-			using (HttpClient httpClient = new HttpClient()) {
-
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"https://partner.steam-api.com/ISteamApps/GetPlayersBanned/v1/?key={0}&appid={1}",
-						key, appid
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+		public async Task<PlayersBanned> GetPlayersBanned(string key, uint appid) {
+			return (await this.Get<PlayersBanned>(
+				string.Format(
+					"https://partner.steam-api.com/ISteamApps/GetPlayersBanned/v1/?key={0}&appid={1}",
+					key, appid
+				)
+			));
 		}
 
 		/// <summary>

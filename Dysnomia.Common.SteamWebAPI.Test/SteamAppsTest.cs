@@ -138,5 +138,26 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 				await steamAppsQuerier.GetPartnerAppListForWebAPIKey(PUBLISHER_INVALID_KEY);
 			});
 		}
+
+		[Fact]
+		public async Task GetPlayersBanned_OK() {
+			var res = await steamAppsQuerier.GetPlayersBanned(PUBLISHER_KEY, PUBLISHER_APPID);
+
+			Assert.True(res.accounts.Count >= 0);
+		}
+
+		[Fact]
+		public async Task GetPlayersBanned_NOK_KEY() {
+			await Assert.ThrowsAsync<ForbiddenException>(async () => {
+				await steamAppsQuerier.GetPlayersBanned(PUBLISHER_INVALID_KEY, PUBLISHER_APPID);
+			});
+		}
+
+		[Fact]
+		public async Task GetPlayersBanned_NOK_APPID() {
+			await Assert.ThrowsAsync<ForbiddenException>(async () => {
+				await steamAppsQuerier.GetPlayersBanned(PUBLISHER_KEY, TF2_APPID);
+			});
+		}
 	}
 }
