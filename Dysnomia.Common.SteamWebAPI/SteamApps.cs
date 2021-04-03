@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -57,8 +58,6 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// </summary>
 		/// <returns></returns>
 		public async Task<IList<AppListItem>> GetAppList() {
-			var test = await this.Get<AppListRoot>("https://api.steampowered.com/ISteamApps/GetAppList/v2/");
-
 			return (await this.Get<AppListRoot>("https://api.steampowered.com/ISteamApps/GetAppList/v2/")).applist.apps;
 		}
 
@@ -75,6 +74,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <returns></returns>
 		public async Task<string> GetCheatingReports(string key, uint appid, uint timebegin, uint timeend, bool includereports, bool includebans, ulong? reportidmin = null) {
 			using (HttpClient httpClient = new HttpClient()) {
+				// TODO: re-test later to format this method as the other ones. When I tried, I got an internal server error :/
 
 				string reportidminStr = "";
 				if (reportidmin != null) {
@@ -90,6 +90,11 @@ namespace Dysnomia.Common.SteamWebAPI {
 
 				return await response.Content.ReadAsStringAsync();
 			}
+		}
+
+
+		public async Task<string> GetCheatingReports(string key, uint appid, DateTime timebegin, DateTime timeend, bool includereports, bool includebans, ulong? reportidmin = null) {
+			return await GetCheatingReports(key, appid, (uint)((DateTimeOffset)timebegin).ToUnixTimeSeconds(), (uint)((DateTimeOffset)timeend).ToUnixTimeSeconds(), includereports, includebans, reportidmin);
 		}
 
 		/// <summary>

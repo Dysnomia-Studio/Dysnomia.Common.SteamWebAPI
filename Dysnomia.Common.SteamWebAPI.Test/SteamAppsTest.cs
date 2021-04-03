@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -96,6 +97,11 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 			var res = await steamAppsQuerier.GetAppList();
 
 			Assert.True(res.Count > 0);
+		}
+
+		[Fact]
+		public async Task GetCheatingReports_OK() {
+			await steamAppsQuerier.GetCheatingReports(PUBLISHER_KEY, PUBLISHER_APPID, new DateTime(2020, 01, 01), DateTime.Now, true, true);
 		}
 	}
 }
