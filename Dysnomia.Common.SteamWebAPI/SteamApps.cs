@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Dysnomia.Common.SteamWebAPI.Models;
 
 namespace Dysnomia.Common.SteamWebAPI {
-	public class SteamApps : SteamWebAPIQuerier {
+	public class SteamApps : SteamWebAPIQuerier, ISteamApps {
 		/// <summary>
 		/// Gets all of the beta branches for the specified application.
 		/// </summary>
