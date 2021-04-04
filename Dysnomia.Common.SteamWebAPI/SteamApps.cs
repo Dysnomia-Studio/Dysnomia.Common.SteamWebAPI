@@ -94,6 +94,17 @@ namespace Dysnomia.Common.SteamWebAPI {
 		}
 
 
+		/// <summary>
+		/// Get a list of cheating reports submitted for this app.
+		/// </summary>
+		/// <param name="key">Steamworks Web API publisher authentication key.</param>
+		/// <param name="appid">AppID of game</param>
+		/// <param name="timebegin">Time range begin</param>
+		/// <param name="timeend">Time range end</param>
+		/// <param name="includereports">include reports that were not bans</param>
+		/// <param name="includebans">include reports that were bans</param>
+		/// <param name="reportidmin">minimum report id</param>
+		/// <returns></returns>
 		public async Task<string> GetCheatingReports(string key, uint appid, DateTime timebegin, DateTime timeend, bool includereports, bool includebans, ulong? reportidmin = null) {
 			return await GetCheatingReports(key, appid, (uint)((DateTimeOffset)timebegin).ToUnixTimeSeconds(), (uint)((DateTimeOffset)timeend).ToUnixTimeSeconds(), includereports, includebans, reportidmin);
 		}
