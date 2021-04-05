@@ -17,8 +17,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<Dictionary<string, AppBetasBranch>> GetAppBetas(string key, uint appid) {
 			return (await this.Get<SteamAPIResponse<AppBetas>>(
 				string.Format(
-					"https://partner.steam-api.com/ISteamApps/GetAppBetas/v1/?key={0}&appid={1}",
-					key, appid
+					"{0}/ISteamApps/GetAppBetas/v1/?key={1}&appid={2}",
+					API_URL, key, appid
 				)
 			)).response.betas;
 		}
@@ -33,8 +33,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<Dictionary<string, AppBuild>> GetAppBuilds(string key, uint appid, uint count = 10) {
 			return (await this.Get<SteamAPIResponse<AppBuilds>>(
 				string.Format(
-					"https://partner.steam-api.com/ISteamApps/GetAppBuilds/v1/?key={0}&appid={1}&count={2}",
-					key, appid, count
+					"{0}/ISteamApps/GetAppBuilds/v1/?key={1}&appid={2}&count={3}",
+					API_URL, key, appid, count
 				)
 			)).response.builds;
 		}
@@ -48,8 +48,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<Dictionary<string, object>> GetAppDepotVersions(string key, uint appid) {
 			return (await this.Get<SteamAPIResponse<AppDepotVersions>>(
 				string.Format(
-					"https://partner.steam-api.com/ISteamApps/GetAppDepotVersions/v1/?key={0}&appid={1}",
-					key, appid
+					"{0}/ISteamApps/GetAppDepotVersions/v1/?key={1}&appid={2}",
+					API_URL, key, appid
 				)
 			)).response.depots;
 		}
@@ -59,7 +59,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// </summary>
 		/// <returns></returns>
 		public async Task<IList<AppListItem>> GetAppList() {
-			return (await this.Get<AppListRoot>("https://api.steampowered.com/ISteamApps/GetAppList/v2/")).applist.apps;
+			return (await this.Get<AppListRoot>(API_URL + "/ISteamApps/GetAppList/v2/")).applist.apps;
 		}
 
 		/// <summary>
@@ -84,8 +84,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 
 				var response = await httpClient.GetAsync(
 					string.Format(
-						"https://partner.steam-api.com/ISteamApps/GetCheatingReports/v1/?key={0}&appid={1}&timebegin={2}&timeend={3}&includereports={4}&includebans={5}{6}",
-						key, appid, timebegin, timeend, includereports, includebans, reportidminStr
+						"{0}/ISteamApps/GetCheatingReports/v1/?key={1}&appid={2}&timebegin={3}&timeend={4}&includereports={5}&includebans={6}{7}",
+						API_URL, key, appid, timebegin, timeend, includereports, includebans, reportidminStr
 					)
 				);
 
@@ -119,8 +119,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<IEnumerable<PartnerAppListAppItem>> GetPartnerAppListForWebAPIKey(string key, string type_filter = "") {
 			return (await this.Get<PartnerAppListRoot>(
 				string.Format(
-					"https://partner.steam-api.com/ISteamApps/GetPartnerAppListForWebAPIKey/v1/?key={0}&type_filter={1}",
-					key, type_filter
+					"{0}/ISteamApps/GetPartnerAppListForWebAPIKey/v1/?key={1}&type_filter={2}",
+					API_URL, key, type_filter
 				)
 			)).applist.apps.app.Where((val) => val != null); // Where() is needed because Steam returns [null] when filter is invalid ...
 		}
@@ -134,8 +134,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<PlayersBanned> GetPlayersBanned(string key, uint appid) {
 			return (await this.Get<PlayersBanned>(
 				string.Format(
-					"https://partner.steam-api.com/ISteamApps/GetPlayersBanned/v1/?key={0}&appid={1}",
-					key, appid
+					"{0}/ISteamApps/GetPlayersBanned/v1/?key={1}&appid={2}",
+					API_URL, key, appid
 				)
 			));
 		}
@@ -160,8 +160,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 
 			return (await this.Get<ServerList>(
 				string.Format(
-					"https://partner.steam-api.com/ISteamApps/GetServerList/v1/?key={0}{1}{2}",
-					key, filterStr, limitStr
+					"{0}/ISteamApps/GetServerList/v1/?key={1}{2}{3}",
+					API_URL, key, filterStr, limitStr
 				)
 			));
 		}
@@ -174,8 +174,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<IList<SteamServersAtAddressItem>> GetServersAtAddress(string addr) {
 			return (await this.Get<SteamAPIResponse<SteamServersAtAddress>>(
 				string.Format(
-					"https://api.steampowered.com/ISteamApps/GetServersAtAddress/v1/?addr={0}",
-					addr
+					"{0}/ISteamApps/GetServersAtAddress/v1/?addr={1}",
+					API_URL, addr
 				)
 			)).response.servers;
 		}
@@ -194,8 +194,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 
 				var response = await httpClient.PostAsync(
 					string.Format(
-						"https://partner.steam-api.com/ISteamApps/SetAppBuildLive/v1/?key={0}&=appid{1}&buildid={2}&betakey={3}&description={4}",
-						key, appid, buildid, betakey, description
+						"{0}/ISteamApps/SetAppBuildLive/v1/?key={1}&=appid{2}&buildid={3}&betakey={4}&description={5}",
+						API_URL, key, appid, buildid, betakey, description
 					),
 					new StringContent("")
 				);
@@ -215,8 +215,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 
 				var response = await httpClient.GetAsync(
 					string.Format(
-						"https://api.steampowered.com/ISteamApps/UpToDateCheck/v1/?appid={0}&version={1}",
-						appid, version
+						"{0}/ISteamApps/UpToDateCheck/v1/?appid={1}&version={2}",
+						API_URL, appid, version
 					)
 				);
 
