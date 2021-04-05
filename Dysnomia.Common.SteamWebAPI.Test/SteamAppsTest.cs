@@ -178,5 +178,22 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
 			Assert.True(res.Count >= 0);
 		}
+
+
+		[Fact]
+		public async Task UpToDateCheck_OK() {
+			var res = await steamAppsQuerier.UpToDateCheck(PUBLISHER_APPID, 6165393);
+
+			var test = "";
+		}
+
+		[Fact]
+		public async Task UpToDateCheck_NOK_KEY() {
+			await Assert.ThrowsAsync<ForbiddenException>(async () => {
+				var res =  await steamAppsQuerier.UpToDateCheck(TF2_APPID, 6165393);
+
+				var test = "";
+			});
+		}
 	}
 }
