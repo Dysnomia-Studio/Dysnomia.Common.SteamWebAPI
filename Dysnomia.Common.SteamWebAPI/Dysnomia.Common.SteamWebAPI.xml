@@ -153,6 +153,26 @@
             <param name="version">The installed version of the game</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.ISteamCommunity">
+            <summary>
+            Provides restricted access to Steam Community features.
+            https://partner.steamgames.com/doc/webapi/ISteamCommunity
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.String,System.Nullable{System.UInt64})">
+            <summary>
+            Allows publishers to report users who are behaving badly on their community hub.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamidActor">SteamID of user doing the reporting</param>
+            <param name="steamidTarget">SteamID of the entity being accused of abuse</param>
+            <param name="appid">AppID to check for ownership</param>
+            <param name="abuseType">Abuse type code</param>
+            <param name="contentType">Content type code</param>
+            <param name="description">Narrative from user</param>
+            <param name="gid">GID of related record (depends on content type)</param>
+            <returns></returns>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.ISteamUserAuth">
             <summary>
             Used to access information about users.
@@ -290,6 +310,26 @@
             </summary>
             <param name="appid">AppID of game</param>
             <param name="version">The installed version of the game</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamCommunity">
+            <summary>
+            Provides restricted access to Steam Community features.
+            https://partner.steamgames.com/doc/webapi/ISteamCommunity
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.String,System.Nullable{System.UInt64})">
+            <summary>
+            Allows publishers to report users who are behaving badly on their community hub.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamidActor">SteamID of user doing the reporting</param>
+            <param name="steamidTarget">SteamID of the entity being accused of abuse</param>
+            <param name="appid">AppID to check for ownership</param>
+            <param name="abuseType">Abuse type code</param>
+            <param name="contentType">Content type code</param>
+            <param name="description">Narrative from user</param>
+            <param name="gid">GID of related record (depends on content type)</param>
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamUserAuth">

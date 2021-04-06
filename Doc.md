@@ -20,6 +20,8 @@
   - [GetServersAtAddress(addr)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetServersAtAddress-System-String- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetServersAtAddress(System.String)')
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
+- [ISteamCommunity](#T-Dysnomia-Common-SteamWebAPI-ISteamCommunity 'Dysnomia.Common.SteamWebAPI.ISteamCommunity')
+  - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,System-UInt32,System-UInt32,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.String,System.Nullable{System.UInt64})')
 - [ISteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
@@ -36,6 +38,8 @@
   - [GetServersAtAddress(addr)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetServersAtAddress-System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetServersAtAddress(System.String)')
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
+- [SteamCommunity](#T-Dysnomia-Common-SteamWebAPI-SteamCommunity 'Dysnomia.Common.SteamWebAPI.SteamCommunity')
+  - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,System-UInt32,System-UInt32,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.String,System.Nullable{System.UInt64})')
 - [SteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-SteamUserAuth 'Dysnomia.Common.SteamWebAPI.SteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
@@ -348,6 +352,42 @@ Possible values are "game,application,tool,demo,dlc,music". When type_filter is 
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID of game |
 | version | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The installed version of the game |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-ISteamCommunity'></a>
+## ISteamCommunity `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Provides restricted access to Steam Community features.
+https://partner.steamgames.com/doc/webapi/ISteamCommunity
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,System-UInt32,System-UInt32,System-String,System-Nullable{System-UInt64}-'></a>
+### ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid) `method`
+
+##### Summary
+
+Allows publishers to report users who are behaving badly on their community hub.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamidActor | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user doing the reporting |
+| steamidTarget | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of the entity being accused of abuse |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to check for ownership |
+| abuseType | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Abuse type code |
+| contentType | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Content type code |
+| description | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Narrative from user |
+| gid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | GID of related record (depends on content type) |
+
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth'></a>
 ## ISteamUserAuth `type`
 
@@ -637,6 +677,42 @@ Possible values are "game,application,tool,demo,dlc,music". When type_filter is 
 | ---- | ---- | ----------- |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID of game |
 | version | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The installed version of the game |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-SteamCommunity'></a>
+## SteamCommunity `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Provides restricted access to Steam Community features.
+https://partner.steamgames.com/doc/webapi/ISteamCommunity
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,System-UInt32,System-UInt32,System-String,System-Nullable{System-UInt64}-'></a>
+### ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid) `method`
+
+##### Summary
+
+Allows publishers to report users who are behaving badly on their community hub.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamidActor | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user doing the reporting |
+| steamidTarget | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of the entity being accused of abuse |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to check for ownership |
+| abuseType | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Abuse type code |
+| contentType | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Content type code |
+| description | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Narrative from user |
+| gid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | GID of related record (depends on content type) |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamUserAuth'></a>
 ## SteamUserAuth `type`
