@@ -26,17 +26,17 @@ namespace Dysnomia.Common.SteamWebAPI {
 
 			var enddateStr = "";
 			if (enddate != null) {
-				enddateStr = "&maxlength=" + enddate;
+				enddateStr = "&enddate=" + enddate;
 			}
 
 			var countStr = "";
 			if (count != null) {
-				countStr = "&maxlength=" + count;
+				countStr = "&count=" + count;
 			}
 
 			var feedsStr = "";
 			if (feeds != null) {
-				feedsStr = "&maxlength=" + feeds;
+				feedsStr = "&feeds=" + feeds;
 			}
 
 			return (await this.Get<AppNewsRoot>(
