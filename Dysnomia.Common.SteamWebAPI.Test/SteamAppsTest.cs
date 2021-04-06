@@ -7,14 +7,8 @@ using Dysnomia.Common.SteamWebAPI.Exceptions;
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class SteamAppsTest {
-		private const string PUBLISHER_INVALID_KEY = "INVALID";
-		private const string PUBLISHER_KEY = "";
-
-		private const uint PUBLISHER_APPID = 1299430; // appId of Extortion
-		private const uint TF2_APPID = 440;
-
-		private readonly SteamApps steamAppsQuerier;
+	public class SteamAppsTest : BaseTestClass {
+		protected readonly SteamApps steamAppsQuerier;
 
 		public SteamAppsTest() {
 			this.steamAppsQuerier = new SteamApps();

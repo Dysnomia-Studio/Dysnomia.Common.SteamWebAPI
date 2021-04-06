@@ -320,6 +320,73 @@
             <param name="gid">GID of related record (depends on content type)</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.ISteamNews">
+            <summary>
+            Provides access to the Steam News functionality.
+            https://partner.steamgames.com/doc/webapi/ISteamNews
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Get the news for the specified app.
+            </summary>
+            <param name="appid">AppID to retrieve news for</param>
+            <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+            <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+            <param name="count"># of posts to retrieve (default 20)</param>
+            <param name="feeds">Comma-seperated list of feed names to return news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Get the news for the specified app.
+            </summary>
+            <param name="appid">AppID to retrieve news for</param>
+            <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+            <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+            <param name="count"># of posts to retrieve (default 20)</param>
+            <param name="feeds">Comma-seperated list of feed names to return news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForApp(System.UInt32)">
+            <summary>
+            Get the news for the specified app.
+            </summary>
+            <param name="appid">AppID to retrieve news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Get the news for the specified app. Publisher only version that can return info for unreleased games.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID to retrieve news for</param>
+            <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+            <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+            <param name="count"># of posts to retrieve (default 20)</param>
+            <param name="feeds">Comma-seperated list of feed names to return news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Get the news for the specified app. Publisher only version that can return info for unreleased games.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID to retrieve news for</param>
+            <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+            <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+            <param name="count"># of posts to retrieve (default 20)</param>
+            <param name="feeds">Comma-seperated list of feed names to return news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32)">
+            <summary>
+            Get the news for the specified app. Publisher only version that can return info for unreleased games.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID to retrieve news for</param>
+            <returns></returns>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.ISteamUserAuth">
             <summary>
             Used to access information about users.
@@ -477,6 +544,73 @@
             <param name="contentType">Content type code (see ECommunityContentType enum)</param>
             <param name="description">Narrative from user</param>
             <param name="gid">GID of related record (depends on content type)</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamNews">
+            <summary>
+            Provides access to the Steam News functionality.
+            https://partner.steamgames.com/doc/webapi/ISteamNews
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Get the news for the specified app.
+            </summary>
+            <param name="appid">AppID to retrieve news for</param>
+            <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+            <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+            <param name="count"># of posts to retrieve (default 20)</param>
+            <param name="feeds">Comma-seperated list of feed names to return news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Get the news for the specified app.
+            </summary>
+            <param name="appid">AppID to retrieve news for</param>
+            <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+            <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+            <param name="count"># of posts to retrieve (default 20)</param>
+            <param name="feeds">Comma-seperated list of feed names to return news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32)">
+            <summary>
+            Get the news for the specified app.
+            </summary>
+            <param name="appid">AppID to retrieve news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Get the news for the specified app. Publisher only version that can return info for unreleased games.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID to retrieve news for</param>
+            <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+            <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+            <param name="count"># of posts to retrieve (default 20)</param>
+            <param name="feeds">Comma-seperated list of feed names to return news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Get the news for the specified app. Publisher only version that can return info for unreleased games.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID to retrieve news for</param>
+            <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+            <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+            <param name="count"># of posts to retrieve (default 20)</param>
+            <param name="feeds">Comma-seperated list of feed names to return news for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32)">
+            <summary>
+            Get the news for the specified app. Publisher only version that can return info for unreleased games.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID to retrieve news for</param>
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamUserAuth">
