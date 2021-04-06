@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dysnomia.Common.SteamWebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:Dysnomia.Common.SteamWebAPI.BroadcastService">
+            <summary>
+            Provides access to Steam broadcasts.
+            https://partner.steamgames.com/doc/webapi/IBroadcastService
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.BroadcastService.PostGameDataFrame(System.String,System.UInt32,System.UInt64,System.UInt64,System.String)">
+            <summary>
+            Add a game meta data frame to broadcast
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid"></param>
+            <param name="steamid"></param>
+            <param name="broadcast_id"></param>
+            <param name="frame_data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.IBroadcastService">
+            <summary>
+            Provides access to Steam broadcasts.
+            https://partner.steamgames.com/doc/webapi/IBroadcastService
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IBroadcastService.PostGameDataFrame(System.String,System.UInt32,System.UInt64,System.UInt64,System.String)">
+            <summary>
+            Add a game meta data frame to broadcast
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid"></param>
+            <param name="steamid"></param>
+            <param name="broadcast_id"></param>
+            <param name="frame_data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.ISteamApps">
+            <summary>
+            Used to access data about applications on Steam.
+            https://partner.steamgames.com/doc/webapi/ISteamApps
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppBetas(System.String,System.UInt32)">
+            <summary>
+            Gets all of the beta branches for the specified application.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">The App ID to get the betas of.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppBuilds(System.String,System.UInt32,System.UInt32)">
+            <summary>
+            Gets an applications build history.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">The App ID to get the betas of.</param>
+            <param name="count">The number of builds to retrieve, the default is 10.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppDepotVersions(System.String,System.UInt32)">
+            <summary>
+            Gets all the versions of all the depots for the specified application.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">The App ID to get the depot versions for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppList">
+            <summary>
+            Gets the complete list of public apps.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.Boolean,System.Boolean,System.Nullable{System.UInt64})">
+            <summary>
+            Get a list of cheating reports submitted for this app.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID of game</param>
+            <param name="timebegin">Time range begin</param>
+            <param name="timeend">Time range end</param>
+            <param name="includereports">include reports that were not bans</param>
+            <param name="includebans">include reports that were bans</param>
+            <param name="reportidmin">minimum report id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetCheatingReports(System.String,System.UInt32,System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Nullable{System.UInt64})">
+            <summary>
+            Get a list of cheating reports submitted for this app.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID of game</param>
+            <param name="timebegin">Time range begin</param>
+            <param name="timeend">Time range end</param>
+            <param name="includereports">include reports that were not bans</param>
+            <param name="includebans">include reports that were bans</param>
+            <param name="reportidmin">minimum report id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetPartnerAppListForWebAPIKey(System.String,System.String)">
+            <summary>
+            Get a list of appIDs associated with a WebAPI key. Type_filter can used to specify certain app types to be returned.
+            Possible values are "game,application,tool,demo,dlc,music". When type_filter is blank or not used, all apps are returned.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="type_filter">Optional comma separated list of types to filter on</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetPlayersBanned(System.String,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID of game</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetServerList(System.String,System.String,System.Nullable{System.UInt32})">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="filter">Query filter string</param>
+            <param name="limit">Limit number of servers in the response</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetServersAtAddress(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="addr">IP or IP:queryport to list</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID of game</param>
+            <param name="buildid">BuildID</param>
+            <param name="betakey">Beta key, required. Use public for default branch</param>
+            <param name="description">Optional description for this build</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.UpToDateCheck(System.UInt32,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="appid">AppID of game</param>
+            <param name="version">The installed version of the game</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamApps">
+            <summary>
+            Used to access data about applications on Steam.
+            https://partner.steamgames.com/doc/webapi/ISteamApps
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetAppBetas(System.String,System.UInt32)">
+            <summary>
+            Gets all of the beta branches for the specified application.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">The App ID to get the betas of.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetAppBuilds(System.String,System.UInt32,System.UInt32)">
+            <summary>
+            Gets an applications build history.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">The App ID to get the betas of.</param>
+            <param name="count">The number of builds to retrieve, the default is 10.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetAppDepotVersions(System.String,System.UInt32)">
+            <summary>
+            Gets all the versions of all the depots for the specified application.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">The App ID to get the depot versions for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetAppList">
+            <summary>
+            Gets the complete list of public apps.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.Boolean,System.Boolean,System.Nullable{System.UInt64})">
+            <summary>
+            Get a list of cheating reports submitted for this app.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID of game</param>
+            <param name="timebegin">Time range begin</param>
+            <param name="timeend">Time range end</param>
+            <param name="includereports">include reports that were not bans</param>
+            <param name="includebans">include reports that were bans</param>
+            <param name="reportidmin">minimum report id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetCheatingReports(System.String,System.UInt32,System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Nullable{System.UInt64})">
+            <summary>
+            Get a list of cheating reports submitted for this app.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID of game</param>
+            <param name="timebegin">Time range begin</param>
+            <param name="timeend">Time range end</param>
+            <param name="includereports">include reports that were not bans</param>
+            <param name="includebans">include reports that were bans</param>
+            <param name="reportidmin">minimum report id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetPartnerAppListForWebAPIKey(System.String,System.String)">
+            <summary>
+            Get a list of appIDs associated with a WebAPI key. Type_filter can used to specify certain app types to be returned.
+            Possible values are "game,application,tool,demo,dlc,music". When type_filter is blank or not used, all apps are returned.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="type_filter">Optional comma separated list of types to filter on</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetPlayersBanned(System.String,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID of game</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetServerList(System.String,System.String,System.Nullable{System.UInt32})">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="filter">Query filter string</param>
+            <param name="limit">Limit number of servers in the response</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetServersAtAddress(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="addr">IP or IP:queryport to list</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">AppID of game</param>
+            <param name="buildid">BuildID</param>
+            <param name="betakey">Beta key, required. Use public for default branch</param>
+            <param name="description">Optional description for this build</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.UpToDateCheck(System.UInt32,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="appid">AppID of game</param>
+            <param name="version">The installed version of the game</param>
+            <returns></returns>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE">
+            <summary>
+            Set that value to true to directly call API at https://partner.steam-api.com/ instead of https://api.steampowered.com/
+            This means we will not call API through Akamai cache server.
+            WARNING: if you recieve multiple error returned by https://partner.steam-api.com/ your IP might be banned by the firewall for a while.
+            See https://partner.steamgames.com/doc/webapi_overview#addresses for more informations
+            </summary>
+        </member>
+    </members>
+</doc>
