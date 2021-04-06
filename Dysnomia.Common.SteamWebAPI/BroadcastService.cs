@@ -18,11 +18,11 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <returns></returns>
 		public async Task<string> PostGameDataFrame(string key, uint appid, ulong steamid, ulong broadcast_id, string frame_data) {
 			using (HttpClient httpClient = new HttpClient()) {
-				var response = await httpClient.GetAsync(
+				var response = await httpClient.PostAsync(
 					string.Format(
 						"{0}/IBroadcastService/PostGameDataFrame/v1/?key={1}&appid={2}&steamid={3}&broadcast_id={4}&frame_data={5}",
 						API_URL, key, appid, steamid, broadcast_id, frame_data
-					)
+					), new StringContent("")
 				);
 
 				return await response.Content.ReadAsStringAsync();
