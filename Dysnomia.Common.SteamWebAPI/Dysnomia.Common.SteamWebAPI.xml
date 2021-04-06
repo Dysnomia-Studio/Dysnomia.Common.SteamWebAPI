@@ -21,6 +21,153 @@
             <param name="frame_data"></param>
             <returns></returns>
         </member>
+        <!-- Badly formed XML comment ignored for member "T:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType" -->
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentNoSelection">
+            <summary>
+            dummy ilegal value: the user has not made a selection
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentUnspecified">
+            <summary>
+            we use this to mean "other"
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentAll">
+            <summary>
+            reset all community content
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentAvatarImage">
+            <summary>
+            clear avatar image
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentProfileText">
+            <summary>
+            reset profile text
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentWebLinks">
+            <summary>
+            delete web links
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentAnnouncement">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentEventText">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentCustomCSS">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentProfileURL">
+            <summary>
+            delete community URL ID
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentComments">
+            <summary>
+            just comments this guy has written
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentPersonaName">
+            <summary>
+            persona name
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentScreenshot">
+            <summary>
+            screenshot
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentVideo">
+            <summary>
+            videos
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentCheating">
+            <summary>
+            cheating
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentUGCImage">
+            <summary>
+            Image stored in UGC --- the report is accusing the image of being offensive
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentActorUGCImage">
+            <summary>
+            Abuse report actor has uploaded a UGC image to server as supporting documentation of their claim
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType" -->
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeNoSelection">
+            <summary>
+            dummy ilegal value: the user has not made a selection
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeUnspecified">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeInappropriate">
+            <summary>
+            just not ok to post
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeProhibited">
+            <summary>
+            prohibited by EULA or general law
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeSpamming">
+            <summary>
+            excessive spamming
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeAdvertisement">
+            <summary>
+            unwanted advertisement
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeExploit">
+            <summary>
+            content data attempts to exploit code issue
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeSpoofing">
+            <summary>
+            user/group is impersonating an official contact
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeLanguage">
+            <summary>
+            bad language
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeAdultContent">
+            <summary>
+            any kind of adult material, references, etc
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeHarassment">
+            <summary>
+            harassment, discrimination, racism, etc
+            </summary>
+        </member>
+        <member name="F:Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeCheating">
+            <summary>
+            cheating
+            </summary>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.IBroadcastService">
             <summary>
             Provides access to Steam broadcasts.
@@ -159,7 +306,7 @@
             https://partner.steamgames.com/doc/webapi/ISteamCommunity
             </summary>
         </member>
-        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.String,System.Nullable{System.UInt64})">
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})">
             <summary>
             Allows publishers to report users who are behaving badly on their community hub.
             </summary>
@@ -318,7 +465,7 @@
             https://partner.steamgames.com/doc/webapi/ISteamCommunity
             </summary>
         </member>
-        <member name="M:Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.String,System.Nullable{System.UInt64})">
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})">
             <summary>
             Allows publishers to report users who are behaving badly on their community hub.
             </summary>
@@ -326,8 +473,8 @@
             <param name="steamidActor">SteamID of user doing the reporting</param>
             <param name="steamidTarget">SteamID of the entity being accused of abuse</param>
             <param name="appid">AppID to check for ownership</param>
-            <param name="abuseType">Abuse type code</param>
-            <param name="contentType">Content type code</param>
+            <param name="abuseType">Abuse type code (see EAbuseReportType enum)</param>
+            <param name="contentType">Content type code (see ECommunityContentType enum)</param>
             <param name="description">Narrative from user</param>
             <param name="gid">GID of related record (depends on content type)</param>
             <returns></returns>

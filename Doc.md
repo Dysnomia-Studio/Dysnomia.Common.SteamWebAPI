@@ -5,6 +5,37 @@
 
 - [BroadcastService](#T-Dysnomia-Common-SteamWebAPI-BroadcastService 'Dysnomia.Common.SteamWebAPI.BroadcastService')
   - [PostGameDataFrame(key,appid,steamid,broadcast_id,frame_data)](#M-Dysnomia-Common-SteamWebAPI-BroadcastService-PostGameDataFrame-System-String,System-UInt32,System-UInt64,System-UInt64,System-String- 'Dysnomia.Common.SteamWebAPI.BroadcastService.PostGameDataFrame(System.String,System.UInt32,System.UInt64,System.UInt64,System.String)')
+- [EAbuseReportContentType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType')
+  - [k_EAbuseReportContentActorUGCImage](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentActorUGCImage 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentActorUGCImage')
+  - [k_EAbuseReportContentAll](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentAll 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentAll')
+  - [k_EAbuseReportContentAnnouncement](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentAnnouncement 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentAnnouncement')
+  - [k_EAbuseReportContentAvatarImage](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentAvatarImage 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentAvatarImage')
+  - [k_EAbuseReportContentCheating](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentCheating 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentCheating')
+  - [k_EAbuseReportContentComments](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentComments 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentComments')
+  - [k_EAbuseReportContentCustomCSS](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentCustomCSS 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentCustomCSS')
+  - [k_EAbuseReportContentEventText](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentEventText 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentEventText')
+  - [k_EAbuseReportContentNoSelection](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentNoSelection 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentNoSelection')
+  - [k_EAbuseReportContentPersonaName](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentPersonaName 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentPersonaName')
+  - [k_EAbuseReportContentProfileText](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentProfileText 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentProfileText')
+  - [k_EAbuseReportContentProfileURL](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentProfileURL 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentProfileURL')
+  - [k_EAbuseReportContentScreenshot](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentScreenshot 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentScreenshot')
+  - [k_EAbuseReportContentUGCImage](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentUGCImage 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentUGCImage')
+  - [k_EAbuseReportContentUnspecified](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentUnspecified 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentUnspecified')
+  - [k_EAbuseReportContentVideo](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentVideo 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentVideo')
+  - [k_EAbuseReportContentWebLinks](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentWebLinks 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentWebLinks')
+- [EAbuseReportType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType')
+  - [k_EAbuseReportTypeAdultContent](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeAdultContent 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeAdultContent')
+  - [k_EAbuseReportTypeAdvertisement](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeAdvertisement 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeAdvertisement')
+  - [k_EAbuseReportTypeCheating](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeCheating 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeCheating')
+  - [k_EAbuseReportTypeExploit](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeExploit 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeExploit')
+  - [k_EAbuseReportTypeHarassment](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeHarassment 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeHarassment')
+  - [k_EAbuseReportTypeInappropriate](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeInappropriate 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeInappropriate')
+  - [k_EAbuseReportTypeLanguage](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeLanguage 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeLanguage')
+  - [k_EAbuseReportTypeNoSelection](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeNoSelection 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeNoSelection')
+  - [k_EAbuseReportTypeProhibited](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeProhibited 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeProhibited')
+  - [k_EAbuseReportTypeSpamming](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeSpamming 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeSpamming')
+  - [k_EAbuseReportTypeSpoofing](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeSpoofing 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeSpoofing')
+  - [k_EAbuseReportTypeUnspecified](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeUnspecified 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeUnspecified')
 - [IBroadcastService](#T-Dysnomia-Common-SteamWebAPI-IBroadcastService 'Dysnomia.Common.SteamWebAPI.IBroadcastService')
   - [PostGameDataFrame(key,appid,steamid,broadcast_id,frame_data)](#M-Dysnomia-Common-SteamWebAPI-IBroadcastService-PostGameDataFrame-System-String,System-UInt32,System-UInt64,System-UInt64,System-String- 'Dysnomia.Common.SteamWebAPI.IBroadcastService.PostGameDataFrame(System.String,System.UInt32,System.UInt64,System.UInt64,System.String)')
 - [ISteamApps](#T-Dysnomia-Common-SteamWebAPI-ISteamApps 'Dysnomia.Common.SteamWebAPI.ISteamApps')
@@ -21,7 +52,7 @@
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
 - [ISteamCommunity](#T-Dysnomia-Common-SteamWebAPI-ISteamCommunity 'Dysnomia.Common.SteamWebAPI.ISteamCommunity')
-  - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,System-UInt32,System-UInt32,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.String,System.Nullable{System.UInt64})')
+  - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
 - [ISteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
@@ -39,7 +70,7 @@
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
 - [SteamCommunity](#T-Dysnomia-Common-SteamWebAPI-SteamCommunity 'Dysnomia.Common.SteamWebAPI.SteamCommunity')
-  - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,System-UInt32,System-UInt32,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,System.UInt32,System.UInt32,System.String,System.Nullable{System.UInt64})')
+  - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
 - [SteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-SteamUserAuth 'Dysnomia.Common.SteamWebAPI.SteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
@@ -78,6 +109,223 @@ Add a game meta data frame to broadcast
 | steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') |  |
 | broadcast_id | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') |  |
 | frame_data | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType'></a>
+## EAbuseReportContentType `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI.Enums
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentActorUGCImage'></a>
+### k_EAbuseReportContentActorUGCImage `constants`
+
+##### Summary
+
+Abuse report actor has uploaded a UGC image to server as supporting documentation of their claim
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentAll'></a>
+### k_EAbuseReportContentAll `constants`
+
+##### Summary
+
+reset all community content
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentAnnouncement'></a>
+### k_EAbuseReportContentAnnouncement `constants`
+
+##### Summary
+
+???
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentAvatarImage'></a>
+### k_EAbuseReportContentAvatarImage `constants`
+
+##### Summary
+
+clear avatar image
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentCheating'></a>
+### k_EAbuseReportContentCheating `constants`
+
+##### Summary
+
+cheating
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentComments'></a>
+### k_EAbuseReportContentComments `constants`
+
+##### Summary
+
+just comments this guy has written
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentCustomCSS'></a>
+### k_EAbuseReportContentCustomCSS `constants`
+
+##### Summary
+
+???
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentEventText'></a>
+### k_EAbuseReportContentEventText `constants`
+
+##### Summary
+
+???
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentNoSelection'></a>
+### k_EAbuseReportContentNoSelection `constants`
+
+##### Summary
+
+dummy ilegal value: the user has not made a selection
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentPersonaName'></a>
+### k_EAbuseReportContentPersonaName `constants`
+
+##### Summary
+
+persona name
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentProfileText'></a>
+### k_EAbuseReportContentProfileText `constants`
+
+##### Summary
+
+reset profile text
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentProfileURL'></a>
+### k_EAbuseReportContentProfileURL `constants`
+
+##### Summary
+
+delete community URL ID
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentScreenshot'></a>
+### k_EAbuseReportContentScreenshot `constants`
+
+##### Summary
+
+screenshot
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentUGCImage'></a>
+### k_EAbuseReportContentUGCImage `constants`
+
+##### Summary
+
+Image stored in UGC --- the report is accusing the image of being offensive
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentUnspecified'></a>
+### k_EAbuseReportContentUnspecified `constants`
+
+##### Summary
+
+we use this to mean "other"
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentVideo'></a>
+### k_EAbuseReportContentVideo `constants`
+
+##### Summary
+
+videos
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentWebLinks'></a>
+### k_EAbuseReportContentWebLinks `constants`
+
+##### Summary
+
+delete web links
+
+<a name='T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType'></a>
+## EAbuseReportType `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI.Enums
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeAdultContent'></a>
+### k_EAbuseReportTypeAdultContent `constants`
+
+##### Summary
+
+any kind of adult material, references, etc
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeAdvertisement'></a>
+### k_EAbuseReportTypeAdvertisement `constants`
+
+##### Summary
+
+unwanted advertisement
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeCheating'></a>
+### k_EAbuseReportTypeCheating `constants`
+
+##### Summary
+
+cheating
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeExploit'></a>
+### k_EAbuseReportTypeExploit `constants`
+
+##### Summary
+
+content data attempts to exploit code issue
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeHarassment'></a>
+### k_EAbuseReportTypeHarassment `constants`
+
+##### Summary
+
+harassment, discrimination, racism, etc
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeInappropriate'></a>
+### k_EAbuseReportTypeInappropriate `constants`
+
+##### Summary
+
+just not ok to post
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeLanguage'></a>
+### k_EAbuseReportTypeLanguage `constants`
+
+##### Summary
+
+bad language
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeNoSelection'></a>
+### k_EAbuseReportTypeNoSelection `constants`
+
+##### Summary
+
+dummy ilegal value: the user has not made a selection
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeProhibited'></a>
+### k_EAbuseReportTypeProhibited `constants`
+
+##### Summary
+
+prohibited by EULA or general law
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeSpamming'></a>
+### k_EAbuseReportTypeSpamming `constants`
+
+##### Summary
+
+excessive spamming
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeSpoofing'></a>
+### k_EAbuseReportTypeSpoofing `constants`
+
+##### Summary
+
+user/group is impersonating an official contact
+
+<a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeUnspecified'></a>
+### k_EAbuseReportTypeUnspecified `constants`
+
+##### Summary
+
+???
 
 <a name='T-Dysnomia-Common-SteamWebAPI-IBroadcastService'></a>
 ## IBroadcastService `type`
@@ -364,7 +612,7 @@ Dysnomia.Common.SteamWebAPI
 Provides restricted access to Steam Community features.
 https://partner.steamgames.com/doc/webapi/ISteamCommunity
 
-<a name='M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,System-UInt32,System-UInt32,System-String,System-Nullable{System-UInt64}-'></a>
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}-'></a>
 ### ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid) `method`
 
 ##### Summary
@@ -383,8 +631,8 @@ Allows publishers to report users who are behaving badly on their community hub.
 | steamidActor | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user doing the reporting |
 | steamidTarget | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of the entity being accused of abuse |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to check for ownership |
-| abuseType | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Abuse type code |
-| contentType | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Content type code |
+| abuseType | [Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType') | Abuse type code |
+| contentType | [Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType') | Content type code |
 | description | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Narrative from user |
 | gid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | GID of related record (depends on content type) |
 
@@ -690,7 +938,7 @@ Dysnomia.Common.SteamWebAPI
 Provides restricted access to Steam Community features.
 https://partner.steamgames.com/doc/webapi/ISteamCommunity
 
-<a name='M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,System-UInt32,System-UInt32,System-String,System-Nullable{System-UInt64}-'></a>
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}-'></a>
 ### ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid) `method`
 
 ##### Summary
@@ -709,8 +957,8 @@ Allows publishers to report users who are behaving badly on their community hub.
 | steamidActor | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user doing the reporting |
 | steamidTarget | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of the entity being accused of abuse |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to check for ownership |
-| abuseType | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Abuse type code |
-| contentType | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Content type code |
+| abuseType | [Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType') | Abuse type code (see EAbuseReportType enum) |
+| contentType | [Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType') | Content type code (see ECommunityContentType enum) |
 | description | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Narrative from user |
 | gid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | GID of related record (depends on content type) |
 

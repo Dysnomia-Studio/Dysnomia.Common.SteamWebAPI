@@ -2,8 +2,7 @@
 	/// <summary>
 	/// Different content types that can be reported as abusive.
 	///
-	/// WARNING: These enum values MUST MATCH the values in Steam's
-	/// ECommunityContentType!
+	/// WARNING: These enum values MUST MATCH the values in Steam's ECommunityContentType!
 	/// 
 	/// Extracted From TF2 & Source Engine source code
 	/// </summary>
