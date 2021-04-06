@@ -153,6 +153,30 @@
             <param name="version">The installed version of the game</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.ISteamUserAuth">
+            <summary>
+            Used to access information about users.
+            https://partner.steamgames.com/doc/webapi/ISteamUserAuth
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="steamid">Should be the users steamid, unencrypted.</param>
+            <param name="sessionkey">Should be a 32 byte random blob of data, which is then encrypted with RSA using the Steam system's public key. Randomness is important here for security.</param>
+            <param name="encrypted_loginkey">Should be the users hashed loginkey, AES encrypted with the sessionkey.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key</param>
+            <param name="appid">appid of game</param>
+            <param name="ticket">Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter.</param>
+            <returns>The user's 64-bit SteamID if the user's ticket is valid</returns>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamApps">
             <summary>
             Used to access data about applications on Steam.
@@ -267,6 +291,30 @@
             <param name="appid">AppID of game</param>
             <param name="version">The installed version of the game</param>
             <returns></returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamUserAuth">
+            <summary>
+            Used to access information about users.
+            https://partner.steamgames.com/doc/webapi/ISteamUserAuth
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="steamid">Should be the users steamid, unencrypted.</param>
+            <param name="sessionkey">Should be a 32 byte random blob of data, which is then encrypted with RSA using the Steam system's public key. Randomness is important here for security.</param>
+            <param name="encrypted_loginkey">Should be the users hashed loginkey, AES encrypted with the sessionkey.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key</param>
+            <param name="appid">appid of game</param>
+            <param name="ticket">Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter.</param>
+            <returns>The user's 64-bit SteamID if the user's ticket is valid</returns>
         </member>
         <member name="F:Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE">
             <summary>
