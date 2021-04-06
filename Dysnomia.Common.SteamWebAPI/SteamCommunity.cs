@@ -1,6 +1,10 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
+using Dysnomia.Common.SteamWebAPI.Enums;
+
+using ECommunityContentType = Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType;
+
 namespace Dysnomia.Common.SteamWebAPI {
 	/// <summary>
 	/// Provides restricted access to Steam Community features.
@@ -14,12 +18,12 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="steamidActor">SteamID of user doing the reporting</param>
 		/// <param name="steamidTarget">SteamID of the entity being accused of abuse</param>
 		/// <param name="appid">AppID to check for ownership</param>
-		/// <param name="abuseType">Abuse type code</param>
-		/// <param name="contentType">Content type code</param>
+		/// <param name="abuseType">Abuse type code (see EAbuseReportType enum)</param>
+		/// <param name="contentType">Content type code (see ECommunityContentType enum)</param>
 		/// <param name="description">Narrative from user</param>
 		/// <param name="gid">GID of related record (depends on content type)</param>
 		/// <returns></returns>
-		public async Task<string> ReportAbuse(string key, ulong steamidActor, ulong steamidTarget, uint appid, uint abuseType, uint contentType, string description, ulong? gid) {
+		public async Task<string> ReportAbuse(string key, ulong steamidActor, ulong steamidTarget, uint appid, EAbuseReportType abuseType, ECommunityContentType contentType, string description, ulong? gid) {
 			using (HttpClient httpClient = new HttpClient()) {
 				string gidStr = "";
 				if (gid != null) {

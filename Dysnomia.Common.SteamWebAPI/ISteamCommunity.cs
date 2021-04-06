@@ -1,5 +1,9 @@
 ﻿using System.Threading.Tasks;
 
+using Dysnomia.Common.SteamWebAPI.Enums;
+
+using ECommunityContentType = Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType;
+
 namespace Dysnomia.Common.SteamWebAPI {
 	/// <summary>
 	/// Provides restricted access to Steam Community features.
@@ -18,6 +22,6 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="description">Narrative from user</param>
 		/// <param name="gid">GID of related record (depends on content type)</param>
 		/// <returns></returns>
-		Task<string> ReportAbuse(string key, ulong steamidActor, ulong steamidTarget, uint appid, uint abuseType, uint contentType, string description, ulong? gid);
+		Task<string> ReportAbuse(string key, ulong steamidActor, ulong steamidTarget, uint appid, EAbuseReportType abuseType, ECommunityContentType contentType, string description, ulong? gid);
 	}
 }
