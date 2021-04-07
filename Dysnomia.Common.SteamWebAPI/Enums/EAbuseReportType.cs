@@ -4,7 +4,7 @@
 	/// 
 	/// WARNING: These enum values MUST MATCH the values in Steam's EAbuseReportType!
 	/// 
-	/// Extracted From TF2 & Source Engine source code
+	/// Extracted From TF2 and Source Engine source code
 	/// </summary>
 	public enum EAbuseReportType {
 		/// <summary>

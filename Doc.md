@@ -5,6 +5,13 @@
 
 - [BroadcastService](#T-Dysnomia-Common-SteamWebAPI-BroadcastService 'Dysnomia.Common.SteamWebAPI.BroadcastService')
   - [PostGameDataFrame(key,appid,steamid,broadcast_id,frame_data)](#M-Dysnomia-Common-SteamWebAPI-BroadcastService-PostGameDataFrame-System-String,System-UInt32,System-UInt64,System-UInt64,System-String- 'Dysnomia.Common.SteamWebAPI.BroadcastService.PostGameDataFrame(System.String,System.UInt32,System.UInt64,System.UInt64,System.String)')
+- [CheatReportingService](#T-Dysnomia-Common-SteamWebAPI-CheatReportingService 'Dysnomia.Common.SteamWebAPI.CheatReportingService')
+  - [GetCheatingReports(key,appid,timeend,timebegin,reportidadmin,includereports,includebans,steamid)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-UInt64,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt64,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt64})')
+  - [RemovePlayerGameBan(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-RemovePlayerGameBan-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.RemovePlayerGameBan(System.String,System.UInt64,System.UInt32)')
+  - [ReportPlayerCheating(key,steamid,appid,steamidreporter,appdata,heuristic,detection,playerreport,noreportid,gamemode,suspicionstarttime,severity)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-Nullable{System-UInt64},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.ReportPlayerCheating(System.String,System.UInt64,System.UInt32,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
+  - [ReportPlayerCheating(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.ReportPlayerCheating(System.String,System.UInt64,System.UInt32)')
+  - [RequestPlayerGameBan(key,steamid,appid,reportid,cheatDescription,duration,delayban,flags)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-String,System-Nullable{System-UInt32},System-Nullable{System-Boolean},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.RequestPlayerGameBan(System.String,System.UInt64,System.UInt32,System.Nullable{System.UInt64},System.String,System.Nullable{System.UInt32},System.Nullable{System.Boolean},System.Nullable{System.UInt32})')
+  - [RequestPlayerGameBan(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.RequestPlayerGameBan(System.String,System.UInt64,System.UInt32)')
 - [EAbuseReportContentType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType')
   - [k_EAbuseReportContentActorUGCImage](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentActorUGCImage 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentActorUGCImage')
   - [k_EAbuseReportContentAll](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentAll 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType.k_EAbuseReportContentAll')
@@ -38,6 +45,12 @@
   - [k_EAbuseReportTypeUnspecified](#F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeUnspecified 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType.k_EAbuseReportTypeUnspecified')
 - [IBroadcastService](#T-Dysnomia-Common-SteamWebAPI-IBroadcastService 'Dysnomia.Common.SteamWebAPI.IBroadcastService')
   - [PostGameDataFrame(key,appid,steamid,broadcast_id,frame_data)](#M-Dysnomia-Common-SteamWebAPI-IBroadcastService-PostGameDataFrame-System-String,System-UInt32,System-UInt64,System-UInt64,System-String- 'Dysnomia.Common.SteamWebAPI.IBroadcastService.PostGameDataFrame(System.String,System.UInt32,System.UInt64,System.UInt64,System.String)')
+- [ICheatReportingService](#T-Dysnomia-Common-SteamWebAPI-ICheatReportingService 'Dysnomia.Common.SteamWebAPI.ICheatReportingService')
+  - [GetCheatingReports(key,appid,timeend,timebegin,reportidadmin,includereports,includebans,steamid)](#M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-UInt64,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ICheatReportingService.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt64,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt64})')
+  - [ReportPlayerCheating(key,steamid,appid,steamidreporter,appdata,heuristic,detection,playerreport,noreportid,gamemode,suspicionstarttime,severity)](#M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-Nullable{System-UInt64},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ICheatReportingService.ReportPlayerCheating(System.String,System.UInt64,System.UInt32,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
+  - [ReportPlayerCheating(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ICheatReportingService.ReportPlayerCheating(System.String,System.UInt64,System.UInt32)')
+  - [RequestPlayerGameBan(key,steamid,appid,reportid,cheatDescription,duration,delayban,flags)](#M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-String,System-Nullable{System-UInt32},System-Nullable{System-Boolean},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ICheatReportingService.RequestPlayerGameBan(System.String,System.UInt64,System.UInt32,System.Nullable{System.UInt64},System.String,System.Nullable{System.UInt32},System.Nullable{System.Boolean},System.Nullable{System.UInt32})')
+  - [RequestPlayerGameBan(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ICheatReportingService.RequestPlayerGameBan(System.String,System.UInt64,System.UInt32)')
 - [ISteamApps](#T-Dysnomia-Common-SteamWebAPI-ISteamApps 'Dysnomia.Common.SteamWebAPI.ISteamApps')
   - [GetAppBetas(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppBetas-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppBetas(System.String,System.UInt32)')
   - [GetAppBuilds(key,appid,count)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppBuilds-System-String,System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppBuilds(System.String,System.UInt32,System.UInt32)')
@@ -124,12 +137,185 @@ Add a game meta data frame to broadcast
 | broadcast_id | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') |  |
 | frame_data | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-CheatReportingService'></a>
+## CheatReportingService `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+This service allows your game to report cheats and cheaters to the VAC system and provides the toolset behind the Game Bans system. It enables two independent workflows for detecting and managing cheating in your game:
+- Gather community reports of cheating and request bans/suspensions based upon this information.
+- Submit detailed information about known cheat software to the VAC system. Once processed, this information will be used to automatically detect and ban players using known cheats.
+To use this interface you must first opt in to VAC support. This can be done from the Anti-Cheat Configuration page in the App Admin panel.
+
+https://partner.steamgames.com/doc/webapi/ICheatReportingService
+
+<a name='M-Dysnomia-Common-SteamWebAPI-CheatReportingService-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-UInt64,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt64}-'></a>
+### GetCheatingReports(key,appid,timeend,timebegin,reportidadmin,includereports,includebans,steamid) `method`
+
+##### Summary
+
+Get a list of cheating reports submitted for this app.
+
+Used to gather the cheating reports so that they may be reviewed and a determination made.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The App ID for the game. |
+| timeend | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The end of the time range. Formatted as Unix epoch time (time since Jan 1st, 1970). |
+| timebegin | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The beginning of the time range. Formatted as Unix epoch time (time since Jan 1st, 1970). |
+| reportidadmin | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Minimum reportID to include. (can pass 0 - end of previous report range) |
+| includereports | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Include reports. If false includebans must be true. |
+| includebans | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Include ban requests? If false includereports must be true. |
+| steamid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | (Optional) Query just for this Steam ID. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-CheatReportingService-RemovePlayerGameBan-System-String,System-UInt64,System-UInt32-'></a>
+### RemovePlayerGameBan(key,steamid,appid) `method`
+
+##### Summary
+
+Remove a game ban on a player.
+
+ This is used if a Game ban is determined to be a false positive.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Steam ID of the user who is reported as cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The appid of the game. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-CheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-Nullable{System-UInt64},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32}-'></a>
+### ReportPlayerCheating(key,steamid,appid,steamidreporter,appdata,heuristic,detection,playerreport,noreportid,gamemode,suspicionstarttime,severity) `method`
+
+##### Summary
+
+ReportPlayerCheating is designed to gather community reports of cheating, where one player reports another player within the game.
+
+ It is intended for unreliable data from peers in the game(semi-trusted sources). The back-end that reports the data should ensure that both parties are authenticated,
+ but the data in itself is treated as hearsay.Optional parameters may be used to encode the type of cheating that is suspected or additional evidence(an identifier pointing
+ to the match/demo for further review).
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The Steam ID of the user who is being reported for cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The App ID for the game. |
+| steamidreporter | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | (Optional) The Steam ID of the user or game server who is reporting the cheating. |
+| appdata | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | (Optional) App specific data about the type of cheating set by developer. (ex 1 = Aimbot, 2 = Wallhack, 3 = Griefing) |
+| heuristic | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Extra information about the source of the cheating - was it a heuristic. |
+| detection | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Extra information about the source of the cheating - was it a detection. |
+| playerreport | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Extra information about the source of the cheating - was it a player report. |
+| noreportid | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Don't return reportid. This should only be passed if you don't intend to issue a ban based on this report. |
+| gamemode | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | (Optional) Extra information about state of game - was it a specific type of game play or game mode. (0 = generic) |
+| suspicionstarttime | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | (Optional) Extra information indicating how far back the game thinks is interesting for this user. Unix epoch time (time since Jan 1st, 1970). |
+| severity | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | (Optional) Level of severity of bad action being reported. Scale set by developer. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-CheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32-'></a>
+### ReportPlayerCheating(key,steamid,appid) `method`
+
+##### Summary
+
+ReportPlayerCheating is designed to gather community reports of cheating, where one player reports another player within the game.
+
+ It is intended for unreliable data from peers in the game(semi-trusted sources). The back-end that reports the data should ensure that both parties are authenticated,
+ but the data in itself is treated as hearsay.Optional parameters may be used to encode the type of cheating that is suspected or additional evidence(an identifier pointing
+ to the match/demo for further review).
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The Steam ID of the user who is being reported for cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The App ID for the game. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-CheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-String,System-Nullable{System-UInt32},System-Nullable{System-Boolean},System-Nullable{System-UInt32}-'></a>
+### RequestPlayerGameBan(key,steamid,appid,reportid,cheatDescription,duration,delayban,flags) `method`
+
+##### Summary
+
+Requests a game ban on a specific player.
+
+This is designed to be used after the incidents from ReportPlayerCheating have been reviewed and cheating has been confirmed.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Steam ID of the user who is reported as cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The appid of the game. |
+| reportid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | The reportid originally used to report cheating. |
+| cheatDescription | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Text describing cheating infraction. |
+| duration | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Ban duration requested in seconds. (duration 0 will issue infinite - less than a year is a suspension and not visible on profile) |
+| delayban | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Delay the ban according to default ban delay rules. |
+| flags | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Additional information about the ban request. (Unused) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-CheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32-'></a>
+### RequestPlayerGameBan(key,steamid,appid) `method`
+
+##### Summary
+
+Requests a game ban on a specific player.
+
+This is designed to be used after the incidents from ReportPlayerCheating have been reviewed and cheating has been confirmed.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Steam ID of the user who is reported as cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The appid of the game. |
+
 <a name='T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType'></a>
 ## EAbuseReportContentType `type`
 
 ##### Namespace
 
 Dysnomia.Common.SteamWebAPI.Enums
+
+##### Summary
+
+Different content types that can be reported as abusive.
+
+ WARNING: These enum values MUST MATCH the values in Steam's ECommunityContentType!
+ 
+ Extracted From TF2 and Source Engine source code
 
 <a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType-k_EAbuseReportContentActorUGCImage'></a>
 ### k_EAbuseReportContentActorUGCImage `constants`
@@ -257,6 +443,14 @@ delete web links
 
 Dysnomia.Common.SteamWebAPI.Enums
 
+##### Summary
+
+Types of reasons why a violation report was issued
+
+WARNING: These enum values MUST MATCH the values in Steam's EAbuseReportType!
+
+Extracted From TF2 and Source Engine source code
+
 <a name='F-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType-k_EAbuseReportTypeAdultContent'></a>
 ### k_EAbuseReportTypeAdultContent `constants`
 
@@ -373,6 +567,150 @@ Add a game meta data frame to broadcast
 | steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') |  |
 | broadcast_id | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') |  |
 | frame_data | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-ICheatReportingService'></a>
+## ICheatReportingService `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+This service allows your game to report cheats and cheaters to the VAC system and provides the toolset behind the Game Bans system. It enables two independent workflows for detecting and managing cheating in your game:
+- Gather community reports of cheating and request bans/suspensions based upon this information.
+- Submit detailed information about known cheat software to the VAC system. Once processed, this information will be used to automatically detect and ban players using known cheats.
+To use this interface you must first opt in to VAC support. This can be done from the Anti-Cheat Configuration page in the App Admin panel.
+
+https://partner.steamgames.com/doc/webapi/ICheatReportingService
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-UInt64,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt64}-'></a>
+### GetCheatingReports(key,appid,timeend,timebegin,reportidadmin,includereports,includebans,steamid) `method`
+
+##### Summary
+
+Get a list of cheating reports submitted for this app.
+
+Used to gather the cheating reports so that they may be reviewed and a determination made.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The App ID for the game. |
+| timeend | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The end of the time range. Formatted as Unix epoch time (time since Jan 1st, 1970). |
+| timebegin | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The beginning of the time range. Formatted as Unix epoch time (time since Jan 1st, 1970). |
+| reportidadmin | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Minimum reportID to include. (can pass 0 - end of previous report range) |
+| includereports | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Include reports. If false includebans must be true. |
+| includebans | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Include ban requests? If false includereports must be true. |
+| steamid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | (Optional) Query just for this Steam ID. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-Nullable{System-UInt64},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32}-'></a>
+### ReportPlayerCheating(key,steamid,appid,steamidreporter,appdata,heuristic,detection,playerreport,noreportid,gamemode,suspicionstarttime,severity) `method`
+
+##### Summary
+
+ReportPlayerCheating is designed to gather community reports of cheating, where one player reports another player within the game.
+
+ It is intended for unreliable data from peers in the game(semi-trusted sources). The back-end that reports the data should ensure that both parties are authenticated,
+ but the data in itself is treated as hearsay.Optional parameters may be used to encode the type of cheating that is suspected or additional evidence(an identifier pointing
+ to the match/demo for further review).
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The Steam ID of the user who is being reported for cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The App ID for the game. |
+| steamidreporter | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | (Optional) The Steam ID of the user or game server who is reporting the cheating. |
+| appdata | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | (Optional) App specific data about the type of cheating set by developer. (ex 1 = Aimbot, 2 = Wallhack, 3 = Griefing) |
+| heuristic | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Extra information about the source of the cheating - was it a heuristic. |
+| detection | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Extra information about the source of the cheating - was it a detection. |
+| playerreport | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Extra information about the source of the cheating - was it a player report. |
+| noreportid | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | (Optional) Don't return reportid. This should only be passed if you don't intend to issue a ban based on this report. |
+| gamemode | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | (Optional) Extra information about state of game - was it a specific type of game play or game mode. (0 = generic) |
+| suspicionstarttime | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | (Optional) Extra information indicating how far back the game thinks is interesting for this user. Unix epoch time (time since Jan 1st, 1970). |
+| severity | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | (Optional) Level of severity of bad action being reported. Scale set by developer. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32-'></a>
+### ReportPlayerCheating(key,steamid,appid) `method`
+
+##### Summary
+
+ReportPlayerCheating is designed to gather community reports of cheating, where one player reports another player within the game.
+
+ It is intended for unreliable data from peers in the game(semi-trusted sources). The back-end that reports the data should ensure that both parties are authenticated,
+ but the data in itself is treated as hearsay.Optional parameters may be used to encode the type of cheating that is suspected or additional evidence(an identifier pointing
+ to the match/demo for further review).
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The Steam ID of the user who is being reported for cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The App ID for the game. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-String,System-Nullable{System-UInt32},System-Nullable{System-Boolean},System-Nullable{System-UInt32}-'></a>
+### RequestPlayerGameBan(key,steamid,appid,reportid,cheatDescription,duration,delayban,flags) `method`
+
+##### Summary
+
+Requests a game ban on a specific player.
+
+This is designed to be used after the incidents from ReportPlayerCheating have been reviewed and cheating has been confirmed.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Steam ID of the user who is reported as cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The appid of the game. |
+| reportid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | The reportid originally used to report cheating. |
+| cheatDescription | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Text describing cheating infraction. |
+| duration | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Ban duration requested in seconds. (duration 0 will issue infinite - less than a year is a suspension and not visible on profile) |
+| delayban | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Delay the ban according to default ban delay rules. |
+| flags | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Additional information about the ban request. (Unused) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32-'></a>
+### RequestPlayerGameBan(key,steamid,appid) `method`
+
+##### Summary
+
+Requests a game ban on a specific player.
+
+This is designed to be used after the incidents from ReportPlayerCheating have been reviewed and cheating has been confirmed.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Steam ID of the user who is reported as cheating. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The appid of the game. |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamApps'></a>
 ## ISteamApps `type`
