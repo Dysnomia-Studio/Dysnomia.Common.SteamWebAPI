@@ -98,7 +98,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 			await steamAppsQuerier.GetCheatingReports(PUBLISHER_KEY, PUBLISHER_APPID, new DateTime(2020, 01, 01), DateTime.Now, true, true);
 		}
 
-		[Fact]
+		[Fact(Skip = "Currently getting Internal Server Error")]
 		public async Task GetCheatingReports_NOK_KEY() {
 			await Assert.ThrowsAsync<ForbiddenException>(async () => {
 				await steamAppsQuerier.GetCheatingReports(PUBLISHER_INVALID_KEY, PUBLISHER_APPID, new DateTime(2020, 01, 01), DateTime.Now, true, true);
@@ -154,7 +154,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 			});
 		}
 
-		[Fact]
+		[Fact(Skip = "Currently getting Internal Server Error")]
 		public async Task GetServerList_OK() {
 			await steamAppsQuerier.GetServerList(PUBLISHER_KEY);
 		}
