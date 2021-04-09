@@ -28,6 +28,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 
 		protected async Task ThrowAPIErrors(HttpResponseMessage response) {
 			switch (response.StatusCode) {
+				case HttpStatusCode.Unauthorized: // 401
 				case HttpStatusCode.Forbidden: // 403
 					throw new ForbiddenException(await response.Content.ReadAsStringAsync());
 

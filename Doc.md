@@ -51,6 +51,13 @@
   - [ReportPlayerCheating(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ICheatReportingService.ReportPlayerCheating(System.String,System.UInt64,System.UInt32)')
   - [RequestPlayerGameBan(key,steamid,appid,reportid,cheatDescription,duration,delayban,flags)](#M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-String,System-Nullable{System-UInt32},System-Nullable{System-Boolean},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ICheatReportingService.RequestPlayerGameBan(System.String,System.UInt64,System.UInt32,System.Nullable{System.UInt64},System.String,System.Nullable{System.UInt32},System.Nullable{System.Boolean},System.Nullable{System.UInt32})')
   - [RequestPlayerGameBan(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ICheatReportingService-RequestPlayerGameBan-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ICheatReportingService.RequestPlayerGameBan(System.String,System.UInt64,System.UInt32)')
+- [IPlayerService](#T-Dysnomia-Common-SteamWebAPI-IPlayerService 'Dysnomia.Common.SteamWebAPI.IPlayerService')
+  - [GetBadges(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetBadges-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.IPlayerService.GetBadges(System.String,System.UInt64)')
+  - [GetCommunityBadgeProgress(key,steamid,badgeid)](#M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetCommunityBadgeProgress-System-String,System-UInt64,System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.IPlayerService.GetCommunityBadgeProgress(System.String,System.UInt64,System.Nullable{System.UInt32})')
+  - [GetOwnedGames(key,steamid,include_appinfo,include_played_free_games)](#M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetOwnedGames-System-String,System-UInt64,System-Boolean,System-Boolean- 'Dysnomia.Common.SteamWebAPI.IPlayerService.GetOwnedGames(System.String,System.UInt64,System.Boolean,System.Boolean)')
+  - [GetRecentlyPlayedGames(key,steamid,count)](#M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetRecentlyPlayedGames-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.IPlayerService.GetRecentlyPlayedGames(System.String,System.UInt64,System.UInt32)')
+  - [GetSteamLevel(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetSteamLevel-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.IPlayerService.GetSteamLevel(System.String,System.UInt64)')
+  - [IsPlayingSharedGame(key,steamid,appid_playing)](#M-Dysnomia-Common-SteamWebAPI-IPlayerService-IsPlayingSharedGame-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.IPlayerService.IsPlayingSharedGame(System.String,System.UInt64,System.UInt32)')
 - [ISteamApps](#T-Dysnomia-Common-SteamWebAPI-ISteamApps 'Dysnomia.Common.SteamWebAPI.ISteamApps')
   - [GetAppBetas(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppBetas-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppBetas(System.String,System.UInt32)')
   - [GetAppBuilds(key,appid,count)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppBuilds-System-String,System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppBuilds(System.String,System.UInt32,System.UInt32)')
@@ -76,6 +83,13 @@
 - [ISteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
+- [PlayerService](#T-Dysnomia-Common-SteamWebAPI-PlayerService 'Dysnomia.Common.SteamWebAPI.PlayerService')
+  - [GetBadges(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetBadges-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetBadges(System.String,System.UInt64)')
+  - [GetCommunityBadgeProgress(key,steamid,badgeid)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetCommunityBadgeProgress-System-String,System-UInt64,System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetCommunityBadgeProgress(System.String,System.UInt64,System.Nullable{System.UInt32})')
+  - [GetOwnedGames(key,steamid,include_appinfo,include_played_free_games)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetOwnedGames-System-String,System-UInt64,System-Boolean,System-Boolean- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetOwnedGames(System.String,System.UInt64,System.Boolean,System.Boolean)')
+  - [GetRecentlyPlayedGames(key,steamid,count)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetRecentlyPlayedGames-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetRecentlyPlayedGames(System.String,System.UInt64,System.UInt32)')
+  - [GetSteamLevel(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetSteamLevel-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetSteamLevel(System.String,System.UInt64)')
+  - [IsPlayingSharedGame(key,steamid,appid_playing)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-IsPlayingSharedGame-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.PlayerService.IsPlayingSharedGame(System.String,System.UInt64,System.UInt32)')
 - [SteamApps](#T-Dysnomia-Common-SteamWebAPI-SteamApps 'Dysnomia.Common.SteamWebAPI.SteamApps')
   - [GetAppBetas(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetAppBetas-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetAppBetas(System.String,System.UInt32)')
   - [GetAppBuilds(key,appid,count)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetAppBuilds-System-String,System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetAppBuilds(System.String,System.UInt32,System.UInt32)')
@@ -712,6 +726,133 @@ This is designed to be used after the incidents from ReportPlayerCheating have b
 | steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Steam ID of the user who is reported as cheating. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The appid of the game. |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-IPlayerService'></a>
+## IPlayerService `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Provides additional methods for interacting with Steam Users.
+See ISteamUser for the primary interface.
+
+https://partner.steamgames.com/doc/webapi/IPlayerService
+
+<a name='M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetBadges-System-String,System-UInt64-'></a>
+### GetBadges(key,steamid) `method`
+
+##### Summary
+
+Gets badges that are owned by a specific user
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetCommunityBadgeProgress-System-String,System-UInt64,System-Nullable{System-UInt32}-'></a>
+### GetCommunityBadgeProgress(key,steamid,badgeid) `method`
+
+##### Summary
+
+Gets all the quests needed to get the specified badge, and which are completed
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+| badgeid | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | The badge we're asking about |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetOwnedGames-System-String,System-UInt64,System-Boolean,System-Boolean-'></a>
+### GetOwnedGames(key,steamid,include_appinfo,include_played_free_games) `method`
+
+##### Summary
+
+Return a list of games owned by the player
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+| include_appinfo | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | true if we want additional details (name, icon) about each game |
+| include_played_free_games | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | Free games are excluded by default. If this is set, free games the user has played will be returned. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetRecentlyPlayedGames-System-String,System-UInt64,System-UInt32-'></a>
+### GetRecentlyPlayedGames(key,steamid,count) `method`
+
+##### Summary
+
+Gets information about a player's recently played games
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+| count | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The number of games to return (0 = all) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-IPlayerService-GetSteamLevel-System-String,System-UInt64-'></a>
+### GetSteamLevel(key,steamid) `method`
+
+##### Summary
+
+Returns the Steam Level of a user
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-IPlayerService-IsPlayingSharedGame-System-String,System-UInt64,System-UInt32-'></a>
+### IsPlayingSharedGame(key,steamid,appid_playing) `method`
+
+##### Summary
+
+Returns valid lender SteamID if game currently played is borrowed
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+| appid_playing | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The game player is currently playing |
+
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamApps'></a>
 ## ISteamApps `type`
 
@@ -1170,6 +1311,126 @@ The user's 64-bit SteamID if the user's ticket is valid
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
 | ticket | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter. |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-PlayerService'></a>
+## PlayerService `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+<a name='M-Dysnomia-Common-SteamWebAPI-PlayerService-GetBadges-System-String,System-UInt64-'></a>
+### GetBadges(key,steamid) `method`
+
+##### Summary
+
+Gets badges that are owned by a specific user
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-PlayerService-GetCommunityBadgeProgress-System-String,System-UInt64,System-Nullable{System-UInt32}-'></a>
+### GetCommunityBadgeProgress(key,steamid,badgeid) `method`
+
+##### Summary
+
+Gets all the quests needed to get the specified badge, and which are completed
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+| badgeid | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | The badge we're asking about. If null, query everything we can |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-PlayerService-GetOwnedGames-System-String,System-UInt64,System-Boolean,System-Boolean-'></a>
+### GetOwnedGames(key,steamid,include_appinfo,include_played_free_games) `method`
+
+##### Summary
+
+Return a list of games owned by the player
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+| include_appinfo | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | true if we want additional details (name, icon) about each game |
+| include_played_free_games | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | Free games are excluded by default. If this is set, free games the user has played will be returned. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-PlayerService-GetRecentlyPlayedGames-System-String,System-UInt64,System-UInt32-'></a>
+### GetRecentlyPlayedGames(key,steamid,count) `method`
+
+##### Summary
+
+Gets information about a player's recently played games
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+| count | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The number of games to return (0 = all) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-PlayerService-GetSteamLevel-System-String,System-UInt64-'></a>
+### GetSteamLevel(key,steamid) `method`
+
+##### Summary
+
+Returns the Steam Level of a user
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-PlayerService-IsPlayingSharedGame-System-String,System-UInt64,System-UInt32-'></a>
+### IsPlayingSharedGame(key,steamid,appid_playing) `method`
+
+##### Summary
+
+Returns valid lender SteamID if game currently played is borrowed
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The player we're asking about |
+| appid_playing | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The game player is currently playing |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamApps'></a>
 ## SteamApps `type`

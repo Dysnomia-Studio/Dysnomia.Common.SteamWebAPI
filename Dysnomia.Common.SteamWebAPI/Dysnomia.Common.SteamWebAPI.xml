@@ -388,6 +388,67 @@
             <param name="steamid">(Optional) Query just for this Steam ID.</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.IPlayerService">
+            <summary>
+            Provides additional methods for interacting with Steam Users.
+            See ISteamUser for the primary interface.
+            
+            https://partner.steamgames.com/doc/webapi/IPlayerService
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IPlayerService.GetRecentlyPlayedGames(System.String,System.UInt64,System.UInt32)">
+            <summary>
+            Gets information about a player's recently played games
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <param name="count">The number of games to return (0 = all)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IPlayerService.GetOwnedGames(System.String,System.UInt64,System.Boolean,System.Boolean)">
+            <summary>
+            Return a list of games owned by the player
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <param name="include_appinfo">true if we want additional details (name, icon) about each game</param>
+            <param name="include_played_free_games">Free games are excluded by default. If this is set, free games the user has played will be returned.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IPlayerService.GetSteamLevel(System.String,System.UInt64)">
+            <summary>
+            Returns the Steam Level of a user
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IPlayerService.GetBadges(System.String,System.UInt64)">
+            <summary>
+            Gets badges that are owned by a specific user
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IPlayerService.GetCommunityBadgeProgress(System.String,System.UInt64,System.Nullable{System.UInt32})">
+            <summary>
+            Gets all the quests needed to get the specified badge, and which are completed
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <param name="badgeid">The badge we're asking about</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IPlayerService.IsPlayingSharedGame(System.String,System.UInt64,System.UInt32)">
+            <summary>
+            Returns valid lender SteamID if game currently played is borrowed
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <param name="appid_playing">The game player is currently playing</param>
+            <returns></returns>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.ISteamApps">
             <summary>
             Used to access data about applications on Steam.
@@ -613,6 +674,59 @@
             <param name="appid">appid of game</param>
             <param name="ticket">Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter.</param>
             <returns>The user's 64-bit SteamID if the user's ticket is valid</returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.GetRecentlyPlayedGames(System.String,System.UInt64,System.UInt32)">
+            <summary>
+            Gets information about a player's recently played games
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <param name="count">The number of games to return (0 = all)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.GetOwnedGames(System.String,System.UInt64,System.Boolean,System.Boolean)">
+            <summary>
+            Return a list of games owned by the player
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <param name="include_appinfo">true if we want additional details (name, icon) about each game</param>
+            <param name="include_played_free_games">Free games are excluded by default. If this is set, free games the user has played will be returned.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.GetSteamLevel(System.String,System.UInt64)">
+            <summary>
+            Returns the Steam Level of a user
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.GetBadges(System.String,System.UInt64)">
+            <summary>
+            Gets badges that are owned by a specific user
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.GetCommunityBadgeProgress(System.String,System.UInt64,System.Nullable{System.UInt32})">
+            <summary>
+            Gets all the quests needed to get the specified badge, and which are completed
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <param name="badgeid">The badge we're asking about. If null, query everything we can</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.IsPlayingSharedGame(System.String,System.UInt64,System.UInt32)">
+            <summary>
+            Returns valid lender SteamID if game currently played is borrowed
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">The player we're asking about</param>
+            <param name="appid_playing">The game player is currently playing</param>
+            <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamApps">
             <summary>
