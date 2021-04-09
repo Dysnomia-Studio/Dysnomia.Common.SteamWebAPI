@@ -80,6 +80,20 @@
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32)')
+- [ISteamUser](#T-Dysnomia-Common-SteamWebAPI-ISteamUser 'Dysnomia.Common.SteamWebAPI.ISteamUser')
+  - [CheckAppOwnership(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.CheckAppOwnership(System.String,System.UInt64,System.UInt32)')
+  - [GetAppPriceInfo(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetAppPriceInfo(System.String,System.UInt64,System.UInt32)')
+  - [GetAppPriceInfo(key,steamid,appids)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32[]- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetAppPriceInfo(System.String,System.UInt64,System.UInt32[])')
+  - [GetDeletedSteamIDs(key,rowversion)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetDeletedSteamIDs-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetDeletedSteamIDs(System.String,System.UInt32)')
+  - [GetFriendList(key,steamid,relationship)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetFriendList-System-String,System-UInt64,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetFriendList(System.String,System.UInt64,System.String)')
+  - [GetPlayerBans(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPlayerBans-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetPlayerBans(System.String,System.UInt64)')
+  - [GetPlayerBans(key,steamids)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPlayerBans-System-String,System-UInt64[]- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetPlayerBans(System.String,System.UInt64[])')
+  - [GetPlayerSummaries(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPlayerSummaries-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetPlayerSummaries(System.String,System.UInt64)')
+  - [GetPlayerSummaries(key,steamids)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPlayerSummaries-System-String,System-UInt64[]- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetPlayerSummaries(System.String,System.UInt64[])')
+  - [GetPublisherAppOwnership(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPublisherAppOwnership-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetPublisherAppOwnership(System.String,System.UInt64)')
+  - [GetPublisherAppOwnershipChanges(key,packagerowversion,cdkeyrowversion)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPublisherAppOwnershipChanges-System-String,System-UInt64,System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetPublisherAppOwnershipChanges(System.String,System.UInt64,System.UInt64)')
+  - [GetUserGroupList(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetUserGroupList-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetUserGroupList(System.String,System.UInt64)')
+  - [ResolveVanityURL(key,vanityurl,url_type)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-ResolveVanityURL-System-String,System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.ResolveVanityURL(System.String,System.String,System.UInt32)')
 - [ISteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
@@ -112,6 +126,20 @@
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32)')
+- [SteamUser](#T-Dysnomia-Common-SteamWebAPI-SteamUser 'Dysnomia.Common.SteamWebAPI.SteamUser')
+  - [CheckAppOwnership(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.CheckAppOwnership(System.String,System.UInt64,System.UInt32)')
+  - [GetAppPriceInfo(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetAppPriceInfo(System.String,System.UInt64,System.UInt32)')
+  - [GetAppPriceInfo(key,steamid,appids)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32[]- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetAppPriceInfo(System.String,System.UInt64,System.UInt32[])')
+  - [GetDeletedSteamIDs(key,rowversion)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetDeletedSteamIDs-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetDeletedSteamIDs(System.String,System.UInt32)')
+  - [GetFriendList(key,steamid,relationship)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetFriendList-System-String,System-UInt64,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetFriendList(System.String,System.UInt64,System.String)')
+  - [GetPlayerBans(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPlayerBans-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetPlayerBans(System.String,System.UInt64)')
+  - [GetPlayerBans(key,steamids)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPlayerBans-System-String,System-UInt64[]- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetPlayerBans(System.String,System.UInt64[])')
+  - [GetPlayerSummaries(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPlayerSummaries-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetPlayerSummaries(System.String,System.UInt64)')
+  - [GetPlayerSummaries(key,steamids)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPlayerSummaries-System-String,System-UInt64[]- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetPlayerSummaries(System.String,System.UInt64[])')
+  - [GetPublisherAppOwnership(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPublisherAppOwnership-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetPublisherAppOwnership(System.String,System.UInt64)')
+  - [GetPublisherAppOwnershipChanges(key,packagerowversion,cdkeyrowversion)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPublisherAppOwnershipChanges-System-String,System-UInt64,System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetPublisherAppOwnershipChanges(System.String,System.UInt64,System.UInt64)')
+  - [GetUserGroupList(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetUserGroupList-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetUserGroupList(System.String,System.UInt64)')
+  - [ResolveVanityURL(key,vanityurl,url_type)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-ResolveVanityURL-System-String,System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.ResolveVanityURL(System.String,System.String,System.UInt32)')
 - [SteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-SteamUserAuth 'Dysnomia.Common.SteamWebAPI.SteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
@@ -1262,6 +1290,270 @@ Get the news for the specified app. Publisher only version that can return info 
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to retrieve news for |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-ISteamUser'></a>
+## ISteamUser `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Used to access information and interact with users.
+See IPlayerService for additional methods.
+
+https://partner.steamgames.com/doc/webapi/ISteamUser
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32-'></a>
+### CheckAppOwnership(key,steamid,appid) `method`
+
+##### Summary
+
+Checks if the specified user owns the app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to check for ownership |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32-'></a>
+### GetAppPriceInfo(key,steamid,appid) `method`
+
+##### Summary
+
+Get price info about one or mutiple apps
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | App id |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32[]-'></a>
+### GetAppPriceInfo(key,steamid,appids) `method`
+
+##### Summary
+
+Get price info about one or mutiple apps
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appids | [System.UInt32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32[] 'System.UInt32[]') | App ids (max: 100) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetDeletedSteamIDs-System-String,System-UInt32-'></a>
+### GetDeletedSteamIDs(key,rowversion) `method`
+
+##### Summary
+
+You can use GetDeletedSteamIDs to retrieve a list of deleted accounts that owned your game(s) before deletion. This API was created to allow for the deletion of user related data for GDPR and other personal information related purposes.
+
+ The provided Steamworks Publisher Key is used for both authentication and to generate the list of appids to check against.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| rowversion | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | An unsigned 64-bit value used to page through deleted accounts. Pass 0 when calling this API for the first time, then pass the value returned from the previous call for each additional request. This value will need to be stored on your server for future calls. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetFriendList-System-String,System-UInt64,System-String-'></a>
+### GetFriendList(key,steamid,relationship) `method`
+
+##### Summary
+
+Gets friend list of a specific user by its steamid
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| relationship | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | relationship type (ex: friend) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPlayerBans-System-String,System-UInt64-'></a>
+### GetPlayerBans(key,steamid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Target Steam ID |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPlayerBans-System-String,System-UInt64[]-'></a>
+### GetPlayerBans(key,steamids) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamids | [System.UInt64[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64[] 'System.UInt64[]') | Target Steam IDs |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPlayerSummaries-System-String,System-UInt64-'></a>
+### GetPlayerSummaries(key,steamid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Target Steam ID |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPlayerSummaries-System-String,System-UInt64[]-'></a>
+### GetPlayerSummaries(key,steamids) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamids | [System.UInt64[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64[] 'System.UInt64[]') | Target Steam IDs |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPublisherAppOwnership-System-String,System-UInt64-'></a>
+### GetPublisherAppOwnership(key,steamid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPublisherAppOwnershipChanges-System-String,System-UInt64,System-UInt64-'></a>
+### GetPublisherAppOwnershipChanges(key,packagerowversion,cdkeyrowversion) `method`
+
+##### Summary
+
+This method can be used to determine what SteamIDs have ownership changes starting from a particular package or key row version number. From the list of SteamIDs returned, a call to GetPublisherAppOwnership can then return the associated ownership data for the applications in the group associated with the key passed in. A partner may wish to track this data in conjunction with linked Steam Accounts to better understand the state of product ownership on Steam.
+
+To begin, make a call to GetPublisherAppOwnershipChanges passing in packagerowversion and cdkeyrowversion with the values of 0 (zero). The response from the call will look something like this:
+
+After this first call returns:
+1) Make a call to GetPublisherAppOwnership for each SteamID to get the actual ownership per AppID.Store or use that data as needed.
+2) Once all the SteamIDs have been processed, check the value of moredata.If it is true, make a new call to GetPublisherAppOwnershipChanges passing in the packagerowversion and cdkeyrowversion as returned from the previous call to GetPublisherAppOwnershipChanges.
+3) Repeat Step 1 and 2 until moredata returns false.
+4) Store the final packagerowversion and cdkeyrowversion values for use in future GetPublisherAppOwnershipChanges calls(e.g. 24 hours later) instead of starting at 0 (zero) again.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| packagerowversion | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The unsigned 64-bit row version to read package changes from. The row version of data read up to will be returned for use in future calls. |
+| cdkeyrowversion | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The unsigned 64-bit row version to read CD Key changes from. The row version of data read up to will be returned for use in future calls. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetUserGroupList-System-String,System-UInt64-'></a>
+### GetUserGroupList(key,steamid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-ResolveVanityURL-System-String,System-String,System-UInt32-'></a>
+### ResolveVanityURL(key,vanityurl,url_type) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| vanityurl | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The vanity URL to get a SteamID for |
+| url_type | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group |
+
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth'></a>
 ## ISteamUserAuth `type`
 
@@ -1840,6 +2132,270 @@ Get the news for the specified app. Publisher only version that can return info 
 | ---- | ---- | ----------- |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to retrieve news for |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-SteamUser'></a>
+## SteamUser `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Used to access information and interact with users.
+See IPlayerService for additional methods.
+
+https://partner.steamgames.com/doc/webapi/ISteamUser
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32-'></a>
+### CheckAppOwnership(key,steamid,appid) `method`
+
+##### Summary
+
+Checks if the specified user owns the app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to check for ownership |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32-'></a>
+### GetAppPriceInfo(key,steamid,appid) `method`
+
+##### Summary
+
+Get price info about one or mutiple apps
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | App id |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32[]-'></a>
+### GetAppPriceInfo(key,steamid,appids) `method`
+
+##### Summary
+
+Get price info about one or mutiple apps
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appids | [System.UInt32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32[] 'System.UInt32[]') | App ids (max: 100) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetDeletedSteamIDs-System-String,System-UInt32-'></a>
+### GetDeletedSteamIDs(key,rowversion) `method`
+
+##### Summary
+
+You can use GetDeletedSteamIDs to retrieve a list of deleted accounts that owned your game(s) before deletion. This API was created to allow for the deletion of user related data for GDPR and other personal information related purposes.
+
+ The provided Steamworks Publisher Key is used for both authentication and to generate the list of appids to check against.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| rowversion | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | An unsigned 64-bit value used to page through deleted accounts. Pass 0 when calling this API for the first time, then pass the value returned from the previous call for each additional request. This value will need to be stored on your server for future calls. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetFriendList-System-String,System-UInt64,System-String-'></a>
+### GetFriendList(key,steamid,relationship) `method`
+
+##### Summary
+
+Gets friend list of a specific user by its steamid
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| relationship | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | relationship type (ex: friend) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPlayerBans-System-String,System-UInt64-'></a>
+### GetPlayerBans(key,steamid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Target Steam ID |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPlayerBans-System-String,System-UInt64[]-'></a>
+### GetPlayerBans(key,steamids) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamids | [System.UInt64[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64[] 'System.UInt64[]') | Target Steam IDs |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPlayerSummaries-System-String,System-UInt64-'></a>
+### GetPlayerSummaries(key,steamid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Target Steam ID |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPlayerSummaries-System-String,System-UInt64[]-'></a>
+### GetPlayerSummaries(key,steamids) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamids | [System.UInt64[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64[] 'System.UInt64[]') | Target Steam IDs |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPublisherAppOwnership-System-String,System-UInt64-'></a>
+### GetPublisherAppOwnership(key,steamid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPublisherAppOwnershipChanges-System-String,System-UInt64,System-UInt64-'></a>
+### GetPublisherAppOwnershipChanges(key,packagerowversion,cdkeyrowversion) `method`
+
+##### Summary
+
+This method can be used to determine what SteamIDs have ownership changes starting from a particular package or key row version number. From the list of SteamIDs returned, a call to GetPublisherAppOwnership can then return the associated ownership data for the applications in the group associated with the key passed in. A partner may wish to track this data in conjunction with linked Steam Accounts to better understand the state of product ownership on Steam.
+
+To begin, make a call to GetPublisherAppOwnershipChanges passing in packagerowversion and cdkeyrowversion with the values of 0 (zero). The response from the call will look something like this:
+
+After this first call returns:
+1) Make a call to GetPublisherAppOwnership for each SteamID to get the actual ownership per AppID.Store or use that data as needed.
+2) Once all the SteamIDs have been processed, check the value of moredata.If it is true, make a new call to GetPublisherAppOwnershipChanges passing in the packagerowversion and cdkeyrowversion as returned from the previous call to GetPublisherAppOwnershipChanges.
+3) Repeat Step 1 and 2 until moredata returns false.
+4) Store the final packagerowversion and cdkeyrowversion values for use in future GetPublisherAppOwnershipChanges calls(e.g. 24 hours later) instead of starting at 0 (zero) again.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| packagerowversion | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The unsigned 64-bit row version to read package changes from. The row version of data read up to will be returned for use in future calls. |
+| cdkeyrowversion | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | The unsigned 64-bit row version to read CD Key changes from. The row version of data read up to will be returned for use in future calls. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GetUserGroupList-System-String,System-UInt64-'></a>
+### GetUserGroupList(key,steamid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-ResolveVanityURL-System-String,System-String,System-UInt32-'></a>
+### ResolveVanityURL(key,vanityurl,url_type) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| vanityurl | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The vanity URL to get a SteamID for |
+| url_type | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamUserAuth'></a>
 ## SteamUserAuth `type`
