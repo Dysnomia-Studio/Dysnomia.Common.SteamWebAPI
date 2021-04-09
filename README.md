@@ -1,7 +1,9 @@
 [
 ![](https://img.shields.io/nuget/dt/Dysnomia.Common.SteamWebAPI?label=NuGet%20Downloads)
 ![](https://img.shields.io/nuget/v/Dysnomia.Common.SteamWebAPI?label=NuGet%20Version)
-](https://nuget.org/packages/Dysnomia.Common.SteamWebAPI)
+](https://nuget.org/packages/Dysnomia.Common.SteamWebAPI)  
+[![Reliability Rating](https://sonar.dysnomia.studio/api/project_badges/measure?project=dysnomia-common-steamwebapi&metric=reliability_rating)](https://sonar.dysnomia.studio/dashboard?id=dysnomia-common-steamwebapi) [![Maintainability Rating](https://sonar.dysnomia.studio/api/project_badges/measure?project=dysnomia-common-steamwebapi&metric=sqale_rating)](https://sonar.dysnomia.studio/dashboard?id=dysnomia-common-steamwebapi) [![Security Rating](https://sonar.dysnomia.studio/api/project_badges/measure?project=dysnomia-common-steamwebapi&metric=security_rating)](https://sonar.dysnomia.studio/dashboard?id=dysnomia-common-steamwebapi)  
+[![Duplicated Lines (%)](https://sonar.dysnomia.studio/api/project_badges/measure?project=dysnomia-common-steamwebapi&metric=duplicated_lines_density)](https://sonar.dysnomia.studio/dashboard?id=dysnomia-common-steamwebapi) [![Coverage](https://sonar.dysnomia.studio/api/project_badges/measure?project=dysnomia-common-steamwebapi&metric=coverage)](https://sonar.dysnomia.studio/dashboard?id=dysnomia-common-steamwebapi)
 
 
 # Dysnomia.Common.SteamWebAPI
