@@ -15,6 +15,32 @@ steps:
     - dotnet build Dysnomia.Common.SteamWebAPI.sln -c Release
     - dotnet pack Dysnomia.Common.SteamWebAPI.sln -c Release
     - dotnet nuget push -s $NUGET_SERVER_ADRESS -k $NUGET_SERVER_KEY $(ls /drone/src/Dysnomia.Common.SteamWebAPI/bin/Release/*.nupkg | head -1)
+  when:
+    event:
+    - tag
+
+- name: docker
+  image: plugins/docker
+  settings:
+    repo: dysnomia/dysnomia-common-steamwebapi
+    dockerfile: Dockerfile
+    tags: ${DRONE_BRANCH}
+    dry_run: true
+    pull-image: false
+  environment:
+    PLUGIN_PULL_IMAGE: false
+    SONAR_HOST: 
+      from_secret: SONAR_HOST
+    SONAR_TOKEN: 
+      from_secret: SONAR_TOKEN
+  settings:
+    build_args_from_env:
+      - SONAR_HOST
+      - SONAR_TOKEN
+
+  when:
+    event:
+    - push
 
 - name: discord
   pull: default
