@@ -33,10 +33,19 @@ steps:
       from_secret: SONAR_HOST
     SONAR_TOKEN: 
       from_secret: SONAR_TOKEN
+    PUBLISHER_KEY: 
+      from_secret: PUBLISHER_KEY
+    WEBAPI_KEY: 
+      from_secret: WEBAPI_KEY
+    STEAMID: 
+      from_secret: STEAMID
   settings:
     build_args_from_env:
       - SONAR_HOST
       - SONAR_TOKEN
+      - PUBLISHER_KEY
+      - WEBAPI_KEY
+      - STEAMID
 
   when:
     event:
