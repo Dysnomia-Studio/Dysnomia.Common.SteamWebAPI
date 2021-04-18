@@ -803,6 +803,86 @@
             <param name="ticket">Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter.</param>
             <returns>The user's 64-bit SteamID if the user's ticket is valid</returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.ISteamUserStats">
+            <summary>
+            Used to access information about users.
+            https://partner.steamgames.com/doc/webapi/ISteamUserStats
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)">
+            <summary>
+            Retrieves the global achievement percentages for the specified app.
+            </summary>
+            <param name="gameid">GameID to retrieve the achievement percentages for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.Nullable{System.UInt32},System.Nullable{System.UInt32})">
+            <summary>
+            Retrieves the global stats percentages for the specified app.
+            </summary>
+            <param name="appid">AppID that we're getting global stats for</param>
+            <param name="names">Stats to get</param>
+            <param name="startdate">Start date for daily totals (unix epoch timestamp)</param>
+            <param name="enddate">End date for daily totals (unix epoch timestamp)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.DateTime,System.DateTime)">
+            <summary>
+            Retrieves the global stats percentages for the specified app.
+            </summary>
+            <param name="appid">AppID that we're getting global stats for</param>
+            <param name="names">Stats to get</param>
+            <param name="startdate">Start date for daily totals</param>
+            <param name="enddate">End date for daily totals</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetNumberOfCurrentPlayers(System.UInt32)">
+            <summary>
+            Gets the total number of players currently active in the specified app on Steam.
+            
+            Note that this will not return players that are playing while not connected to Steam.
+            </summary>
+            <param name="appid">AppID that we're getting user count for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetPlayerAchievements(System.String,System.UInt64,System.UInt32,System.String)">
+            <summary>
+            Gets the list of achievements the specified user has unlocked in an app.
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="appid">AppID to get achievements for</param>
+            <param name="l">(Optional) Language to return strings for (english, french, etc.). null = no translation</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetSchemaForGame(System.String,System.UInt32,System.String)">
+            <summary>
+            Gets the complete list of stats and achievements for the specified game.
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="appid">appid of game</param>
+            <param name="l">(Optional) Localized language to return (english, french, etc.). null = no translation</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetUserStatsForGame(System.String,System.UInt64,System.UInt32)">
+            <summary>
+            Gets the list of stats that the specified user has set in an app.
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="appid">appid of game</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUserStats.SetUserStatsForGame(System.String,System.UInt64,System.UInt32,System.Collections.Generic.Dictionary{System.String,System.UInt32})">
+            <summary>
+            Sets a stat for the specified user for the game.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="appid">appid of game</param>
+            <param name="values">Dictionnary listing "Stat name" => "Value"</param>
+            <returns></returns>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.GetRecentlyPlayedGames(System.String,System.UInt64,System.UInt32)">
             <summary>
             Gets information about a player's recently played games
@@ -1209,6 +1289,86 @@
             <param name="appid">appid of game</param>
             <param name="ticket">Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter.</param>
             <returns>The user's 64-bit SteamID if the user's ticket is valid</returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamUserStats">
+            <summary>
+            Used to access information about users.
+            https://partner.steamgames.com/doc/webapi/ISteamUserStats
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)">
+            <summary>
+            Retrieves the global achievement percentages for the specified app.
+            </summary>
+            <param name="gameid">GameID to retrieve the achievement percentages for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.Nullable{System.UInt32},System.Nullable{System.UInt32})">
+            <summary>
+            Retrieves the global stats percentages for the specified app.
+            </summary>
+            <param name="appid">AppID that we're getting global stats for</param>
+            <param name="names">Stats to get</param>
+            <param name="startdate">Start date for daily totals (unix epoch timestamp)</param>
+            <param name="enddate">End date for daily totals (unix epoch timestamp)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.DateTime,System.DateTime)">
+            <summary>
+            Retrieves the global stats percentages for the specified app.
+            </summary>
+            <param name="appid">AppID that we're getting global stats for</param>
+            <param name="names">Stats to get</param>
+            <param name="startdate">Start date for daily totals</param>
+            <param name="enddate">End date for daily totals</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.GetNumberOfCurrentPlayers(System.UInt32)">
+            <summary>
+            Gets the total number of players currently active in the specified app on Steam.
+            
+            Note that this will not return players that are playing while not connected to Steam.
+            </summary>
+            <param name="appid">AppID that we're getting user count for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.GetPlayerAchievements(System.String,System.UInt64,System.UInt32,System.String)">
+            <summary>
+            Gets the list of achievements the specified user has unlocked in an app.
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="appid">AppID to get achievements for</param>
+            <param name="l">(Optional) Language to return strings for (english, french, etc.). null = no translation</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.GetSchemaForGame(System.String,System.UInt32,System.String)">
+            <summary>
+            Gets the complete list of stats and achievements for the specified game.
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="appid">appid of game</param>
+            <param name="l">(Optional) Localized language to return (english, french, etc.). null = no translation</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.GetUserStatsForGame(System.String,System.UInt64,System.UInt32)">
+            <summary>
+            Gets the list of stats that the specified user has set in an app.
+            </summary>
+            <param name="key">Steamworks Web API user authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="appid">appid of game</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.SetUserStatsForGame(System.String,System.UInt64,System.UInt32,System.Collections.Generic.Dictionary{System.String,System.UInt32})">
+            <summary>
+            Sets a stat for the specified user for the game.
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="appid">appid of game</param>
+            <param name="values">Dictionnary listing "Stat name" => "Value"</param>
+            <returns></returns>
         </member>
         <member name="F:Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE">
             <summary>

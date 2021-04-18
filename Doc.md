@@ -97,6 +97,15 @@
 - [ISteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
+- [ISteamUserStats](#T-Dysnomia-Common-SteamWebAPI-ISteamUserStats 'Dysnomia.Common.SteamWebAPI.ISteamUserStats')
+  - [GetGlobalAchievementPercentagesForApp(gameid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetGlobalAchievementPercentagesForApp-System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)')
+  - [GetGlobalStatsForGame(appid,names,startdate,enddate)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
+  - [GetGlobalStatsForGame(appid,names,startdate,enddate)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-DateTime,System-DateTime- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.DateTime,System.DateTime)')
+  - [GetNumberOfCurrentPlayers(appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetNumberOfCurrentPlayers-System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetNumberOfCurrentPlayers(System.UInt32)')
+  - [GetPlayerAchievements(key,steamid,appid,l)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetPlayerAchievements-System-String,System-UInt64,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetPlayerAchievements(System.String,System.UInt64,System.UInt32,System.String)')
+  - [GetSchemaForGame(key,appid,l)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetSchemaForGame-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetSchemaForGame(System.String,System.UInt32,System.String)')
+  - [GetUserStatsForGame(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetUserStatsForGame-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetUserStatsForGame(System.String,System.UInt64,System.UInt32)')
+  - [SetUserStatsForGame(key,steamid,appid,values)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-SetUserStatsForGame-System-String,System-UInt64,System-UInt32,System-Collections-Generic-Dictionary{System-String,System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.SetUserStatsForGame(System.String,System.UInt64,System.UInt32,System.Collections.Generic.Dictionary{System.String,System.UInt32})')
 - [PlayerService](#T-Dysnomia-Common-SteamWebAPI-PlayerService 'Dysnomia.Common.SteamWebAPI.PlayerService')
   - [GetBadges(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetBadges-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetBadges(System.String,System.UInt64)')
   - [GetCommunityBadgeProgress(key,steamid,badgeid)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetCommunityBadgeProgress-System-String,System-UInt64,System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetCommunityBadgeProgress(System.String,System.UInt64,System.Nullable{System.UInt32})')
@@ -143,6 +152,15 @@
 - [SteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-SteamUserAuth 'Dysnomia.Common.SteamWebAPI.SteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
+- [SteamUserStats](#T-Dysnomia-Common-SteamWebAPI-SteamUserStats 'Dysnomia.Common.SteamWebAPI.SteamUserStats')
+  - [GetGlobalAchievementPercentagesForApp(gameid)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalAchievementPercentagesForApp-System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)')
+  - [GetGlobalStatsForGame(appid,names,startdate,enddate)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
+  - [GetGlobalStatsForGame(appid,names,startdate,enddate)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-DateTime,System-DateTime- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.DateTime,System.DateTime)')
+  - [GetNumberOfCurrentPlayers(appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetNumberOfCurrentPlayers-System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetNumberOfCurrentPlayers(System.UInt32)')
+  - [GetPlayerAchievements(key,steamid,appid,l)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetPlayerAchievements-System-String,System-UInt64,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetPlayerAchievements(System.String,System.UInt64,System.UInt32,System.String)')
+  - [GetSchemaForGame(key,appid,l)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetSchemaForGame-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetSchemaForGame(System.String,System.UInt32,System.String)')
+  - [GetUserStatsForGame(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetUserStatsForGame-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetUserStatsForGame(System.String,System.UInt64,System.UInt32)')
+  - [SetUserStatsForGame(key,steamid,appid,values)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-SetUserStatsForGame-System-String,System-UInt64,System-UInt32,System-Collections-Generic-Dictionary{System-String,System-UInt32}- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.SetUserStatsForGame(System.String,System.UInt64,System.UInt32,System.Collections.Generic.Dictionary{System.String,System.UInt32})')
 - [SteamWebAPIQuerier](#T-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier 'Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier')
   - [PROD_MODE](#F-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier-PROD_MODE 'Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE')
 
@@ -1604,6 +1622,172 @@ The user's 64-bit SteamID if the user's ticket is valid
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
 | ticket | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter. |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-ISteamUserStats'></a>
+## ISteamUserStats `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Used to access information about users.
+https://partner.steamgames.com/doc/webapi/ISteamUserStats
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetGlobalAchievementPercentagesForApp-System-UInt64-'></a>
+### GetGlobalAchievementPercentagesForApp(gameid) `method`
+
+##### Summary
+
+Retrieves the global achievement percentages for the specified app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| gameid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | GameID to retrieve the achievement percentages for |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-Nullable{System-UInt32},System-Nullable{System-UInt32}-'></a>
+### GetGlobalStatsForGame(appid,names,startdate,enddate) `method`
+
+##### Summary
+
+Retrieves the global stats percentages for the specified app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID that we're getting global stats for |
+| names | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Stats to get |
+| startdate | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Start date for daily totals (unix epoch timestamp) |
+| enddate | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | End date for daily totals (unix epoch timestamp) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-DateTime,System-DateTime-'></a>
+### GetGlobalStatsForGame(appid,names,startdate,enddate) `method`
+
+##### Summary
+
+Retrieves the global stats percentages for the specified app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID that we're getting global stats for |
+| names | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Stats to get |
+| startdate | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | Start date for daily totals |
+| enddate | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | End date for daily totals |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetNumberOfCurrentPlayers-System-UInt32-'></a>
+### GetNumberOfCurrentPlayers(appid) `method`
+
+##### Summary
+
+Gets the total number of players currently active in the specified app on Steam.
+
+Note that this will not return players that are playing while not connected to Steam.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID that we're getting user count for |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetPlayerAchievements-System-String,System-UInt64,System-UInt32,System-String-'></a>
+### GetPlayerAchievements(key,steamid,appid,l) `method`
+
+##### Summary
+
+Gets the list of achievements the specified user has unlocked in an app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to get achievements for |
+| l | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Optional) Language to return strings for (english, french, etc.). null = no translation |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetSchemaForGame-System-String,System-UInt32,System-String-'></a>
+### GetSchemaForGame(key,appid,l) `method`
+
+##### Summary
+
+Gets the complete list of stats and achievements for the specified game.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| l | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Optional) Localized language to return (english, french, etc.). null = no translation |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetUserStatsForGame-System-String,System-UInt64,System-UInt32-'></a>
+### GetUserStatsForGame(key,steamid,appid) `method`
+
+##### Summary
+
+Gets the list of stats that the specified user has set in an app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-SetUserStatsForGame-System-String,System-UInt64,System-UInt32,System-Collections-Generic-Dictionary{System-String,System-UInt32}-'></a>
+### SetUserStatsForGame(key,steamid,appid,values) `method`
+
+##### Summary
+
+Sets a stat for the specified user for the game.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| values | [System.Collections.Generic.Dictionary{System.String,System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.UInt32}') | Dictionnary listing "Stat name" => "Value" |
+
 <a name='T-Dysnomia-Common-SteamWebAPI-PlayerService'></a>
 ## PlayerService `type`
 
@@ -2446,6 +2630,172 @@ The user's 64-bit SteamID if the user's ticket is valid
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
 | ticket | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter. |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-SteamUserStats'></a>
+## SteamUserStats `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Used to access information about users.
+https://partner.steamgames.com/doc/webapi/ISteamUserStats
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalAchievementPercentagesForApp-System-UInt64-'></a>
+### GetGlobalAchievementPercentagesForApp(gameid) `method`
+
+##### Summary
+
+Retrieves the global achievement percentages for the specified app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| gameid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | GameID to retrieve the achievement percentages for |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-Nullable{System-UInt32},System-Nullable{System-UInt32}-'></a>
+### GetGlobalStatsForGame(appid,names,startdate,enddate) `method`
+
+##### Summary
+
+Retrieves the global stats percentages for the specified app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID that we're getting global stats for |
+| names | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Stats to get |
+| startdate | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Start date for daily totals (unix epoch timestamp) |
+| enddate | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | End date for daily totals (unix epoch timestamp) |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-DateTime,System-DateTime-'></a>
+### GetGlobalStatsForGame(appid,names,startdate,enddate) `method`
+
+##### Summary
+
+Retrieves the global stats percentages for the specified app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID that we're getting global stats for |
+| names | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Stats to get |
+| startdate | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | Start date for daily totals |
+| enddate | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | End date for daily totals |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetNumberOfCurrentPlayers-System-UInt32-'></a>
+### GetNumberOfCurrentPlayers(appid) `method`
+
+##### Summary
+
+Gets the total number of players currently active in the specified app on Steam.
+
+Note that this will not return players that are playing while not connected to Steam.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID that we're getting user count for |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetPlayerAchievements-System-String,System-UInt64,System-UInt32,System-String-'></a>
+### GetPlayerAchievements(key,steamid,appid,l) `method`
+
+##### Summary
+
+Gets the list of achievements the specified user has unlocked in an app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to get achievements for |
+| l | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Optional) Language to return strings for (english, french, etc.). null = no translation |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetSchemaForGame-System-String,System-UInt32,System-String-'></a>
+### GetSchemaForGame(key,appid,l) `method`
+
+##### Summary
+
+Gets the complete list of stats and achievements for the specified game.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| l | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Optional) Localized language to return (english, french, etc.). null = no translation |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetUserStatsForGame-System-String,System-UInt64,System-UInt32-'></a>
+### GetUserStatsForGame(key,steamid,appid) `method`
+
+##### Summary
+
+Gets the list of stats that the specified user has set in an app.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-SetUserStatsForGame-System-String,System-UInt64,System-UInt32,System-Collections-Generic-Dictionary{System-String,System-UInt32}-'></a>
+### SetUserStatsForGame(key,steamid,appid,values) `method`
+
+##### Summary
+
+Sets a stat for the specified user for the game.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| values | [System.Collections.Generic.Dictionary{System.String,System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.UInt32}') | Dictionnary listing "Stat name" => "Value" |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier'></a>
 ## SteamWebAPIQuerier `type`

@@ -36,8 +36,6 @@ RUN jq ".PUBLISHER_KEY = \"$PUBLISHER_KEY\"" Dysnomia.Common.SteamWebAPI.Test/ap
 RUN jq ".WEBAPI_KEY = \"$WEBAPI_KEY\"" Dysnomia.Common.SteamWebAPI.Test/appsettings.json > tmp.appsettings.json && mv tmp.appsettings.json Dysnomia.Common.SteamWebAPI.Test/appsettings.json
 RUN jq ".STEAMID = \"$STEAMID\"" Dysnomia.Common.SteamWebAPI.Test/appsettings.json > tmp.appsettings.json && mv tmp.appsettings.json Dysnomia.Common.SteamWebAPI.Test/appsettings.json
 
-RUN cat Dysnomia.Common.SteamWebAPI.Test/appsettings.json
-
 RUN dotnet sonarscanner begin /k:"dysnomia-common-steamwebapi" /d:sonar.host.url="$SONAR_HOST" /d:sonar.login="$SONAR_TOKEN" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs"
 RUN dotnet restore Dysnomia.Common.SteamWebAPI.sln --ignore-failed-sources /p:EnableDefaultItems=false
 RUN dotnet build Dysnomia.Common.SteamWebAPI.sln --no-restore -c Release -o out
