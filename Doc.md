@@ -80,6 +80,7 @@
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32)')
+- [ISteamStore](#T-Dysnomia-Common-SteamWebAPI-ISteamStore 'Dysnomia.Common.SteamWebAPI.ISteamStore')
 - [ISteamUser](#T-Dysnomia-Common-SteamWebAPI-ISteamUser 'Dysnomia.Common.SteamWebAPI.ISteamUser')
   - [CheckAppOwnership(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.CheckAppOwnership(System.String,System.UInt64,System.UInt32)')
   - [GetAppPriceInfo(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetAppPriceInfo(System.String,System.UInt64,System.UInt32)')
@@ -135,6 +136,7 @@
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32)')
+- [SteamStore](#T-Dysnomia-Common-SteamWebAPI-SteamStore 'Dysnomia.Common.SteamWebAPI.SteamStore')
 - [SteamUser](#T-Dysnomia-Common-SteamWebAPI-SteamUser 'Dysnomia.Common.SteamWebAPI.SteamUser')
   - [CheckAppOwnership(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.CheckAppOwnership(System.String,System.UInt64,System.UInt32)')
   - [GetAppPriceInfo(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetAppPriceInfo(System.String,System.UInt64,System.UInt32)')
@@ -163,6 +165,11 @@
   - [SetUserStatsForGame(key,steamid,appid,values)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-SetUserStatsForGame-System-String,System-UInt64,System-UInt32,System-Collections-Generic-Dictionary{System-String,System-UInt32}- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.SetUserStatsForGame(System.String,System.UInt64,System.UInt32,System.Collections.Generic.Dictionary{System.String,System.UInt32})')
 - [SteamWebAPIQuerier](#T-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier 'Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier')
   - [PROD_MODE](#F-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier-PROD_MODE 'Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE')
+- [StoreAppDetails](#T-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails')
+  - [controller_support](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails-controller_support 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.controller_support')
+  - [type](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails-type 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.type')
+- [StoreAppDetailsPricePackageGroup](#T-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup')
+  - [display_type](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup-display_type 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup.display_type')
 
 <a name='T-Dysnomia-Common-SteamWebAPI-BroadcastService'></a>
 ## BroadcastService `type`
@@ -1308,6 +1315,17 @@ Get the news for the specified app. Publisher only version that can return info 
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to retrieve news for |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-ISteamStore'></a>
+## ISteamStore `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+This class is using steam store API (https://store.steampowered.com/api/)
+
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamUser'></a>
 ## ISteamUser `type`
 
@@ -2317,6 +2335,17 @@ Get the news for the specified app. Publisher only version that can return info 
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to retrieve news for |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-SteamStore'></a>
+## SteamStore `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+This class is using steam store API (https://store.steampowered.com/api/)
+
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamUser'></a>
 ## SteamUser `type`
 
@@ -2813,3 +2842,39 @@ Set that value to true to directly call API at https://partner.steam-api.com/ in
 This means we will not call API through Akamai cache server.
 WARNING: if you recieve multiple error returned by https://partner.steam-api.com/ your IP might be banned by the firewall for a while.
 See https://partner.steamgames.com/doc/webapi_overview#addresses for more informations
+
+<a name='T-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails'></a>
+## StoreAppDetails `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI.Models
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails-controller_support'></a>
+### controller_support `property`
+
+##### Summary
+
+partial, full, or not filled
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails-type'></a>
+### type `property`
+
+##### Summary
+
+Observed values: "game", "dlc", "demo", "advertising", "mod", "video".
+
+<a name='T-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup'></a>
+## StoreAppDetailsPricePackageGroup `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI.Models
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup-display_type'></a>
+### display_type `property`
+
+##### Summary
+
+0 - list subs as seperate purchase blocks.
+1 - list subs in a dropdown box, contained within a single purchase block for the package group

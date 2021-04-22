@@ -651,6 +651,11 @@
             <param name="appid">AppID to retrieve news for</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.ISteamStore">
+            <summary>
+            This class is using steam store API (https://store.steampowered.com/api/)
+            </summary>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.ISteamUser">
             <summary>
             Used to access information and interact with users.
@@ -882,6 +887,22 @@
             <param name="appid">appid of game</param>
             <param name="values">Dictionnary listing "Stat name" => "Value"</param>
             <returns></returns>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.type">
+            <summary>
+            Observed values: "game", "dlc", "demo", "advertising", "mod", "video".
+            </summary>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.controller_support">
+            <summary>
+            partial, full, or not filled
+            </summary>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup.display_type">
+            <summary>
+            0 - list subs as seperate purchase blocks.
+            1 - list subs in a dropdown box, contained within a single purchase block for the package group
+            </summary>
         </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.GetRecentlyPlayedGames(System.String,System.UInt64,System.UInt32)">
             <summary>
@@ -1137,6 +1158,11 @@
             <param name="key">Steamworks Web API publisher authentication key.</param>
             <param name="appid">AppID to retrieve news for</param>
             <returns></returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamStore">
+            <summary>
+            This class is using steam store API (https://store.steampowered.com/api/)
+            </summary>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamUser">
             <summary>
