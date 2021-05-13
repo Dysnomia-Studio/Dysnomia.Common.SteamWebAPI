@@ -17,6 +17,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public BaseTestClass() {
 			var config = new ConfigurationBuilder()
 				.AddUserSecrets<BaseTestClass>()
+				.AddJsonFile("appsettings.json")
 				.Build();
 
 			PUBLISHER_KEY = config["PUBLISHER_KEY"];
