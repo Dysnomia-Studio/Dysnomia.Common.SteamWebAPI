@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-using Dysnomia.Common.SteamWebAPI.Helpers;
+using Dysnomia.Common.WebAPIWrapper.Helpers;
 
 namespace Dysnomia.Common.SteamWebAPI.Models {
 	public class StoreAppDetailsPriceOverview {

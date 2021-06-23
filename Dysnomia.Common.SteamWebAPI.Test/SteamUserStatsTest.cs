@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using Dysnomia.Common.SteamWebAPI.Exceptions;
+using Dysnomia.Common.WebAPIWrapper.Exceptions;
 
 using Xunit;
 
