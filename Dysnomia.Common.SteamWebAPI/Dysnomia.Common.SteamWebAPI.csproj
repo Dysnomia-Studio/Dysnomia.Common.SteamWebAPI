@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp3.1;net5.0</TargetFrameworks>
     <Authors>Axel "Elanis" Soupé</Authors>
     <Company>Dysnomia</Company>
     <Description>A C# library to easily get data from Steam Web API</Description>
