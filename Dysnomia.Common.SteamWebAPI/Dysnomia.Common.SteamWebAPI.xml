@@ -775,6 +775,27 @@
             <param name="steamid">SteamID of user</param>
             <returns></returns>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUser.GrantPackage(System.String,System.UInt64,System.UInt32,System.String,System.String,System.Nullable{System.UInt32})">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="packageid">PackageID to grant</param>
+            <param name="ipaddress">ip address of user in string format (xxx.xxx.xxx.xxx).</param>
+            <param name="thirdpartykey">Optionally associate third party key during grant. 'thirdpartyappid' will have to be set.</param>
+            <param name="thirdpartyappid">Has to be set if 'thirdpartykey' is set. The appid associated with the 'thirdpartykey'.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUser.GrantPackage(System.String,System.UInt64,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="packageid">PackageID to grant</param>
+            <returns></returns>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUser.ResolveVanityURL(System.String,System.String,System.UInt32)">
             <summary>
             
@@ -782,6 +803,16 @@
             <param name="key">Steamworks Web API user authentication key.</param>
             <param name="vanityurl">The vanity URL to get a SteamID for</param>
             <param name="url_type">The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamUser.RevokePackage(System.String,System.UInt64,System.UInt32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="packageid">PackageID to grant</param>
+            <param name="revokereason">Reason for why to revoke</param>
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.ISteamUserAuth">
@@ -1283,6 +1314,27 @@
             <param name="steamid">SteamID of user</param>
             <returns></returns>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUser.GrantPackage(System.String,System.UInt64,System.UInt32,System.String,System.String,System.Nullable{System.UInt32})">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="packageid">PackageID to grant</param>
+            <param name="ipaddress">ip address of user in string format (xxx.xxx.xxx.xxx).</param>
+            <param name="thirdpartykey">Optionally associate third party key during grant. 'thirdpartyappid' will have to be set.</param>
+            <param name="thirdpartyappid">Has to be set if 'thirdpartykey' is set. The appid associated with the 'thirdpartykey'.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUser.GrantPackage(System.String,System.UInt64,System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="packageid">PackageID to grant</param>
+            <returns></returns>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamUser.ResolveVanityURL(System.String,System.String,System.UInt32)">
             <summary>
             
@@ -1290,6 +1342,16 @@
             <param name="key">Steamworks Web API user authentication key.</param>
             <param name="vanityurl">The vanity URL to get a SteamID for</param>
             <param name="url_type">The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUser.RevokePackage(System.String,System.UInt64,System.UInt32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="steamid">SteamID of user</param>
+            <param name="packageid">PackageID to grant</param>
+            <param name="revokereason">Reason for why to revoke</param>
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamUserAuth">

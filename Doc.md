@@ -94,7 +94,10 @@
   - [GetPublisherAppOwnership(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPublisherAppOwnership-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetPublisherAppOwnership(System.String,System.UInt64)')
   - [GetPublisherAppOwnershipChanges(key,packagerowversion,cdkeyrowversion)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetPublisherAppOwnershipChanges-System-String,System-UInt64,System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetPublisherAppOwnershipChanges(System.String,System.UInt64,System.UInt64)')
   - [GetUserGroupList(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GetUserGroupList-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GetUserGroupList(System.String,System.UInt64)')
+  - [GrantPackage(key,steamid,packageid,ipaddress,thirdpartykey,thirdpartyappid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GrantPackage-System-String,System-UInt64,System-UInt32,System-String,System-String,System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GrantPackage(System.String,System.UInt64,System.UInt32,System.String,System.String,System.Nullable{System.UInt32})')
+  - [GrantPackage(key,steamid,packageid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-GrantPackage-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.GrantPackage(System.String,System.UInt64,System.UInt32)')
   - [ResolveVanityURL(key,vanityurl,url_type)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-ResolveVanityURL-System-String,System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.ResolveVanityURL(System.String,System.String,System.UInt32)')
+  - [RevokePackage(key,steamid,packageid,revokereason)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-RevokePackage-System-String,System-UInt64,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUser.RevokePackage(System.String,System.UInt64,System.UInt32,System.String)')
 - [ISteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
@@ -150,7 +153,10 @@
   - [GetPublisherAppOwnership(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPublisherAppOwnership-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetPublisherAppOwnership(System.String,System.UInt64)')
   - [GetPublisherAppOwnershipChanges(key,packagerowversion,cdkeyrowversion)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetPublisherAppOwnershipChanges-System-String,System-UInt64,System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetPublisherAppOwnershipChanges(System.String,System.UInt64,System.UInt64)')
   - [GetUserGroupList(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetUserGroupList-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetUserGroupList(System.String,System.UInt64)')
+  - [GrantPackage(key,steamid,packageid,ipaddress,thirdpartykey,thirdpartyappid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GrantPackage-System-String,System-UInt64,System-UInt32,System-String,System-String,System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.SteamUser.GrantPackage(System.String,System.UInt64,System.UInt32,System.String,System.String,System.Nullable{System.UInt32})')
+  - [GrantPackage(key,steamid,packageid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GrantPackage-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.GrantPackage(System.String,System.UInt64,System.UInt32)')
   - [ResolveVanityURL(key,vanityurl,url_type)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-ResolveVanityURL-System-String,System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.ResolveVanityURL(System.String,System.String,System.UInt32)')
+  - [RevokePackage(key,steamid,packageid,revokereason)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-RevokePackage-System-String,System-UInt64,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUser.RevokePackage(System.String,System.UInt64,System.UInt32,System.String)')
 - [SteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-SteamUserAuth 'Dysnomia.Common.SteamWebAPI.SteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
@@ -1571,6 +1577,47 @@ After this first call returns:
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
 
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GrantPackage-System-String,System-UInt64,System-UInt32,System-String,System-String,System-Nullable{System-UInt32}-'></a>
+### GrantPackage(key,steamid,packageid,ipaddress,thirdpartykey,thirdpartyappid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| packageid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | PackageID to grant |
+| ipaddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | ip address of user in string format (xxx.xxx.xxx.xxx). |
+| thirdpartykey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Optionally associate third party key during grant. 'thirdpartyappid' will have to be set. |
+| thirdpartyappid | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Has to be set if 'thirdpartykey' is set. The appid associated with the 'thirdpartykey'. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-GrantPackage-System-String,System-UInt64,System-UInt32-'></a>
+### GrantPackage(key,steamid,packageid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| packageid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | PackageID to grant |
+
 <a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-ResolveVanityURL-System-String,System-String,System-UInt32-'></a>
 ### ResolveVanityURL(key,vanityurl,url_type) `method`
 
@@ -1589,6 +1636,26 @@ After this first call returns:
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
 | vanityurl | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The vanity URL to get a SteamID for |
 | url_type | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUser-RevokePackage-System-String,System-UInt64,System-UInt32,System-String-'></a>
+### RevokePackage(key,steamid,packageid,revokereason) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| packageid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | PackageID to grant |
+| revokereason | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Reason for why to revoke |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth'></a>
 ## ISteamUserAuth `type`
@@ -2591,6 +2658,47 @@ After this first call returns:
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GrantPackage-System-String,System-UInt64,System-UInt32,System-String,System-String,System-Nullable{System-UInt32}-'></a>
+### GrantPackage(key,steamid,packageid,ipaddress,thirdpartykey,thirdpartyappid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| packageid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | PackageID to grant |
+| ipaddress | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | ip address of user in string format (xxx.xxx.xxx.xxx). |
+| thirdpartykey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Optionally associate third party key during grant. 'thirdpartyappid' will have to be set. |
+| thirdpartyappid | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Has to be set if 'thirdpartykey' is set. The appid associated with the 'thirdpartykey'. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-GrantPackage-System-String,System-UInt64,System-UInt32-'></a>
+### GrantPackage(key,steamid,packageid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| packageid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | PackageID to grant |
+
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-ResolveVanityURL-System-String,System-String,System-UInt32-'></a>
 ### ResolveVanityURL(key,vanityurl,url_type) `method`
 
@@ -2609,6 +2717,26 @@ After this first call returns:
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API user authentication key. |
 | vanityurl | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The vanity URL to get a SteamID for |
 | url_type | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-RevokePackage-System-String,System-UInt64,System-UInt32,System-String-'></a>
+### RevokePackage(key,steamid,packageid,revokereason) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | SteamID of user |
+| packageid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | PackageID to grant |
+| revokereason | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Reason for why to revoke |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamUserAuth'></a>
 ## SteamUserAuth `type`

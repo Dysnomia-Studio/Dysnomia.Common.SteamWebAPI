@@ -125,10 +125,40 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <summary>
 		/// 
 		/// </summary>
+		/// <param name="key">Steamworks Web API publisher authentication key.</param>
+		/// <param name="steamid">SteamID of user</param>
+		/// <param name="packageid">PackageID to grant</param>
+		/// <param name="ipaddress">ip address of user in string format (xxx.xxx.xxx.xxx).</param>
+		/// <param name="thirdpartykey">Optionally associate third party key during grant. 'thirdpartyappid' will have to be set.</param>
+		/// <param name="thirdpartyappid">Has to be set if 'thirdpartykey' is set. The appid associated with the 'thirdpartykey'.</param>
+		/// <returns></returns>
+		Task<string> GrantPackage(string key, ulong steamid, uint packageid, string ipaddress, string thirdpartykey, uint? thirdpartyappid);
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="key">Steamworks Web API publisher authentication key.</param>
+		/// <param name="steamid">SteamID of user</param>
+		/// <param name="packageid">PackageID to grant</param>
+		/// <returns></returns>
+		Task<string> GrantPackage(string key, ulong steamid, uint packageid);
+
+		/// <summary>
+		/// 
+		/// </summary>
 		/// <param name="key">Steamworks Web API user authentication key.</param>
 		/// <param name="vanityurl">The vanity URL to get a SteamID for</param>
 		/// <param name="url_type">The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group</param>
 		/// <returns></returns>
 		Task<ResolveVanityURLResponse> ResolveVanityURL(string key, string vanityurl, uint url_type = 1);
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="key">Steamworks Web API publisher authentication key.</param>
+		/// <param name="steamid">SteamID of user</param>
+		/// <param name="packageid">PackageID to grant</param>
+		/// <param name="revokereason">Reason for why to revoke</param>
+		/// <returns></returns>
+		Task<string> RevokePackage(string key, ulong steamid, uint packageid, string revokereason);
 	}
 }

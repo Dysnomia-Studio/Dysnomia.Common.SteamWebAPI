@@ -206,6 +206,51 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <summary>
 		/// 
 		/// </summary>
+		/// <param name="key">Steamworks Web API publisher authentication key.</param>
+		/// <param name="steamid">SteamID of user</param>
+		/// <param name="packageid">PackageID to grant</param>
+		/// <param name="ipaddress">ip address of user in string format (xxx.xxx.xxx.xxx).</param>
+		/// <param name="thirdpartykey">Optionally associate third party key during grant. 'thirdpartyappid' will have to be set.</param>
+		/// <param name="thirdpartyappid">Has to be set if 'thirdpartykey' is set. The appid associated with the 'thirdpartykey'.</param>
+		/// <returns></returns>
+		public async Task<string> GrantPackage(string key, ulong steamid, uint packageid, string ipaddress, string thirdpartykey, uint? thirdpartyappid) {
+			var ipaddressStr = "";
+			if (!string.IsNullOrWhiteSpace(ipaddress)) {
+				ipaddressStr = "&ipaddress=" + ipaddress;
+			}
+
+			var thirdpartykeyStr = "";
+			if (!string.IsNullOrWhiteSpace(thirdpartykey)) {
+				thirdpartykeyStr = "&thirdpartykey=" + thirdpartykey;
+			}
+
+			var thirdpartyappidStr = "";
+			if (thirdpartyappid != null) {
+				thirdpartyappidStr = "&thirdpartyappid=" + thirdpartyappid;
+			}
+
+			return (await this.PostString(
+				string.Format(
+					"{0}/ISteamUser/GrantPackage/v2/?key={1}&steamid={2}&packageid={3}{4}{5}{6}",
+					API_URL, key, steamid, packageid, ipaddressStr, thirdpartykeyStr, thirdpartyappidStr
+				),
+				null
+			));
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="key">Steamworks Web API publisher authentication key.</param>
+		/// <param name="steamid">SteamID of user</param>
+		/// <param name="packageid">PackageID to grant</param>
+		/// <returns></returns>
+		public async Task<string> GrantPackage(string key, ulong steamid, uint packageid) {
+			return await GrantPackage(key, steamid, packageid, null, null, null);
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
 		/// <param name="key">Steamworks Web API user authentication key.</param>
 		/// <param name="vanityurl">The vanity URL to get a SteamID for</param>
 		/// <param name="url_type">The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group</param>
@@ -217,6 +262,24 @@ namespace Dysnomia.Common.SteamWebAPI {
 					API_URL, key, vanityurl, url_type
 				)
 			)).response;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="key">Steamworks Web API publisher authentication key.</param>
+		/// <param name="steamid">SteamID of user</param>
+		/// <param name="packageid">PackageID to grant</param>
+		/// <param name="revokereason">Reason for why to revoke</param>
+		/// <returns></returns>
+		public async Task<string> RevokePackage(string key, ulong steamid, uint packageid, string revokereason) {
+			return (await this.PostString(
+				string.Format(
+					"{0}/ISteamUser/RevokePackage/v2/?key={1}&steamid={2}&packageid={3}&revokereason={6}",
+					API_URL, key, steamid, packageid, revokereason
+				),
+				null
+			));
 		}
 	}
 }
