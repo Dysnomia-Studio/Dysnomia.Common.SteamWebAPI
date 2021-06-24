@@ -275,7 +275,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<string> RevokePackage(string key, ulong steamid, uint packageid, string revokereason) {
 			return (await this.PostString(
 				string.Format(
-					"{0}/ISteamUser/RevokePackage/v2/?key={1}&steamid={2}&packageid={3}&revokereason={6}",
+					"{0}/ISteamUser/RevokePackage/v2/?key={1}&steamid={2}&packageid={3}&revokereason={4}",
 					API_URL, key, steamid, packageid, revokereason
 				),
 				null
