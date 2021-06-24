@@ -173,6 +173,20 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <summary>
 		/// 
 		/// </summary>
+		/// <param name="appid">AppID of game</param>
+		/// <returns></returns>
+		public async Task<SDRConfig> GetSDRConfig(uint appid) {
+			return (await this.Get<SDRConfig>(
+				string.Format(
+					"{0}/ISteamApps/GetSDRConfig/v1/?appid={1}",
+					API_URL, appid
+				)
+			));
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
 		/// <param name="addr">IP or IP:queryport to list</param>
 		/// <returns></returns>
 		public async Task<IList<SteamServersAtAddressItem>> GetServersAtAddress(string addr) {

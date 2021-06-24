@@ -97,6 +97,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <summary>
 		/// 
 		/// </summary>
+		/// <param name="appid">AppID of game</param>
+		/// <returns></returns>
+		Task<SDRConfig> GetSDRConfig(uint appid);
+
+		/// <summary>
+		/// 
+		/// </summary>
 		/// <param name="addr">IP or IP:queryport to list</param>
 		/// <returns></returns>
 		Task<IList<SteamServersAtAddressItem>> GetServersAtAddress(string addr);

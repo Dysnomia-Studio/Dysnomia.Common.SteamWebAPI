@@ -67,6 +67,7 @@
   - [GetCheatingReports(key,appid,timebegin,timeend,includereports,includebans,reportidmin)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetCheatingReports-System-String,System-UInt32,System-DateTime,System-DateTime,System-Boolean,System-Boolean,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetCheatingReports(System.String,System.UInt32,System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Nullable{System.UInt64})')
   - [GetPartnerAppListForWebAPIKey(key,type_filter)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetPartnerAppListForWebAPIKey-System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetPartnerAppListForWebAPIKey(System.String,System.String)')
   - [GetPlayersBanned(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetPlayersBanned-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetPlayersBanned(System.String,System.UInt32)')
+  - [GetSDRConfig(appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetSDRConfig-System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetSDRConfig(System.UInt32)')
   - [GetServerList(key,filter,limit)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetServerList-System-String,System-String,System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetServerList(System.String,System.String,System.Nullable{System.UInt32})')
   - [GetServersAtAddress(addr)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetServersAtAddress-System-String- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetServersAtAddress(System.String)')
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
@@ -126,6 +127,7 @@
   - [GetCheatingReports(key,appid,timebegin,timeend,includereports,includebans,reportidmin)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetCheatingReports-System-String,System-UInt32,System-DateTime,System-DateTime,System-Boolean,System-Boolean,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetCheatingReports(System.String,System.UInt32,System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Nullable{System.UInt64})')
   - [GetPartnerAppListForWebAPIKey(key,type_filter)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetPartnerAppListForWebAPIKey-System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetPartnerAppListForWebAPIKey(System.String,System.String)')
   - [GetPlayersBanned(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetPlayersBanned-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetPlayersBanned(System.String,System.UInt32)')
+  - [GetSDRConfig(appid)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetSDRConfig-System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetSDRConfig(System.UInt32)')
   - [GetServerList(key,filter,limit)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetServerList-System-String,System-String,System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetServerList(System.String,System.String,System.Nullable{System.UInt32})')
   - [GetServersAtAddress(addr)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetServersAtAddress-System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetServersAtAddress(System.String)')
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
@@ -1075,6 +1077,23 @@ Possible values are "game,application,tool,demo,dlc,music". When type_filter is 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID of game |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetSDRConfig-System-UInt32-'></a>
+### GetSDRConfig(appid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID of game |
 
 <a name='M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetServerList-System-String,System-String,System-Nullable{System-UInt32}-'></a>
@@ -2156,6 +2175,23 @@ Possible values are "game,application,tool,demo,dlc,music". When type_filter is 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID of game |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamApps-GetSDRConfig-System-UInt32-'></a>
+### GetSDRConfig(appid) `method`
+
+##### Summary
+
+
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID of game |
 
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamApps-GetServerList-System-String,System-String,System-Nullable{System-UInt32}-'></a>

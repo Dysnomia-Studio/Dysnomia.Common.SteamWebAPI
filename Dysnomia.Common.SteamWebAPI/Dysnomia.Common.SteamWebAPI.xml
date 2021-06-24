@@ -538,6 +538,13 @@
             <param name="limit">Limit number of servers in the response</param>
             <returns></returns>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetSDRConfig(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="appid">AppID of game</param>
+            <returns></returns>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetServersAtAddress(System.String)">
             <summary>
             
@@ -1075,6 +1082,13 @@
             <param name="key">Steamworks Web API publisher authentication key.</param>
             <param name="filter">Query filter string</param>
             <param name="limit">Limit number of servers in the response</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetSDRConfig(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="appid">AppID of game</param>
             <returns></returns>
         </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetServersAtAddress(System.String)">
