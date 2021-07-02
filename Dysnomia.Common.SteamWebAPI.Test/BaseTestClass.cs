@@ -14,6 +14,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		protected ulong STEAMID = 0;
 		protected const ulong INVALID_STEAMID = 0;
 
+		protected string STEAMPROFILE;
+
 		public BaseTestClass() {
 			var config = new ConfigurationBuilder()
 				.AddUserSecrets<BaseTestClass>()
@@ -23,6 +25,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 			PUBLISHER_KEY = config["PUBLISHER_KEY"];
 			WEBAPI_KEY = config["WEBAPI_KEY"];
 			STEAMID = ulong.Parse(config["STEAMID"]);
+			STEAMPROFILE = config["STEAMPROFILE"];
 		}
 	}
 }

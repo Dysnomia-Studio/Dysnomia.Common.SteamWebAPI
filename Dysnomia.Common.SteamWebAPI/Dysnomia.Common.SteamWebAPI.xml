@@ -1137,6 +1137,11 @@
             <param name="gid">GID of related record (depends on content type)</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamCommunityProfile">
+            <summary>
+            Used to get data directly from profile in steamcommunity.com website
+            </summary>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamNews">
             <summary>
             Provides access to the Steam News functionality.

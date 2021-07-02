@@ -134,6 +134,7 @@
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
 - [SteamCommunity](#T-Dysnomia-Common-SteamWebAPI-SteamCommunity 'Dysnomia.Common.SteamWebAPI.SteamCommunity')
   - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
+- [SteamCommunityProfile](#T-Dysnomia-Common-SteamWebAPI-SteamCommunityProfile 'Dysnomia.Common.SteamWebAPI.SteamCommunityProfile')
 - [SteamNews](#T-Dysnomia-Common-SteamWebAPI-SteamNews 'Dysnomia.Common.SteamWebAPI.SteamNews')
   - [GetNewsForApp(appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForApp(appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
@@ -2304,6 +2305,17 @@ Allows publishers to report users who are behaving badly on their community hub.
 | contentType | [Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType') | Content type code (see ECommunityContentType enum) |
 | description | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Narrative from user |
 | gid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | GID of related record (depends on content type) |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-SteamCommunityProfile'></a>
+## SteamCommunityProfile `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Used to get data directly from profile in steamcommunity.com website
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamNews'></a>
 ## SteamNews `type`
