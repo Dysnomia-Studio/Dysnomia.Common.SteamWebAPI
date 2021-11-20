@@ -1,9 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Dysnomia.Common.SteamWebAPI.Test
-{
-    public abstract class BaseTestClass
-    {
+namespace Dysnomia.Common.SteamWebAPI.Test {
+    public abstract class BaseTestClass {
         protected const string PUBLISHER_INVALID_KEY = "INVALID";
         protected string PUBLISHER_KEY = "";
 
@@ -21,8 +19,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test
 
         protected string STEAMPROFILE;
 
-        public BaseTestClass()
-        {
+        public BaseTestClass() {
             var config = new ConfigurationBuilder()
                 .AddUserSecrets<BaseTestClass>()
                 .AddJsonFile("appsettings.json")

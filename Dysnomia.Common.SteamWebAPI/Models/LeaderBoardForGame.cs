@@ -1,15 +1,12 @@
 ﻿using System.Collections.Generic;
 
-namespace Dysnomia.Common.SteamWebAPI.Models
-{
-    public class LeaderBoardForGameRoot
-    {
+namespace Dysnomia.Common.SteamWebAPI.Models {
+    public class LeaderBoardForGameRoot {
         public int result { get; set; }
         public IEnumerable<LeaderBoardForGame> leaderboards { get; set; }
     }
 
-    public class LeaderBoardForGame
-    {
+    public class LeaderBoardForGame {
         public int id { get; set; }
         public string name { get; set; }
         public int entries { get; set; }

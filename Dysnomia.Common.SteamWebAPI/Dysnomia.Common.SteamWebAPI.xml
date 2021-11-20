@@ -596,6 +596,7 @@
             Used to access Steam leaderboards.
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})" -->
         <member name="M:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)">
             <summary>
             Returns leaderboard list for a specific app id
@@ -1184,6 +1185,7 @@
             Used to access Steam leaderboards.
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})" -->
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)">
             <summary>
             Returns leaderboard list for a specific app id

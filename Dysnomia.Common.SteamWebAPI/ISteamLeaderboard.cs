@@ -3,13 +3,24 @@ using Dysnomia.Common.SteamWebAPI.Models;
 
 using System.Threading.Tasks;
 
-namespace Dysnomia.Common.SteamWebAPI
-{
+namespace Dysnomia.Common.SteamWebAPI {
     /// <summary>
     /// Used to access Steam leaderboards.
     /// </summary>
-    public interface ISteamLeaderboard
-    {
+    public interface ISteamLeaderboard {
+        /// <summary>
+        /// Get entries for a specific app leaderboard
+        /// </summary>
+        /// <param name="key">Steamworks Web API publisher authentication key.</param>
+        /// <param name="appid">appid of game</param>
+        /// <param name="leaderboardid">SteamID used for friend & around user requests</param>
+        /// <param name="datarequest">type of request: RequestGlobal, RequestAroundUser, RequestFriends</param>
+        /// <param name="rangestart">range start or 0</param>
+        /// <param name="rangeend">range end or max LB entries</param>
+        /// <param name="steamid">SteamID used for friend & around user requests</param>
+        /// <returns></returns>
+        Task<LeaderboardEntryInformation> GetLeaderboardEntries(string key, uint appid, int leaderboardid, uint datarequest, int rangestart = 0, int rangeend = int.MaxValue, ulong? steamid = null);
+
         /// <summary>
         /// Returns leaderboard list for a specific app id
         /// </summary>
