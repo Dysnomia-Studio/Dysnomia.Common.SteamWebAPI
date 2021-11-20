@@ -591,6 +591,43 @@
             <param name="gid">GID of related record (depends on content type)</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard">
+            <summary>
+            Used to access Steam leaderboards.
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)">
+            <summary>
+            Returns leaderboard list for a specific app id
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">appid of game</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod)">
+            <summary>
+            Set score for a specific user, appid and leaderboard
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">appid of game</param>
+            <param name="leaderboardid">numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame</param>
+            <param name="steamid">steamID to set the score for</param>
+            <param name="score">the score to set for this user</param>
+            <param name="scoremethod">update method to use. Can be "KeepBest" or "ForceUpdate"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,System.String)">
+            <summary>
+            Set score for a specific user, appid and leaderboard
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">appid of game</param>
+            <param name="leaderboardid">numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame</param>
+            <param name="steamid">steamID to set the score for</param>
+            <param name="score">the score to set for this user</param>
+            <param name="scoremethod">update method to use. Can be "KeepBest" or "ForceUpdate"</param>
+            <returns></returns>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.ISteamNews">
             <summary>
             Provides access to the Steam News functionality.
@@ -1141,6 +1178,43 @@
             <summary>
             Used to get data directly from profile in steamcommunity.com website
             </summary>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamLeaderboard">
+            <summary>
+            Used to access Steam leaderboards.
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)">
+            <summary>
+            Returns leaderboard list for a specific app id
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">appid of game</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod)">
+            <summary>
+            Set score for a specific user, appid and leaderboard
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">appid of game</param>
+            <param name="leaderboardid">numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame</param>
+            <param name="steamid">steamID to set the score for</param>
+            <param name="score">the score to set for this user</param>
+            <param name="scoremethod">update method to use. Can be "KeepBest" or "ForceUpdate"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,System.String)">
+            <summary>
+            Set score for a specific user, appid and leaderboard
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">appid of game</param>
+            <param name="leaderboardid">numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame</param>
+            <param name="steamid">steamID to set the score for</param>
+            <param name="score">the score to set for this user</param>
+            <param name="scoremethod">update method to use. Can be "KeepBest" or "ForceUpdate"</param>
+            <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamNews">
             <summary>

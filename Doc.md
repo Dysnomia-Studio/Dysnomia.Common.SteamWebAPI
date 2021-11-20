@@ -74,6 +74,10 @@
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
 - [ISteamCommunity](#T-Dysnomia-Common-SteamWebAPI-ISteamCommunity 'Dysnomia.Common.SteamWebAPI.ISteamCommunity')
   - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
+- [ISteamLeaderboard](#T-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard')
+  - [GetLeaderboardsForGame(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)')
+  - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod- 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod)')
+  - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,System.String)')
 - [ISteamNews](#T-Dysnomia-Common-SteamWebAPI-ISteamNews 'Dysnomia.Common.SteamWebAPI.ISteamNews')
   - [GetNewsForApp(appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForApp(appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
@@ -135,6 +139,10 @@
 - [SteamCommunity](#T-Dysnomia-Common-SteamWebAPI-SteamCommunity 'Dysnomia.Common.SteamWebAPI.SteamCommunity')
   - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
 - [SteamCommunityProfile](#T-Dysnomia-Common-SteamWebAPI-SteamCommunityProfile 'Dysnomia.Common.SteamWebAPI.SteamCommunityProfile')
+- [SteamLeaderboard](#T-Dysnomia-Common-SteamWebAPI-SteamLeaderboard 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard')
+  - [GetLeaderboardsForGame(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)')
+  - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod)')
+  - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,System.String)')
 - [SteamNews](#T-Dysnomia-Common-SteamWebAPI-SteamNews 'Dysnomia.Common.SteamWebAPI.SteamNews')
   - [GetNewsForApp(appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForApp(appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
@@ -1207,6 +1215,79 @@ Allows publishers to report users who are behaving badly on their community hub.
 | contentType | [Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType](#T-Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType 'Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType') | Content type code |
 | description | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Narrative from user |
 | gid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | GID of related record (depends on content type) |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard'></a>
+## ISteamLeaderboard `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Used to access Steam leaderboards.
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32-'></a>
+### GetLeaderboardsForGame(key,appid) `method`
+
+##### Summary
+
+Returns leaderboard list for a specific app id
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod-'></a>
+### SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod) `method`
+
+##### Summary
+
+Set score for a specific user, appid and leaderboard
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| leaderboardid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | steamID to set the score for |
+| score | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | the score to set for this user |
+| scoremethod | [Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod](#T-Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod 'Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod') | update method to use. Can be "KeepBest" or "ForceUpdate" |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,System-String-'></a>
+### SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod) `method`
+
+##### Summary
+
+Set score for a specific user, appid and leaderboard
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| leaderboardid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | steamID to set the score for |
+| score | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | the score to set for this user |
+| scoremethod | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | update method to use. Can be "KeepBest" or "ForceUpdate" |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamNews'></a>
 ## ISteamNews `type`
@@ -2316,6 +2397,79 @@ Dysnomia.Common.SteamWebAPI
 ##### Summary
 
 Used to get data directly from profile in steamcommunity.com website
+
+<a name='T-Dysnomia-Common-SteamWebAPI-SteamLeaderboard'></a>
+## SteamLeaderboard `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Used to access Steam leaderboards.
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32-'></a>
+### GetLeaderboardsForGame(key,appid) `method`
+
+##### Summary
+
+Returns leaderboard list for a specific app id
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod-'></a>
+### SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod) `method`
+
+##### Summary
+
+Set score for a specific user, appid and leaderboard
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| leaderboardid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | steamID to set the score for |
+| score | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | the score to set for this user |
+| scoremethod | [Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod](#T-Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod 'Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod') | update method to use. Can be "KeepBest" or "ForceUpdate" |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,System-String-'></a>
+### SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod) `method`
+
+##### Summary
+
+Set score for a specific user, appid and leaderboard
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| leaderboardid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame |
+| steamid | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | steamID to set the score for |
+| score | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | the score to set for this user |
+| scoremethod | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | update method to use. Can be "KeepBest" or "ForceUpdate" |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamNews'></a>
 ## SteamNews `type`
