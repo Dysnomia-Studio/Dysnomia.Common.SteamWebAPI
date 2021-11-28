@@ -1,7 +1,7 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
+﻿using Dysnomia.Common.SteamWebAPI.Enums;
 
-using Dysnomia.Common.SteamWebAPI.Enums;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 using ECommunityContentType = Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType;
 
@@ -11,6 +11,9 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// https://partner.steamgames.com/doc/webapi/ISteamCommunity
 	/// </summary>
 	public class SteamCommunity : SteamWebAPIQuerier, ISteamCommunity {
+		public SteamCommunity(IHttpClientFactory clientFactory) : base(clientFactory) {
+		}
+
 		/// <summary>
 		/// Allows publishers to report users who are behaving badly on their community hub.
 		/// </summary>
@@ -24,21 +27,17 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="gid">GID of related record (depends on content type)</param>
 		/// <returns></returns>
 		public async Task<string> ReportAbuse(string key, ulong steamidActor, ulong steamidTarget, uint appid, EAbuseReportType abuseType, ECommunityContentType contentType, string description, ulong? gid) {
-			using (HttpClient httpClient = new HttpClient()) {
-				string gidStr = "";
-				if (gid != null) {
-					gidStr = "&gid=" + gid;
-				}
-
-				var response = await httpClient.PostAsync(
-					string.Format(
-						"{0}/ISteamCommunity/ReportAbuse/v1/?key={1}&steamidActor={2}&steamidTarget={3}&appid={4}&abuseType={5}&contentType={6}&description={7}{8}",
-						API_URL, key, steamidActor, steamidTarget, appid, abuseType, contentType, description, gidStr
-					), new StringContent("")
-				);
-
-				return await response.Content.ReadAsStringAsync();
+			string gidStr = "";
+			if (gid != null) {
+				gidStr = "&gid=" + gid;
 			}
+
+			return await this.PostString(
+				string.Format(
+					"{0}/ISteamCommunity/ReportAbuse/v1/?key={1}&steamidActor={2}&steamidTarget={3}&appid={4}&abuseType={5}&contentType={6}&description={7}{8}",
+					API_URL, key, steamidActor, steamidTarget, appid, abuseType, contentType, description, gidStr
+				), new StringContent("")
+			);
 		}
 	}
 }

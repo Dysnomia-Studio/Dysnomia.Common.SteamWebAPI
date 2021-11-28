@@ -1,13 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Dysnomia.Common.SteamWebAPI.Models;
 
-using Dysnomia.Common.SteamWebAPI.Models;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	/// <summary>
 	/// This class is using steam store API (https://store.steampowered.com/api/)
 	/// </summary>
 	public class SteamStore : SteamWebAPIQuerier, ISteamStore {
+		public SteamStore(IHttpClientFactory clientFactory) : base(clientFactory) {
+		}
+
 		public async Task<Dictionary<string, StoreAppDetailsPriceOverview>> GetAppPrices(string[] appids) {
 			return await this.Get<Dictionary<string, StoreAppDetailsPriceOverview>>("https://store.steampowered.com/api/appdetails/?filters=price_overview&appids=" + string.Join(",", appids));
 		}

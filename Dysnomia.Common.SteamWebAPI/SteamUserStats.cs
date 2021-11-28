@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Dysnomia.Common.SteamWebAPI.Models;
+
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-
-using Dysnomia.Common.SteamWebAPI.Models;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	/// <summary>
@@ -11,6 +11,9 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// https://partner.steamgames.com/doc/webapi/ISteamUserStats
 	/// </summary>
 	public class SteamUserStats : SteamWebAPIQuerier, ISteamUserStats {
+		public SteamUserStats(IHttpClientFactory clientFactory) : base(clientFactory) {
+		}
+
 		/// <summary>
 		/// Retrieves the global achievement percentages for the specified app.
 		/// </summary>
@@ -153,25 +156,21 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="values">Dictionnary listing "Stat name" => "Value"</param>
 		/// <returns></returns>
 		public async Task<string> SetUserStatsForGame(string key, ulong steamid, uint appid, Dictionary<string, uint> values) {
-			using (HttpClient httpClient = new HttpClient()) {
-				string valuesStr = "&count=" + values.Count;
-				int i = 0;
-				foreach (var item in values) {
-					valuesStr += "&name[" + i + "]=" + item.Key;
-					valuesStr += "&value[" + i + "]=" + item.Value;
-					i++;
-				}
-
-				var response = await httpClient.PostAsync(
-					string.Format(
-						"{0}/ISteamUserStats/SetUserStatsForGame/v1/?key={1}&=steamid{2}&appid={3}{4}",
-						API_URL, key, steamid, appid, valuesStr
-					),
-					new StringContent("")
-				);
-
-				return await response.Content.ReadAsStringAsync();
+			string valuesStr = "&count=" + values.Count;
+			int i = 0;
+			foreach (var item in values) {
+				valuesStr += "&name[" + i + "]=" + item.Key;
+				valuesStr += "&value[" + i + "]=" + item.Value;
+				i++;
 			}
+
+			return await this.PostString(
+				string.Format(
+					"{0}/ISteamUserStats/SetUserStatsForGame/v1/?key={1}&=steamid{2}&appid={3}{4}",
+					API_URL, key, steamid, appid, valuesStr
+				),
+				new StringContent("")
+			);
 		}
 	}
 }

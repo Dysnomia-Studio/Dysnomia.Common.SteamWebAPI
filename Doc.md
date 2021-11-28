@@ -75,6 +75,7 @@
 - [ISteamCommunity](#T-Dysnomia-Common-SteamWebAPI-ISteamCommunity 'Dysnomia.Common.SteamWebAPI.ISteamCommunity')
   - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
 - [ISteamLeaderboard](#T-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard')
+  - [GetLeaderboardEntries(key,appid,leaderboardid,datarequest,rangestart,rangeend,steamid)](#M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-GetLeaderboardEntries-System-String,System-UInt32,System-Int32,System-UInt32,System-Int32,System-Int32,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})')
   - [GetLeaderboardsForGame(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)')
   - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod- 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod)')
   - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,System.String)')
@@ -140,6 +141,7 @@
   - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
 - [SteamCommunityProfile](#T-Dysnomia-Common-SteamWebAPI-SteamCommunityProfile 'Dysnomia.Common.SteamWebAPI.SteamCommunityProfile')
 - [SteamLeaderboard](#T-Dysnomia-Common-SteamWebAPI-SteamLeaderboard 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard')
+  - [GetLeaderboardEntries(key,appid,leaderboardid,datarequest,rangestart,rangeend,steamid)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardEntries-System-String,System-UInt32,System-Int32,System-UInt32,System-Int32,System-Int32,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})')
   - [GetLeaderboardsForGame(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)')
   - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod)')
   - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,System.String)')
@@ -181,7 +183,7 @@
   - [GetUserStatsForGame(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetUserStatsForGame-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetUserStatsForGame(System.String,System.UInt64,System.UInt32)')
   - [SetUserStatsForGame(key,steamid,appid,values)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-SetUserStatsForGame-System-String,System-UInt64,System-UInt32,System-Collections-Generic-Dictionary{System-String,System-UInt32}- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.SetUserStatsForGame(System.String,System.UInt64,System.UInt32,System.Collections.Generic.Dictionary{System.String,System.UInt32})')
 - [SteamWebAPIQuerier](#T-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier 'Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier')
-  - [PROD_MODE](#F-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier-PROD_MODE 'Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE')
+  - [PROD_MODE](#P-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier-PROD_MODE 'Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE')
 - [StoreAppDetails](#T-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails')
   - [controller_support](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails-controller_support 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.controller_support')
   - [type](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails-type 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.type')
@@ -1226,6 +1228,29 @@ Dysnomia.Common.SteamWebAPI
 ##### Summary
 
 Used to access Steam leaderboards.
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-GetLeaderboardEntries-System-String,System-UInt32,System-Int32,System-UInt32,System-Int32,System-Int32,System-Nullable{System-UInt64}-'></a>
+### GetLeaderboardEntries(key,appid,leaderboardid,datarequest,rangestart,rangeend,steamid) `method`
+
+##### Summary
+
+Get entries for a specific app leaderboard
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| leaderboardid | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | SteamID used for friend and around user requests |
+| datarequest | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | type of request: RequestGlobal, RequestAroundUser, RequestFriends |
+| rangestart | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | range start or 0 |
+| rangeend | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | range end or max LB entries |
+| steamid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | SteamID used for friend and around user requests |
 
 <a name='M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32-'></a>
 ### GetLeaderboardsForGame(key,appid) `method`
@@ -2409,6 +2434,29 @@ Dysnomia.Common.SteamWebAPI
 
 Used to access Steam leaderboards.
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardEntries-System-String,System-UInt32,System-Int32,System-UInt32,System-Int32,System-Int32,System-Nullable{System-UInt64}-'></a>
+### GetLeaderboardEntries(key,appid,leaderboardid,datarequest,rangestart,rangeend,steamid) `method`
+
+##### Summary
+
+Get entries for a specific app leaderboard
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
+| appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
+| leaderboardid | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | SteamID used for friend and around user requests |
+| datarequest | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | type of request: RequestGlobal, RequestAroundUser, RequestFriends |
+| rangestart | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | range start or 0 |
+| rangeend | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | range end or max LB entries |
+| steamid | [System.Nullable{System.UInt64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt64}') | SteamID used for friend and around user requests |
+
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32-'></a>
 ### GetLeaderboardsForGame(key,appid) `method`
 
@@ -3163,8 +3211,8 @@ Sets a stat for the specified user for the game.
 
 Dysnomia.Common.SteamWebAPI
 
-<a name='F-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier-PROD_MODE'></a>
-### PROD_MODE `constants`
+<a name='P-Dysnomia-Common-SteamWebAPI-SteamWebAPIQuerier-PROD_MODE'></a>
+### PROD_MODE `property`
 
 ##### Summary
 

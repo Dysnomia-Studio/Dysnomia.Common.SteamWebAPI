@@ -1,7 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Dysnomia.Common.SteamWebAPI.Models;
 
-using Dysnomia.Common.SteamWebAPI.Models;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	/// <summary>
@@ -9,6 +10,9 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// https://partner.steamgames.com/doc/webapi/ISteamNews
 	/// </summary>
 	public class SteamNews : SteamWebAPIQuerier, ISteamNews {
+		public SteamNews(IHttpClientFactory clientFactory) : base(clientFactory) {
+		}
+
 		/// <summary>
 		/// Get the news for the specified app.
 		/// </summary>

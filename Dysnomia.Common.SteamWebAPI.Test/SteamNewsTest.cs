@@ -4,10 +4,10 @@ using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
 	public class SteamNewsTest : BaseTestClass {
-		protected readonly SteamNews steamNewsQuerier;
+		protected readonly ISteamNews steamNewsQuerier;
 
-		public SteamNewsTest() {
-			this.steamNewsQuerier = new SteamNews();
+		public SteamNewsTest(ISteamNews steamNewsQuerier) {
+			this.steamNewsQuerier = steamNewsQuerier;
 		}
 
 		[Fact]

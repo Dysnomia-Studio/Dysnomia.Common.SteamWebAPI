@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Dysnomia.Common.WebAPIWrapper.Exceptions;
 
-using Dysnomia.Common.WebAPIWrapper.Exceptions;
+using System.Threading.Tasks;
 
 using Xunit;
 
@@ -8,8 +8,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 	public class SteamUserTest : BaseTestClass {
 		protected readonly ISteamUser steamAppsQuerier;
 
-		public SteamUserTest() {
-			this.steamAppsQuerier = new SteamUser();
+		public SteamUserTest(ISteamUser steamAppsQuerier) {
+			this.steamAppsQuerier = steamAppsQuerier;
 		}
 
 		[Fact]
@@ -93,14 +93,14 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetPlayerBans_OK() {
 			var res = await steamAppsQuerier.GetPlayerBans(WEBAPI_KEY, STEAMID);
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res != null);
 		}
 
 		[Fact]
 		public async Task GetPlayerBans_OK_Array() {
 			var res = await steamAppsQuerier.GetPlayerBans(WEBAPI_KEY, new ulong[] { STEAMID });
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res != null);
 		}
 
 		[Fact]
@@ -114,14 +114,14 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetPlayerSummaries_OK() {
 			var res = await steamAppsQuerier.GetPlayerSummaries(WEBAPI_KEY, STEAMID);
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res.Count > 0);
 		}
 
 		[Fact]
 		public async Task GetPlayerSummaries_OK_Array() {
 			var res = await steamAppsQuerier.GetPlayerSummaries(WEBAPI_KEY, new ulong[] { STEAMID });
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res.Count > 0);
 		}
 
 		[Fact]
@@ -135,7 +135,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetPublisherAppOwnership_OK() {
 			var res = await steamAppsQuerier.GetPublisherAppOwnership(PUBLISHER_KEY, STEAMID);
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res.Count > 0);
 		}
 
 		[Fact]
@@ -149,7 +149,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetPublisherAppOwnershipChanges_OK() {
 			var res = await steamAppsQuerier.GetPublisherAppOwnershipChanges(PUBLISHER_KEY, 0, 0);
 
-			Assert.True(res.steamids.Count >= 0);
+			Assert.True(res.steamids.Count > 0);
 		}
 
 		[Fact]
@@ -163,7 +163,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetUserGroupList() {
 			var res = await steamAppsQuerier.GetUserGroupList(PUBLISHER_KEY, STEAMID);
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res.Count > 0);
 		}
 
 		[Fact]

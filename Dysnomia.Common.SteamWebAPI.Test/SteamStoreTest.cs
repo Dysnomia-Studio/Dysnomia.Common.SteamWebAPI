@@ -6,8 +6,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 	public class SteamStoreTest : BaseTestClass {
 		protected readonly ISteamStore steamStore;
 
-		public SteamStoreTest() {
-			this.steamStore = new SteamStore();
+		public SteamStoreTest(ISteamStore steamStore) {
+			this.steamStore = steamStore;
 		}
 
 		[Fact]

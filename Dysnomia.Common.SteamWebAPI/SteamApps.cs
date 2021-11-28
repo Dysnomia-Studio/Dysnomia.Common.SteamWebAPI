@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Dysnomia.Common.SteamWebAPI.Models;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-
-using Dysnomia.Common.SteamWebAPI.Models;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	/// <summary>
@@ -12,6 +12,9 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// https://partner.steamgames.com/doc/webapi/ISteamApps
 	/// </summary>
 	public class SteamApps : SteamWebAPIQuerier, ISteamApps {
+		public SteamApps(IHttpClientFactory clientFactory) : base(clientFactory) {
+		}
+
 		/// <summary>
 		/// Gets all of the beta branches for the specified application.
 		/// </summary>
@@ -78,23 +81,19 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="reportidmin">minimum report id</param>
 		/// <returns></returns>
 		public async Task<string> GetCheatingReports(string key, uint appid, uint timebegin, uint timeend, bool includereports, bool includebans, ulong? reportidmin = null) {
-			using (HttpClient httpClient = new HttpClient()) {
-				// TODO: re-test later to format this method as the other ones. When I tried, I got an internal server error :/
+			// TODO: re-test later to format this method as the other ones. When I tried, I got an internal server error :/
 
-				string reportidminStr = "";
-				if (reportidmin != null) {
-					reportidminStr = "&reportidmin=" + reportidmin;
-				}
-
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"{0}/ISteamApps/GetCheatingReports/v1/?key={1}&appid={2}&timebegin={3}&timeend={4}&includereports={5}&includebans={6}{7}",
-						API_URL, key, appid, timebegin, timeend, includereports, includebans, reportidminStr
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
+			string reportidminStr = "";
+			if (reportidmin != null) {
+				reportidminStr = "&reportidmin=" + reportidmin;
 			}
+
+			return await this.GetString(
+				string.Format(
+					"{0}/ISteamApps/GetCheatingReports/v1/?key={1}&appid={2}&timebegin={3}&timeend={4}&includereports={5}&includebans={6}{7}",
+					API_URL, key, appid, timebegin, timeend, includereports, includebans, reportidminStr
+				)
+			);
 		}
 
 
@@ -208,18 +207,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="description">Optional description for this build</param>
 		/// <returns></returns>
 		public async Task<string> SetAppBuildLive(string key, uint appid, uint buildid, string betakey, string description = "") {
-			using (HttpClient httpClient = new HttpClient()) {
-
-				var response = await httpClient.PostAsync(
-					string.Format(
-						"{0}/ISteamApps/SetAppBuildLive/v1/?key={1}&=appid{2}&buildid={3}&betakey={4}&description={5}",
-						API_URL, key, appid, buildid, betakey, description
-					),
-					new StringContent("")
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+			return await this.PostString(
+				string.Format(
+					"{0}/ISteamApps/SetAppBuildLive/v1/?key={1}&=appid{2}&buildid={3}&betakey={4}&description={5}",
+					API_URL, key, appid, buildid, betakey, description
+				),
+				new StringContent("")
+			);
 		}
 
 		/// <summary>
@@ -229,17 +223,12 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="version">The installed version of the game</param>
 		/// <returns></returns>
 		public async Task<string> UpToDateCheck(uint appid, uint version) {
-			using (HttpClient httpClient = new HttpClient()) {
-
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"{0}/ISteamApps/UpToDateCheck/v1/?appid={1}&version={2}",
-						API_URL, appid, version
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+			return await this.GetString(
+				string.Format(
+					"{0}/ISteamApps/UpToDateCheck/v1/?appid={1}&version={2}",
+					API_URL, appid, version
+				)
+			);
 		}
 	}
 }

@@ -596,7 +596,19 @@
             Used to access Steam leaderboards.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})" -->
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})">
+            <summary>
+            Get entries for a specific app leaderboard
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">appid of game</param>
+            <param name="leaderboardid">SteamID used for friend and around user requests</param>
+            <param name="datarequest">type of request: RequestGlobal, RequestAroundUser, RequestFriends</param>
+            <param name="rangestart">range start or 0</param>
+            <param name="rangeend">range end or max LB entries</param>
+            <param name="steamid">SteamID used for friend and around user requests</param>
+            <returns></returns>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)">
             <summary>
             Returns leaderboard list for a specific app id
@@ -1185,7 +1197,19 @@
             Used to access Steam leaderboards.
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})" -->
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})">
+            <summary>
+            Get entries for a specific app leaderboard
+            </summary>
+            <param name="key">Steamworks Web API publisher authentication key.</param>
+            <param name="appid">appid of game</param>
+            <param name="leaderboardid">SteamID used for friend and around user requests</param>
+            <param name="datarequest">type of request: RequestGlobal, RequestAroundUser, RequestFriends</param>
+            <param name="rangestart">range start or 0</param>
+            <param name="rangeend">range end or max LB entries</param>
+            <param name="steamid">SteamID used for friend and around user requests</param>
+            <returns></returns>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)">
             <summary>
             Returns leaderboard list for a specific app id
@@ -1553,7 +1577,7 @@
             <param name="values">Dictionnary listing "Stat name" => "Value"</param>
             <returns></returns>
         </member>
-        <member name="F:Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE">
+        <member name="P:Dysnomia.Common.SteamWebAPI.SteamWebAPIQuerier.PROD_MODE">
             <summary>
             Set that value to true to directly call API at https://partner.steam-api.com/ instead of https://api.steampowered.com/
             This means we will not call API through Akamai cache server.

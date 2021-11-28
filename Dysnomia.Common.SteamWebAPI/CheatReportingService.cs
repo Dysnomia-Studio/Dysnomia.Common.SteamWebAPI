@@ -11,6 +11,9 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// https://partner.steamgames.com/doc/webapi/ICheatReportingService
 	/// </summary>
 	public class CheatReportingService : SteamWebAPIQuerier, ICheatReportingService {
+		public CheatReportingService(IHttpClientFactory clientFactory) : base(clientFactory) {
+		}
+
 		/// <summary>
 		/// ReportPlayerCheating is designed to gather community reports of cheating, where one player reports another player within the game.
 		///
@@ -32,62 +35,58 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="severity">(Optional) Level of severity of bad action being reported. Scale set by developer.</param>
 		/// <returns></returns>
 		public async Task<string> ReportPlayerCheating(string key, ulong steamid, uint appid, ulong? steamidreporter, ulong? appdata, bool? heuristic, bool? detection, bool? playerreport, bool? noreportid, uint? gamemode, uint? suspicionstarttime, uint? severity) {
-			using (HttpClient httpClient = new HttpClient()) {
-				string steamidreporterStr = "";
-				if (steamidreporter != null) {
-					steamidreporterStr = "&reportidmin=" + steamidreporter;
-				}
-
-				string appdataStr = "";
-				if (appdata != null) {
-					appdataStr = "&appdata=" + appdata;
-				}
-
-				string heuristicStr = "";
-				if (heuristic != null) {
-					heuristicStr = "&heuristic=" + heuristic;
-				}
-
-				string detectionStr = "";
-				if (detection != null) {
-					detectionStr = "&detection=" + detection;
-				}
-
-				string playerreportStr = "";
-				if (playerreport != null) {
-					playerreportStr = "&playerreport=" + playerreport;
-				}
-
-				string noreportidStr = "";
-				if (noreportid != null) {
-					noreportidStr = "&noreportid=" + noreportid;
-				}
-
-				string gamemodeStr = "";
-				if (gamemode != null) {
-					gamemodeStr = "&gamemode=" + gamemode;
-				}
-
-				string suspicionstarttimeStr = "";
-				if (suspicionstarttime != null) {
-					suspicionstarttimeStr = "&suspicionstarttime=" + suspicionstarttime;
-				}
-
-				string severityStr = "";
-				if (severity != null) {
-					severityStr = "&severity=" + severity;
-				}
-
-				var response = await httpClient.PostAsync(
-					string.Format(
-						"{0}/ICheatReportingService/ReportPlayerCheating/v1/?key={1}&=steamid{2}&appid={3}{4}{5}{6}{7}{8}{9}{10}{11}{12}",
-						API_URL, key, steamid, appid, steamidreporterStr, appdataStr, heuristicStr, detectionStr, playerreportStr, noreportidStr, gamemodeStr, suspicionstarttimeStr, severityStr
-					),
-					new StringContent("")
-				);
-
-				return await response.Content.ReadAsStringAsync();
+			string steamidreporterStr = "";
+			if (steamidreporter != null) {
+				steamidreporterStr = "&reportidmin=" + steamidreporter;
 			}
+
+			string appdataStr = "";
+			if (appdata != null) {
+				appdataStr = "&appdata=" + appdata;
+			}
+
+			string heuristicStr = "";
+			if (heuristic != null) {
+				heuristicStr = "&heuristic=" + heuristic;
+			}
+
+			string detectionStr = "";
+			if (detection != null) {
+				detectionStr = "&detection=" + detection;
+			}
+
+			string playerreportStr = "";
+			if (playerreport != null) {
+				playerreportStr = "&playerreport=" + playerreport;
+			}
+
+			string noreportidStr = "";
+			if (noreportid != null) {
+				noreportidStr = "&noreportid=" + noreportid;
+			}
+
+			string gamemodeStr = "";
+			if (gamemode != null) {
+				gamemodeStr = "&gamemode=" + gamemode;
+			}
+
+			string suspicionstarttimeStr = "";
+			if (suspicionstarttime != null) {
+				suspicionstarttimeStr = "&suspicionstarttime=" + suspicionstarttime;
+			}
+
+			string severityStr = "";
+			if (severity != null) {
+				severityStr = "&severity=" + severity;
+			}
+
+			return await this.PostString(
+				string.Format(
+					"{0}/ICheatReportingService/ReportPlayerCheating/v1/?key={1}&=steamid{2}&appid={3}{4}{5}{6}{7}{8}{9}{10}{11}{12}",
+					API_URL, key, steamid, appid, steamidreporterStr, appdataStr, heuristicStr, detectionStr, playerreportStr, noreportidStr, gamemodeStr, suspicionstarttimeStr, severityStr
+				),
+				new StringContent("")
+			);
 		}
 
 		/// <summary>
@@ -120,42 +119,38 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="flags">Additional information about the ban request. (Unused)</param>
 		/// <returns></returns>
 		public async Task<string> RequestPlayerGameBan(string key, ulong steamid, uint appid, ulong? reportid, string cheatDescription, uint? duration, bool? delayban, uint? flags) {
-			using (HttpClient httpClient = new HttpClient()) {
-				string reportidStr = "";
-				if (reportid != null) {
-					reportidStr = "&reportid=" + reportid;
-				}
-
-				string cheatDescriptionStr = "";
-				if (cheatDescription != null) {
-					cheatDescriptionStr = "&cheatDescription=" + cheatDescription;
-				}
-
-				string durationStr = "";
-				if (duration != null) {
-					durationStr = "&duration=" + duration;
-				}
-
-				string delaybanStr = "";
-				if (delayban != null) {
-					delaybanStr = "&delayban=" + delayban;
-				}
-
-				string flagsStr = "";
-				if (flags != null) {
-					flagsStr = "&flags=" + flags;
-				}
-
-				var response = await httpClient.PostAsync(
-					string.Format(
-						"{0}/ICheatReportingService/RequestPlayerGameBan/v1/?key={1}&=steamid{2}&appid={3}{4}{5}{6}{7}{8}",
-						API_URL, key, steamid, appid, reportidStr, cheatDescriptionStr, durationStr, delaybanStr, flagsStr
-					),
-					new StringContent("")
-				);
-
-				return await response.Content.ReadAsStringAsync();
+			string reportidStr = "";
+			if (reportid != null) {
+				reportidStr = "&reportid=" + reportid;
 			}
+
+			string cheatDescriptionStr = "";
+			if (cheatDescription != null) {
+				cheatDescriptionStr = "&cheatDescription=" + cheatDescription;
+			}
+
+			string durationStr = "";
+			if (duration != null) {
+				durationStr = "&duration=" + duration;
+			}
+
+			string delaybanStr = "";
+			if (delayban != null) {
+				delaybanStr = "&delayban=" + delayban;
+			}
+
+			string flagsStr = "";
+			if (flags != null) {
+				flagsStr = "&flags=" + flags;
+			}
+
+			return await this.PostString(
+				string.Format(
+					"{0}/ICheatReportingService/RequestPlayerGameBan/v1/?key={1}&=steamid{2}&appid={3}{4}{5}{6}{7}{8}",
+					API_URL, key, steamid, appid, reportidStr, cheatDescriptionStr, durationStr, delaybanStr, flagsStr
+				),
+				new StringContent("")
+			);
 		}
 
 		/// <summary>
@@ -181,17 +176,13 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The appid of the game.</param>
 		/// <returns></returns>
 		public async Task<string> RemovePlayerGameBan(string key, ulong steamid, uint appid) {
-			using (HttpClient httpClient = new HttpClient()) {
-				var response = await httpClient.PostAsync(
-					string.Format(
-						"{0}/ICheatReportingService/RemovePlayerGameBan/v1/?key={1}&=steamid{2}&appid={3}",
-						API_URL, key, steamid, appid
-					),
-					new StringContent("")
-				);
-
-				return await response.Content.ReadAsStringAsync();
-			}
+			return await this.PostString(
+				string.Format(
+					"{0}/ICheatReportingService/RemovePlayerGameBan/v1/?key={1}&=steamid{2}&appid={3}",
+					API_URL, key, steamid, appid
+				),
+				new StringContent("")
+			);
 		}
 
 		/// <summary>
@@ -209,31 +200,27 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="steamid">(Optional) Query just for this Steam ID.</param>
 		/// <returns></returns>
 		public async Task<string> GetCheatingReports(string key, uint appid, uint timeend, uint timebegin, ulong reportidadmin, bool? includereports, bool? includebans, ulong? steamid) {
-			using (HttpClient httpClient = new HttpClient()) {
-				string includereportsStr = "";
-				if (includereports != null) {
-					includereportsStr = "&includereports=" + includereports;
-				}
-
-				string includebansStr = "";
-				if (includebans != null) {
-					includebansStr = "&includebans=" + includebans;
-				}
-
-				string steamidStr = "";
-				if (steamid != null) {
-					steamidStr = "&steamid=" + steamid;
-				}
-
-				var response = await httpClient.GetAsync(
-					string.Format(
-						"{0}/ICheatReportingService/GetCheatingReports/v1/?key={1}{2}&appid={3}&timeend={4}&timebegin={5}&reportidadmin={6}{7}{8}",
-						API_URL, key, steamidStr, appid, timeend, timebegin, reportidadmin, includereportsStr, includebansStr
-					)
-				);
-
-				return await response.Content.ReadAsStringAsync();
+			string includereportsStr = "";
+			if (includereports != null) {
+				includereportsStr = "&includereports=" + includereports;
 			}
+
+			string includebansStr = "";
+			if (includebans != null) {
+				includebansStr = "&includebans=" + includebans;
+			}
+
+			string steamidStr = "";
+			if (steamid != null) {
+				steamidStr = "&steamid=" + steamid;
+			}
+
+			return await this.GetString(
+				string.Format(
+					"{0}/ICheatReportingService/GetCheatingReports/v1/?key={1}{2}&appid={3}&timeend={4}&timebegin={5}&reportidadmin={6}{7}{8}",
+					API_URL, key, steamidStr, appid, timeend, timebegin, reportidadmin, includereportsStr, includebansStr
+				)
+			);
 		}
 
 		// TODO: implement ReportCheatData

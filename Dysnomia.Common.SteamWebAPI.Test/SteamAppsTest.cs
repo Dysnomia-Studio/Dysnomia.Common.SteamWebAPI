@@ -1,17 +1,17 @@
+using Dysnomia.Common.WebAPIWrapper.Exceptions;
+
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-
-using Dysnomia.Common.WebAPIWrapper.Exceptions;
 
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
 	public class SteamAppsTest : BaseTestClass {
-		protected readonly SteamApps steamAppsQuerier;
+		protected readonly ISteamApps steamAppsQuerier;
 
-		public SteamAppsTest() {
-			this.steamAppsQuerier = new SteamApps();
+		public SteamAppsTest(ISteamApps steamAppsQuerier) {
+			this.steamAppsQuerier = steamAppsQuerier;
 		}
 
 		[Fact]
@@ -109,14 +109,14 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetPartnerAppListForWebAPIKey_OK_NoFilter() {
 			var res = (await steamAppsQuerier.GetPartnerAppListForWebAPIKey(PUBLISHER_KEY)).ToList();
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res.Count > 0);
 		}
 
 		[Fact]
 		public async Task GetPartnerAppListForWebAPIKey_OK_ValidFilter() {
 			var res = (await steamAppsQuerier.GetPartnerAppListForWebAPIKey(PUBLISHER_KEY, "demo")).ToList();
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res.Count > 0);
 		}
 
 		[Fact]
@@ -137,7 +137,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetPlayersBanned_OK() {
 			var res = await steamAppsQuerier.GetPlayersBanned(PUBLISHER_KEY, PUBLISHER_APPID);
 
-			Assert.True(res.accounts.Count >= 0);
+			Assert.True(res != null);
+			Assert.True(res.accounts != null);
 		}
 
 		[Fact]
@@ -177,7 +178,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetServersAtAddress() {
 			var res = await steamAppsQuerier.GetServersAtAddress("146.66.152.1"); // 146.66.152.0/24 are EU West CSGO server located in Luxembourg
 
-			Assert.True(res.Count >= 0);
+			Assert.True(res != null);
 		}
 
 

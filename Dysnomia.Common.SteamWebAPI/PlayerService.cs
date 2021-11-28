@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Dysnomia.Common.SteamWebAPI.Models;
 
-using Dysnomia.Common.SteamWebAPI.Models;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	public class PlayerService : SteamWebAPIQuerier, IPlayerService {
+		public PlayerService(IHttpClientFactory clientFactory) : base(clientFactory) {
+		}
+
 		/// <summary>
 		/// Gets information about a player's recently played games
 		/// </summary>

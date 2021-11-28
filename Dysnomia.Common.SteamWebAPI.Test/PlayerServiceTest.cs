@@ -1,29 +1,29 @@
-﻿using System.Threading.Tasks;
+﻿using Dysnomia.Common.WebAPIWrapper.Exceptions;
 
-using Dysnomia.Common.WebAPIWrapper.Exceptions;
+using System.Threading.Tasks;
 
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
 	public class PlayerServiceTest : BaseTestClass {
-		protected readonly PlayerService playerServiceQuerier;
+		protected readonly IPlayerService playerServiceQuerier;
 
-		public PlayerServiceTest() {
-			this.playerServiceQuerier = new PlayerService();
+		public PlayerServiceTest(IPlayerService playerServiceQuerier) {
+			this.playerServiceQuerier = playerServiceQuerier;
 		}
 
 		[Fact]
 		public async Task GetRecentlyPlayedGames_OK_NOLIMIT() {
 			var res = await playerServiceQuerier.GetRecentlyPlayedGames(WEBAPI_KEY, STEAMID, 0);
 
-			Assert.True(res.Count >= 0, res.Count.ToString());
+			Assert.True(res != null);
 		}
 
 		[Fact]
 		public async Task GetRecentlyPlayedGames_OK_5LIMIT() {
 			var res = await playerServiceQuerier.GetRecentlyPlayedGames(WEBAPI_KEY, STEAMID, 5);
 
-			Assert.True(res.Count >= 0, res.Count.ToString());
+			Assert.True(res != null);
 			Assert.True(res.Count <= 5, res.Count.ToString());
 		}
 
@@ -115,7 +115,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task IsPlayingSharedGame_OK() {
 			var res = await playerServiceQuerier.IsPlayingSharedGame(WEBAPI_KEY, STEAMID, TF2_APPID);
 
-			Assert.Equal(res, "0");
+			Assert.Equal("0", res);
 		}
 
 		[Fact]

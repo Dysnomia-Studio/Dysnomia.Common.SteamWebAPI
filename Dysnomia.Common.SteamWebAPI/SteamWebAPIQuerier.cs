@@ -1,5 +1,7 @@
 ﻿using Dysnomia.Common.WebAPIWrapper;
 
+using System.Net.Http;
+
 namespace Dysnomia.Common.SteamWebAPI {
 	public class SteamWebAPIQuerier : WebAPIQuerier {
 		/// <summary>
@@ -8,11 +10,11 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// WARNING: if you recieve multiple error returned by https://partner.steam-api.com/ your IP might be banned by the firewall for a while.
 		/// See https://partner.steamgames.com/doc/webapi_overview#addresses for more informations
 		/// </summary>
-		public static bool PROD_MODE = false;
+		public static bool PROD_MODE { get; set; } = false;
 
 		protected readonly string API_URL;
 
-		protected SteamWebAPIQuerier() {
+		public SteamWebAPIQuerier(IHttpClientFactory clientFactory) : base(clientFactory) {
 			if (PROD_MODE) {
 				API_URL = "https://partner.steam-api.com";
 			} else {

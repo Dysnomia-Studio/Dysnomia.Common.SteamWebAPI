@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Dysnomia.Common.SteamWebAPI.Models;
 
-using Dysnomia.Common.SteamWebAPI.Models;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SteamWebAPI {
 	/// <summary>
@@ -11,6 +12,9 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// https://partner.steamgames.com/doc/webapi/ISteamUser
 	/// </summary>
 	public class SteamUser : SteamWebAPIQuerier, ISteamUser {
+		public SteamUser(IHttpClientFactory clientFactory) : base(clientFactory) {
+		}
+
 		/// <summary>
 		/// Checks if the specified user owns the app.
 		/// </summary>

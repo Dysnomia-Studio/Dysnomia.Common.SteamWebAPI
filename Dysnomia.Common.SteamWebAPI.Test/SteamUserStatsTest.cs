@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Dysnomia.Common.WebAPIWrapper.Exceptions;
 
-using Dysnomia.Common.WebAPIWrapper.Exceptions;
+using System;
+using System.Threading.Tasks;
 
 using Xunit;
 
@@ -9,8 +9,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 	public class SteamUserStatsTest : BaseTestClass {
 		protected readonly ISteamUserStats steamUserStats;
 
-		public SteamUserStatsTest() {
-			this.steamUserStats = new SteamUserStats();
+		public SteamUserStatsTest(ISteamUserStats steamUserStats) {
+			this.steamUserStats = steamUserStats;
 		}
 
 		[Fact]
@@ -64,7 +64,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetPlayerAchievements_OK() {
 			var res = await steamUserStats.GetPlayerAchievements(WEBAPI_KEY, STEAMID, TF2_APPID);
 
-			Assert.True(res.achievements.Count >= 0, res.ToString());
+			Assert.True(res.achievements.Count > 0, res.ToString());
 			Assert.True(res.achievements[0].apiname != null);
 			Assert.True(res.achievements[0].description == null);
 		}
@@ -73,7 +73,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetPlayerAchievements_OK_Lang() {
 			var res = await steamUserStats.GetPlayerAchievements(WEBAPI_KEY, STEAMID, TF2_APPID, "french");
 
-			Assert.True(res.achievements.Count >= 0, res.ToString());
+			Assert.True(res.achievements.Count > 0, res.ToString());
 			Assert.True(res.achievements[0].apiname != null);
 			Assert.True(res.achievements[0].description != null);
 		}
@@ -89,8 +89,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetSchemaForGame_OK() {
 			var res = await steamUserStats.GetSchemaForGame(WEBAPI_KEY, TF2_APPID);
 
-			Assert.True(res.availableGameStats.achievements.Count >= 0);
-			Assert.True(res.availableGameStats.stats.Count >= 0);
+			Assert.True(res.availableGameStats.achievements.Count > 0);
+			Assert.True(res.availableGameStats.stats.Count > 0);
 			Assert.True(res.availableGameStats.achievements[0].description != null);
 			Assert.True(res.availableGameStats.stats[0].displayName != null);
 		}
@@ -99,8 +99,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetSchemaForGame_OK_Lang() {
 			var res = await steamUserStats.GetSchemaForGame(WEBAPI_KEY, TF2_APPID, "french");
 
-			Assert.True(res.availableGameStats.achievements.Count >= 0);
-			Assert.True(res.availableGameStats.stats.Count >= 0);
+			Assert.True(res.availableGameStats.achievements.Count > 0);
+			Assert.True(res.availableGameStats.stats.Count > 0);
 			Assert.True(res.availableGameStats.achievements[0].description != null);
 			Assert.True(res.availableGameStats.stats[0].displayName != null);
 		}
@@ -116,7 +116,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetUserStatsForGame_OK() {
 			var res = await steamUserStats.GetUserStatsForGame(WEBAPI_KEY, STEAMID, TF2_APPID);
 
-			Assert.True(res.achievements.Count >= 0, res.ToString());
+			Assert.True(res.achievements.Count > 0, res.ToString());
 			Assert.True(res.achievements[0].name != null);
 		}
 

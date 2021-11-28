@@ -4,10 +4,10 @@ using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
 	public class SteamCommunityProfileTest : BaseTestClass {
-		protected readonly SteamCommunityProfile steamCommunityProfile;
+		protected readonly ISteamCommunityProfile steamCommunityProfile;
 
-		public SteamCommunityProfileTest() {
-			this.steamCommunityProfile = new SteamCommunityProfile();
+		public SteamCommunityProfileTest(ISteamCommunityProfile steamCommunityProfile) {
+			this.steamCommunityProfile = steamCommunityProfile;
 		}
 
 		[Fact]
