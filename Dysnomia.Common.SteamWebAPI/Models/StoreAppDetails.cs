@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
+﻿using Dysnomia.Common.WebAPIWrapper.Helpers;
 
-using Dysnomia.Common.WebAPIWrapper.Helpers;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Dysnomia.Common.SteamWebAPI.Models {
 	public class StoreAppDetailsPriceOverview {
@@ -99,11 +99,11 @@ namespace Dysnomia.Common.SteamWebAPI.Models {
 		public string selection_text { get; set; }
 		public string save_text { get; set; }
 		/// <summary>
+		/// Old rules:
 		/// 0 - list subs as seperate purchase blocks.
 		/// 1 - list subs in a dropdown box, contained within a single purchase block for the package group
 		/// </summary>
-		[JsonConverter(typeof(StringToNumberConverter<int>))] // Steam can return a string here ... 
-		public int display_type { get; set; }
+		public string display_type { get; set; }
 		[JsonConverter(typeof(StringToBooleanConverter))] // Steam can return boolean string version here ...
 		public bool is_recurring_subscription { get; set; }
 		public StoreAppDetailsPricePackageGroupSubscription[] subs { get; set; }
