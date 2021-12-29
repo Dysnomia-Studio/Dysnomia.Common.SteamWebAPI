@@ -3254,5 +3254,7 @@ Dysnomia.Common.SteamWebAPI.Models
 
 ##### Summary
 
+Old rules:
 0 - list subs as seperate purchase blocks.
 1 - list subs in a dropdown box, contained within a single purchase block for the package group
+default - ???

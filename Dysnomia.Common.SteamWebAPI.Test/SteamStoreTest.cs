@@ -74,5 +74,10 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 		public async Task GetAppDetails_Extortion_Demo() {
 			await steamStore.GetAppDetails("1355540");
 		}
+
+		[Fact]
+		public async Task GetAppDetails_EYE() { // This one has a weird display_type, we add this test to prevent non-compatibility of future modifications
+			await steamStore.GetAppDetails("314260");
+		}
 	}
 }

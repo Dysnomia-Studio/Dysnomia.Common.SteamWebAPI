@@ -988,8 +988,10 @@
         </member>
         <member name="P:Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup.display_type">
             <summary>
+            Old rules:
             0 - list subs as seperate purchase blocks.
             1 - list subs in a dropdown box, contained within a single purchase block for the package group
+            default - ???
             </summary>
         </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.PlayerService.GetRecentlyPlayedGames(System.String,System.UInt64,System.UInt32)">

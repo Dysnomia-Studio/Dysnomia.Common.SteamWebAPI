@@ -102,7 +102,9 @@ namespace Dysnomia.Common.SteamWebAPI.Models {
 		/// Old rules:
 		/// 0 - list subs as seperate purchase blocks.
 		/// 1 - list subs in a dropdown box, contained within a single purchase block for the package group
+		/// default - ???
 		/// </summary>
+		[JsonConverter(typeof(WhateverToStringConverter))] // Steam can return a string representing an number, or a number, or even a string like "default" here ... 
 		public string display_type { get; set; }
 		[JsonConverter(typeof(StringToBooleanConverter))] // Steam can return boolean string version here ...
 		public bool is_recurring_subscription { get; set; }
