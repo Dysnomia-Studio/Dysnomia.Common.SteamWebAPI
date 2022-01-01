@@ -93,12 +93,12 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 			Assert.True(res.Count > 0);
 		}
 
-		[Fact]
+		[Fact(Skip = "Currently getting Internal Server Error")]
 		public async Task GetCheatingReports_OK() {
 			await steamAppsQuerier.GetCheatingReports(PUBLISHER_KEY, PUBLISHER_APPID, new DateTime(2020, 01, 01), DateTime.Now, true, true);
 		}
 
-		[Fact(Skip = "Currently getting Internal Server Error")]
+		[Fact]
 		public async Task GetCheatingReports_NOK_KEY() {
 			await Assert.ThrowsAsync<ForbiddenException>(async () => {
 				await steamAppsQuerier.GetCheatingReports(PUBLISHER_INVALID_KEY, PUBLISHER_APPID, new DateTime(2020, 01, 01), DateTime.Now, true, true);
