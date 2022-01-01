@@ -1,11 +1,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
 
+ARG DRONE_BRANCH
+ARG PUBLISHER_KEY
 ARG SONAR_HOST
 ARG SONAR_TOKEN
-ARG PUBLISHER_KEY
-ARG WEBAPI_KEY
 ARG STEAMID
+ARG WEBAPI_KEY
 
 # Install sonarScanner
 RUN dotnet tool install --global dotnet-sonarscanner
@@ -24,10 +25,10 @@ RUN apt-get install -y nodejs
 COPY . ./
 
 RUN jq ".PUBLISHER_KEY = \"$PUBLISHER_KEY\"" Dysnomia.Common.SteamWebAPI.Test/appsettings.json > tmp.appsettings.json && mv tmp.appsettings.json Dysnomia.Common.SteamWebAPI.Test/appsettings.json
-RUN jq ".WEBAPI_KEY = \"$WEBAPI_KEY\"" Dysnomia.Common.SteamWebAPI.Test/appsettings.json > tmp.appsettings.json && mv tmp.appsettings.json Dysnomia.Common.SteamWebAPI.Test/appsettings.json
 RUN jq ".STEAMID = \"$STEAMID\"" Dysnomia.Common.SteamWebAPI.Test/appsettings.json > tmp.appsettings.json && mv tmp.appsettings.json Dysnomia.Common.SteamWebAPI.Test/appsettings.json
+RUN jq ".WEBAPI_KEY = \"$WEBAPI_KEY\"" Dysnomia.Common.SteamWebAPI.Test/appsettings.json > tmp.appsettings.json && mv tmp.appsettings.json Dysnomia.Common.SteamWebAPI.Test/appsettings.json
 
-RUN dotnet sonarscanner begin /k:"dysnomia-common-steamwebapi" /d:sonar.host.url="$SONAR_HOST" /d:sonar.login="$SONAR_TOKEN" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs"
+RUN dotnet sonarscanner begin /k:"dysnomia-common-steamwebapi" /d:sonar.host.url="$SONAR_HOST" /d:sonar.login="$SONAR_TOKEN" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs" /d:sonar.branch.name="$DRONE_BRANCH"
 RUN dotnet restore Dysnomia.Common.SteamWebAPI.sln --ignore-failed-sources /p:EnableDefaultItems=false
 RUN dotnet build Dysnomia.Common.SteamWebAPI.sln /m:1 --no-restore -c Release -o out
 RUN dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover

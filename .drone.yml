@@ -23,29 +23,30 @@ steps:
   settings:
     repo: dysnomia/dysnomia-common-steamwebapi
     dockerfile: Dockerfile
-    tags: ${DRONE_BRANCH}
+    tags: ${DRONE_BRANCH//\//-}
     dry_run: true
     pull-image: false
   environment:
     PLUGIN_PULL_IMAGE: false
+    DRONE_BRANCH: ${DRONE_BRANCH}
+    PUBLISHER_KEY: 
+      from_secret: PUBLISHER_KEY
     SONAR_HOST: 
       from_secret: SONAR_HOST
     SONAR_TOKEN: 
       from_secret: SONAR_TOKEN
-    PUBLISHER_KEY: 
-      from_secret: PUBLISHER_KEY
-    WEBAPI_KEY: 
-      from_secret: WEBAPI_KEY
     STEAMID: 
       from_secret: STEAMID
+    WEBAPI_KEY: 
+      from_secret: WEBAPI_KEY
   settings:
     build_args_from_env:
+      - DRONE_BRANCH
+      - PUBLISHER_KEY
       - SONAR_HOST
       - SONAR_TOKEN
-      - PUBLISHER_KEY
-      - WEBAPI_KEY
       - STEAMID
-
+      - WEBAPI_KEY
   when:
     event:
     - push
