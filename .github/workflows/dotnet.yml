@@ -22,4 +22,9 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
+      env:
+        PUBLISHER_KEY: ${{ secrets.PUBLISHER_KEY }}
+        STEAMID: ${{ secrets.STEAMID }}
+        STEAMPROFILE: ${{ secrets.STEAMPROFILE }}
+        WEBAPI_KEY: ${{ secrets.WEBAPI_KEY }}
       run: dotnet test --no-build --verbosity normal
