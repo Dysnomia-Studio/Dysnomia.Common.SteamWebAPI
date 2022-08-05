@@ -3,10 +3,10 @@
 namespace Dysnomia.Common.SteamWebAPI.Test {
 	public abstract class BaseTestClass {
 		protected const string PUBLISHER_INVALID_KEY = "INVALID";
-		protected string PUBLISHER_KEY = "";
+		protected string PUBLISHER_KEY;
 
 		protected const string WEBAPI_INVALID_KEY = "INVALID";
-		protected string WEBAPI_KEY = "";
+		protected string WEBAPI_KEY;
 
 		protected const uint PUBLISHER_APPID = 1299430; // appId of Extortion
 		protected const uint TF2_APPID = 440;
@@ -21,6 +21,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
 		public BaseTestClass() {
 			var config = new ConfigurationBuilder()
+				.AddEnvironmentVariables()
 				.AddUserSecrets<BaseTestClass>(optional: true)
 				.AddJsonFile("appsettings.json")
 				.Build();
