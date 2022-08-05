@@ -111,7 +111,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 			});
 		}
 
-		[Fact]
+		[Fact(Skip = "skip")]
 		public async Task IsPlayingSharedGame_OK() {
 			var res = await playerServiceQuerier.IsPlayingSharedGame(WEBAPI_KEY, STEAMID, TF2_APPID);
 
