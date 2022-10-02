@@ -6,6 +6,14 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  SONAR_KEY: dysnomia-common-steamwebapi
+  SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  CSPROJ: Dysnomia.Common.SteamWebAPI/Dysnomia.Common.SteamWebAPI.csproj
+  NUGET_SERVER_ADRESS: https://api.nuget.org/v3/index.json
+  NUGET_SERVER_KEY: ${{ secrets.NUGET_ORG_KEY }}
+
 jobs:
   build:
 
@@ -17,14 +25,34 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
+    - name: Setup sonarscanner
+      run: |
+        dotnet tool install --global dotnet-sonarscanner
+        sudo apt-get update
+        sudo mkdir -p /usr/share/man/man1
+        sudo apt install openjdk-11-jdk jq -y
+
+    - name: Start sonarscanner
+      run: dotnet sonarscanner begin /k:"${{ env.SONAR_KEY }}" /d:sonar.host.url="${{ env.SONAR_HOST_URL }}" /d:sonar.login="${{ env.SONAR_TOKEN }}" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs" /d:sonar.branch.name="${{github.ref_name}}"
+
+    - name: Set Version in csproj
+      if: startsWith(github.event.ref, 'refs/tags/')
+      run: sed -i 's/>1.0.0</>${{github.ref_name}}</g' ${{ env.CSPROJ }}
+
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      env:
-        PUBLISHER_KEY: ${{ secrets.PUBLISHER_KEY }}
-        STEAMID: ${{ secrets.STEAMID }}
-        STEAMPROFILE: ${{ secrets.STEAMPROFILE }}
-        WEBAPI_KEY: ${{ secrets.WEBAPI_KEY }}
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+
+    - name: End sonarscanner
+      run: dotnet sonarscanner end /d:sonar.login="${{ env.SONAR_TOKEN }}"
+
+    - name: Pack
+      run: dotnet pack -c Release -o out 
+    - name: Push
+      if: startsWith(github.event.ref, 'refs/tags/')
+      run: dotnet nuget push -s ${{ env.NUGET_SERVER_ADRESS }} -k ${{ env.NUGET_SERVER_KEY }} $(ls out/*.nupkg | head -1)
+
+
