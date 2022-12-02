@@ -18,7 +18,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		public async Task<SteamCommunityProfileModel> GetProfile(string id) {
 			var str = await this.GetString(
 				string.Format(
-					"https://steamcommunity.com/id/{0}/games?tab=all&xml=1",
+					"https://steamcommunity.com/profiles/{0}/games?tab=all&xml=1",
 					id
 				)
 			);

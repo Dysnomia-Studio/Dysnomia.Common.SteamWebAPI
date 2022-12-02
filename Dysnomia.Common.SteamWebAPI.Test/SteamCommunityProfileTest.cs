@@ -12,7 +12,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
 		[Fact]
 		public async Task GetProfile_OK() {
-			var res = await steamCommunityProfile.GetProfile(STEAMPROFILE);
+			var res = await steamCommunityProfile.GetProfile(STEAMID.ToString());
 
 			Assert.True(res != null);
 		}
