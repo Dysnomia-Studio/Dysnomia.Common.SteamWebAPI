@@ -34,7 +34,7 @@ jobs:
         sudo apt install openjdk-11-jdk jq -y
 
     - name: Start sonarscanner
-      run: dotnet sonarscanner begin /k:"${{ env.SONAR_KEY }}" /d:sonar.host.url="${{ env.SONAR_HOST_URL }}" /d:sonar.login="${{ env.SONAR_TOKEN }}" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs" /d:sonar.branch.name="${{github.ref_name}}"
+      run: dotnet sonarscanner begin /k:"${{ env.SONAR_KEY }}" /d:sonar.host.url="${{ env.SONAR_HOST_URL }}" /d:sonar.login="${{ env.SONAR_TOKEN }}" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml /d:sonar.coverage.exclusions="**Test*.cs" /d:sonar.branch.name="${{github.ref_name}}"
 
     - name: Set Version in csproj
       if: startsWith(github.event.ref, 'refs/tags/')
@@ -50,7 +50,9 @@ jobs:
         STEAMID: ${{ secrets.STEAMID }}
         STEAMPROFILE: ${{ secrets.STEAMPROFILE }}
         WEBAPI_KEY: ${{ secrets.WEBAPI_KEY }}
-      run: dotnet test --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+      run: |
+        dotnet tool install --global dotnet-coverage
+        dotnet-coverage collect 'dotnet test --no-build --verbosity normal' -f xml  -o 'coverage.xml'
 
     - name: End sonarscanner
       run: dotnet sonarscanner end /d:sonar.login="${{ env.SONAR_TOKEN }}"
@@ -60,5 +62,3 @@ jobs:
     - name: Push
       if: startsWith(github.event.ref, 'refs/tags/')
       run: dotnet nuget push -s ${{ env.NUGET_SERVER_ADRESS }} -k ${{ env.NUGET_SERVER_KEY }} $(ls out/*.nupkg | head -1)
-
-
