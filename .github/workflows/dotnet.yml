@@ -58,7 +58,7 @@ jobs:
       run: dotnet sonarscanner end /d:sonar.login="${{ env.SONAR_TOKEN }}"
 
     - name: Pack
-      run: dotnet pack -c Release -o out 
+      run: dotnet pack ${{ env.CSPROJ }} -c Release -o out 
     - name: Push
       if: startsWith(github.event.ref, 'refs/tags/')
       run: dotnet nuget push -s ${{ env.NUGET_SERVER_ADRESS }} -k ${{ env.NUGET_SERVER_KEY }} $(ls out/*.nupkg | head -1)
