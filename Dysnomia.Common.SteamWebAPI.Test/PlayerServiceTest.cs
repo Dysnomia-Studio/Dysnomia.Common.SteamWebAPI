@@ -36,7 +36,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
 		[Fact]
 		public async Task GetRecentlyPlayedGames_NOK_STEAMID() {
-			await Assert.ThrowsAsync<InternalServerErrorException>(async () => {
+			await Assert.ThrowsAsync<BadRequestException>(async () => {
 				await playerServiceQuerier.GetRecentlyPlayedGames(WEBAPI_KEY, INVALID_STEAMID, 5);
 			});
 		}
@@ -111,11 +111,11 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 			});
 		}
 
-		[Fact(Skip = "skip")]
+		[Fact]
 		public async Task IsPlayingSharedGame_OK() {
 			var res = await playerServiceQuerier.IsPlayingSharedGame(WEBAPI_KEY, STEAMID, TF2_APPID);
 
-			Assert.Equal("0", res);
+			Assert.Null(res);
 		}
 
 		[Fact]
