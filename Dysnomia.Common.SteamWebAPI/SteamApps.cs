@@ -22,7 +22,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The App ID to get the betas of.</param>
 		/// <returns></returns>
 		public async Task<Dictionary<string, AppBetasBranch>> GetAppBetas(string key, uint appid) {
-			return (await this.Get<SteamAPIResponse<AppBetas>>(
+			return (await this.GetAsync<SteamAPIResponse<AppBetas>>(
 				string.Format(
 					"{0}/ISteamApps/GetAppBetas/v1/?key={1}&appid={2}",
 					API_URL, key, appid
@@ -38,7 +38,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="count">The number of builds to retrieve, the default is 10.</param>
 		/// <returns></returns>
 		public async Task<Dictionary<string, AppBuild>> GetAppBuilds(string key, uint appid, uint count = 10) {
-			return (await this.Get<SteamAPIResponse<AppBuilds>>(
+			return (await this.GetAsync<SteamAPIResponse<AppBuilds>>(
 				string.Format(
 					"{0}/ISteamApps/GetAppBuilds/v1/?key={1}&appid={2}&count={3}",
 					API_URL, key, appid, count
@@ -53,7 +53,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The App ID to get the depot versions for.</param>
 		/// <returns></returns>
 		public async Task<Dictionary<string, object>> GetAppDepotVersions(string key, uint appid) {
-			return (await this.Get<SteamAPIResponse<AppDepotVersions>>(
+			return (await this.GetAsync<SteamAPIResponse<AppDepotVersions>>(
 				string.Format(
 					"{0}/ISteamApps/GetAppDepotVersions/v1/?key={1}&appid={2}",
 					API_URL, key, appid
@@ -66,7 +66,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// </summary>
 		/// <returns></returns>
 		public async Task<IList<AppListItem>> GetAppList() {
-			return (await this.Get<AppListRoot>(API_URL + "/ISteamApps/GetAppList/v2/")).applist.apps;
+			return (await this.GetAsync<AppListRoot>(API_URL + "/ISteamApps/GetAppList/v2/")).applist.apps;
 		}
 
 		/// <summary>
@@ -88,7 +88,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				reportidminStr = "&reportidmin=" + reportidmin;
 			}
 
-			return await this.GetString(
+			return await this.GetStringAsync(
 				string.Format(
 					"{0}/ISteamApps/GetCheatingReports/v1/?key={1}&appid={2}&timebegin={3}&timeend={4}&includereports={5}&includebans={6}{7}",
 					API_URL, key, appid, timebegin, timeend, includereports, includebans, reportidminStr
@@ -120,7 +120,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="type_filter">Optional comma separated list of types to filter on</param>
 		/// <returns></returns>
 		public async Task<IEnumerable<PartnerAppListAppItem>> GetPartnerAppListForWebAPIKey(string key, string type_filter = "") {
-			return (await this.Get<PartnerAppListRoot>(
+			return (await this.GetAsync<PartnerAppListRoot>(
 				string.Format(
 					"{0}/ISteamApps/GetPartnerAppListForWebAPIKey/v1/?key={1}&type_filter={2}",
 					API_URL, key, type_filter
@@ -135,7 +135,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">AppID of game</param>
 		/// <returns></returns>
 		public async Task<PlayersBanned> GetPlayersBanned(string key, uint appid) {
-			return (await this.Get<PlayersBanned>(
+			return (await this.GetAsync<PlayersBanned>(
 				string.Format(
 					"{0}/ISteamApps/GetPlayersBanned/v1/?key={1}&appid={2}",
 					API_URL, key, appid
@@ -161,7 +161,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				limitStr = "&limit=" + limit;
 			}
 
-			return (await this.Get<ServerList>(
+			return (await this.GetAsync<ServerList>(
 				string.Format(
 					"{0}/ISteamApps/GetServerList/v1/?key={1}{2}{3}",
 					API_URL, key, filterStr, limitStr
@@ -175,7 +175,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">AppID of game</param>
 		/// <returns></returns>
 		public async Task<SDRConfig> GetSDRConfig(uint appid) {
-			return (await this.Get<SDRConfig>(
+			return (await this.GetAsync<SDRConfig>(
 				string.Format(
 					"{0}/ISteamApps/GetSDRConfig/v1/?appid={1}",
 					API_URL, appid
@@ -189,7 +189,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="addr">IP or IP:queryport to list</param>
 		/// <returns></returns>
 		public async Task<IList<SteamServersAtAddressItem>> GetServersAtAddress(string addr) {
-			return (await this.Get<SteamAPIResponse<SteamServersAtAddress>>(
+			return (await this.GetAsync<SteamAPIResponse<SteamServersAtAddress>>(
 				string.Format(
 					"{0}/ISteamApps/GetServersAtAddress/v1/?addr={1}",
 					API_URL, addr
@@ -207,7 +207,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="description">Optional description for this build</param>
 		/// <returns></returns>
 		public async Task<string> SetAppBuildLive(string key, uint appid, uint buildid, string betakey, string description = "") {
-			return await this.PostString(
+			return await this.PostStringAsync(
 				string.Format(
 					"{0}/ISteamApps/SetAppBuildLive/v1/?key={1}&=appid{2}&buildid={3}&betakey={4}&description={5}",
 					API_URL, key, appid, buildid, betakey, description
@@ -223,7 +223,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="version">The installed version of the game</param>
 		/// <returns></returns>
 		public async Task<string> UpToDateCheck(uint appid, uint version) {
-			return await this.GetString(
+			return await this.GetStringAsync(
 				string.Format(
 					"{0}/ISteamApps/UpToDateCheck/v1/?appid={1}&version={2}",
 					API_URL, appid, version

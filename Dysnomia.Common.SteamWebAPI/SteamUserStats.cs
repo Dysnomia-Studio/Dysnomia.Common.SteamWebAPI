@@ -20,7 +20,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="gameid">GameID to retrieve the achievement percentages for</param>
 		/// <returns></returns>
 		public async Task<IList<GlobalAchievementPercentages>> GetGlobalAchievementPercentagesForApp(ulong gameid) {
-			return (await this.Get<GlobalAchievementPercentagesRoot>(
+			return (await this.GetAsync<GlobalAchievementPercentagesRoot>(
 				string.Format(
 					"{0}/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={1}",
 					API_URL, gameid
@@ -52,7 +52,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				enddateStr = "&enddate=" + enddate.ToString();
 			}
 
-			return (await this.Get<SteamAPIResponse<GlobalStats>>(
+			return (await this.GetAsync<SteamAPIResponse<GlobalStats>>(
 				string.Format(
 					"{0}/ISteamUserStats/GetGlobalStatsForGame/v0001/?format=json&appid={1}{2}{3}{4}",
 					API_URL, appid, namesStr, startdateStr, enddateStr
@@ -80,7 +80,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">AppID that we're getting user count for</param>
 		/// <returns></returns>
 		public async Task<ulong> GetNumberOfCurrentPlayers(uint appid) {
-			return (await this.Get<SteamAPIResponse<NumberOfCurrentPlayers>>(
+			return (await this.GetAsync<SteamAPIResponse<NumberOfCurrentPlayers>>(
 				string.Format(
 					"{0}/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid={1}",
 					API_URL, appid
@@ -102,7 +102,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				lStr = "&l=" + l;
 			}
 
-			return (await this.Get<PlayerAchievementsRoot>(
+			return (await this.GetAsync<PlayerAchievementsRoot>(
 				string.Format(
 					"{0}/ISteamUserStats/GetPlayerAchievements/v1/?key={1}&steamid={2}&appid={3}{4}",
 					API_URL, key, steamid, appid, lStr
@@ -123,7 +123,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				lStr = "&l=" + l;
 			}
 
-			return (await this.Get<SchemaForGameRoot>(
+			return (await this.GetAsync<SchemaForGameRoot>(
 				string.Format(
 					"{0}/ISteamUserStats/GetSchemaForGame/v2/?key={1}&appid={2}{3}",
 					API_URL, key, appid, lStr
@@ -139,7 +139,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">appid of game</param>
 		/// <returns></returns>
 		public async Task<UserStatsForGame> GetUserStatsForGame(string key, ulong steamid, uint appid) {
-			return (await this.Get<UserStatsForGameRoot>(
+			return (await this.GetAsync<UserStatsForGameRoot>(
 				string.Format(
 					"{0}/ISteamUserStats/GetUserStatsForGame/v2/?key={1}&steamid={2}&appid={3}",
 					API_URL, key, steamid, appid
@@ -164,7 +164,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				i++;
 			}
 
-			return await this.PostString(
+			return await this.PostStringAsync(
 				string.Format(
 					"{0}/ISteamUserStats/SetUserStatsForGame/v1/?key={1}&=steamid{2}&appid={3}{4}",
 					API_URL, key, steamid, appid, valuesStr

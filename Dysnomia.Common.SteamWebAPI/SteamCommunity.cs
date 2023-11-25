@@ -32,7 +32,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				gidStr = "&gid=" + gid;
 			}
 
-			return await this.PostString(
+			return await this.PostStringAsync(
 				string.Format(
 					"{0}/ISteamCommunity/ReportAbuse/v1/?key={1}&steamidActor={2}&steamidTarget={3}&appid={4}&abuseType={5}&contentType={6}&description={7}{8}",
 					API_URL, key, steamidActor, steamidTarget, appid, abuseType, contentType, description, gidStr

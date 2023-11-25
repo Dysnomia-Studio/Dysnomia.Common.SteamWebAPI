@@ -13,7 +13,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		}
 
 		public async Task<Dictionary<string, StoreAppDetailsPriceOverview>> GetAppPrices(string[] appids) {
-			return await this.Get<Dictionary<string, StoreAppDetailsPriceOverview>>("https://store.steampowered.com/api/appdetails/?filters=price_overview&appids=" + string.Join(",", appids));
+			return await this.GetAsync<Dictionary<string, StoreAppDetailsPriceOverview>>("https://store.steampowered.com/api/appdetails/?filters=price_overview&appids=" + string.Join(",", appids));
 		}
 
 		public async Task<StoreAppDetailsRoot> GetAppDetails(string appid) {
@@ -35,7 +35,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				linux_requirements
 			*/
 
-			return (await this.Get<Dictionary<string, StoreAppDetailsRoot>>("https://store.steampowered.com/api/appdetails/?&appids=" + appid))[appid];
+			return (await this.GetAsync<Dictionary<string, StoreAppDetailsRoot>>("https://store.steampowered.com/api/appdetails/?&appids=" + appid))[appid];
 
 		}
 	}

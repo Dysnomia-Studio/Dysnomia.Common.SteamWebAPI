@@ -23,7 +23,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">AppID to check for ownership</param>
 		/// <returns></returns>
 		public async Task<AppOwnership> CheckAppOwnership(string key, ulong steamid, uint appid) {
-			return (await this.Get<AppOwershipRoot>(
+			return (await this.GetAsync<AppOwershipRoot>(
 				string.Format(
 					"{0}/ISteamUser/CheckAppOwnership/v2/?key={1}&steamid={2}&appid={3}",
 					API_URL, key, steamid, appid
@@ -32,7 +32,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		}
 
 		private async Task<IDictionary<string, AppPriceInfo>> GetAppPriceInfo(string key, ulong steamid, string appids) {
-			return (await this.Get<AppPriceInfoRoot>(
+			return (await this.GetAsync<AppPriceInfoRoot>(
 				string.Format(
 					"{0}/ISteamUser/GetAppPriceInfo/v1/?key={1}&steamid={2}&appids={3}",
 					API_URL, key, steamid, appids
@@ -71,7 +71,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="rowversion">An unsigned 64-bit value used to page through deleted accounts. Pass 0 when calling this API for the first time, then pass the value returned from the previous call for each additional request. This value will need to be stored on your server for future calls.</param>
 		/// <returns></returns>
 		public async Task<DeletedSteamIDsResponse> GetDeletedSteamIDs(string key, uint rowversion) {
-			return (await this.Get<SteamAPIResponse<DeletedSteamIDsResponse>>(
+			return (await this.GetAsync<SteamAPIResponse<DeletedSteamIDsResponse>>(
 				string.Format(
 					"{0}/ISteamUser/GetDeletedSteamIDs/v1/?key={1}&rowversion={2}",
 					API_URL, key, rowversion
@@ -87,7 +87,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="relationship">relationship type (ex: friend)</param>
 		/// <returns></returns>
 		public async Task<IList<Friend>> GetFriendList(string key, ulong steamid, string relationship = "friend") {
-			return (await this.Get<FriendListRoot>(
+			return (await this.GetAsync<FriendListRoot>(
 				string.Format(
 					"{0}/ISteamUser/GetFriendList/v1/?key={1}&steamid={2}&relationship={3}",
 					API_URL, key, steamid, relationship
@@ -96,7 +96,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		}
 
 		private async Task<IList<PlayerBan>> GetPlayerBans(string key, string steamids) {
-			return (await this.Get<PlayerBansRoot>(
+			return (await this.GetAsync<PlayerBansRoot>(
 				string.Format(
 					"{0}/ISteamUser/GetPlayerBans/v1/?key={1}&steamids={2}",
 					API_URL, key, steamids
@@ -125,7 +125,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		}
 
 		private async Task<IList<PlayerSummary>> GetPlayerSummaries(string key, string steamids) {
-			return (await this.Get<SteamAPIResponse<PlayerSummaryRoot>>(
+			return (await this.GetAsync<SteamAPIResponse<PlayerSummaryRoot>>(
 				string.Format(
 					"{0}/ISteamUser/GetPlayerSummaries/v1/?key={1}&steamids={2}",
 					API_URL, key, steamids
@@ -160,7 +160,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="steamid">SteamID of user</param>
 		/// <returns></returns>
 		public async Task<IList<PublisherAppOwnership>> GetPublisherAppOwnership(string key, ulong steamid) {
-			return (await this.Get<PublisherAppOwnershipRoot>(
+			return (await this.GetAsync<PublisherAppOwnershipRoot>(
 				string.Format(
 					"{0}/ISteamUser/GetPublisherAppOwnership/v3/?key={1}&steamid={2}",
 					API_URL, key, steamid
@@ -184,7 +184,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="cdkeyrowversion">The unsigned 64-bit row version to read CD Key changes from. The row version of data read up to will be returned for use in future calls.</param>
 		/// <returns></returns>
 		public async Task<AppOwnershipChanges> GetPublisherAppOwnershipChanges(string key, ulong packagerowversion, ulong cdkeyrowversion) {
-			return (await this.Get<AppOwnershipChangesRoot>(
+			return (await this.GetAsync<AppOwnershipChangesRoot>(
 				string.Format(
 					"{0}/ISteamUser/GetPublisherAppOwnershipChanges/v1/?key={1}&packagerowversion={2}&cdkeyrowversion={3}",
 					API_URL, key, packagerowversion, cdkeyrowversion
@@ -199,7 +199,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="steamid">SteamID of user</param>
 		/// <returns></returns>
 		public async Task<IList<Group>> GetUserGroupList(string key, ulong steamid) {
-			return (await this.Get<SteamAPIResponse<GroupRoot>>(
+			return (await this.GetAsync<SteamAPIResponse<GroupRoot>>(
 				string.Format(
 					"{0}/ISteamUser/GetUserGroupList/v1/?key={1}&steamid={2}",
 					API_URL, key, steamid
@@ -233,7 +233,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				thirdpartyappidStr = "&thirdpartyappid=" + thirdpartyappid;
 			}
 
-			return (await this.PostString(
+			return (await this.PostStringAsync(
 				string.Format(
 					"{0}/ISteamUser/GrantPackage/v2/?key={1}&steamid={2}&packageid={3}{4}{5}{6}",
 					API_URL, key, steamid, packageid, ipaddressStr, thirdpartykeyStr, thirdpartyappidStr
@@ -260,7 +260,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="url_type">The type of vanity URL. 1 (default): Individual profile, 2: Group, 3: Official game group</param>
 		/// <returns></returns>
 		public async Task<ResolveVanityURLResponse> ResolveVanityURL(string key, string vanityurl, uint url_type = 1) {
-			return (await this.Get<SteamAPIResponse<ResolveVanityURLResponse>>(
+			return (await this.GetAsync<SteamAPIResponse<ResolveVanityURLResponse>>(
 				string.Format(
 					"{0}/ISteamUser/ResolveVanityURL/v1/?key={1}&vanityurl={2}&url_type={3}",
 					API_URL, key, vanityurl, url_type
@@ -277,7 +277,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="revokereason">Reason for why to revoke</param>
 		/// <returns></returns>
 		public async Task<string> RevokePackage(string key, ulong steamid, uint packageid, string revokereason) {
-			return (await this.PostString(
+			return (await this.PostStringAsync(
 				string.Format(
 					"{0}/ISteamUser/RevokePackage/v2/?key={1}&steamid={2}&packageid={3}&revokereason={4}",
 					API_URL, key, steamid, packageid, revokereason

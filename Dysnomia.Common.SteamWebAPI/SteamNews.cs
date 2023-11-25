@@ -43,7 +43,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				feedsStr = "&feeds=" + feeds;
 			}
 
-			return (await this.Get<AppNewsRoot>(
+			return (await this.GetAsync<AppNewsRoot>(
 				string.Format(
 					"{0}/ISteamNews/GetNewsForApp/v2/?appid={1}{2}{3}{4}{5}",
 					API_URL, appid, maxLengthStr, enddateStr, countStr, feedsStr
@@ -104,7 +104,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				feedsStr = "&maxlength=" + feeds;
 			}
 
-			return (await this.Get<AppNewsRoot>(
+			return (await this.GetAsync<AppNewsRoot>(
 				string.Format(
 					"{0}/ISteamNews/GetNewsForAppAuthed/v2/?key={1}&appid={2}{3}{4}{5}{6}",
 					API_URL, key, appid, maxLengthStr, enddateStr, countStr, feedsStr

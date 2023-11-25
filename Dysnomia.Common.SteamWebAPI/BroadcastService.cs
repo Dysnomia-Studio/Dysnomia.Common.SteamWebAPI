@@ -20,7 +20,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="frame_data"></param>
 		/// <returns></returns>
 		public async Task<string> PostGameDataFrame(string key, uint appid, ulong steamid, ulong broadcast_id, string frame_data) {
-			return await this.PostString(
+			return await this.PostStringAsync(
 				string.Format(
 					"{0}/IBroadcastService/PostGameDataFrame/v1/?key={1}&appid={2}&steamid={3}&broadcast_id={4}&frame_data={5}",
 					API_URL, key, appid, steamid, broadcast_id, frame_data

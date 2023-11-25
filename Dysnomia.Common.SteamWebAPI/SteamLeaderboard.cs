@@ -30,7 +30,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				steamIdStr = $"&steamid={steamid}";
 			}
 
-			return (await Get<LeaderboardEntryRoot>(
+			return (await GetAsync<LeaderboardEntryRoot>(
 					string.Format(
 						"{0}/ISteamLeaderboards/GetLeaderboardEntries/v1/?key={1}&appid={2}&rangestart={3}&rangeend={4}&leaderboardid={5}&datarequest={6}{7}",
 						API_URL, key, appid, rangestart, rangeend, leaderboardid, datarequest, steamIdStr
@@ -45,7 +45,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">appid of game</param>
 		/// <returns></returns>
 		public async Task<LeaderBoardForGameRoot> GetLeaderboardsForGame(string key, uint appid) {
-			return (await Get<SteamAPIResponse<LeaderBoardForGameRoot>>(
+			return (await GetAsync<SteamAPIResponse<LeaderBoardForGameRoot>>(
 					string.Format(
 						"{0}/ISteamLeaderboards/GetLeaderboardsForGame/v2/?key={1}&appid={2}",
 						API_URL, key, appid
@@ -87,7 +87,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				new KeyValuePair<string, string>("scoremethod", scoremethod),
 			});
 
-			return (await Post<SetLeaderboardScoreResult>(
+			return (await PostAsync<SetLeaderboardScoreResult>(
 				string.Format(
 					"{0}/ISteamLeaderboards/SetLeaderboardScore/v1/",
 					API_URL

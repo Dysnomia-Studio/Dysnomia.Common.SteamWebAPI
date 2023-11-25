@@ -17,7 +17,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="count">The number of games to return (0 = all)</param>
 		/// <returns></returns>
 		public async Task<IList<PlayerAppUsageItem>> GetRecentlyPlayedGames(string key, ulong steamid, uint count) {
-			return (await this.Get<SteamAPIResponse<PlayerAppUsage>>(
+			return (await this.GetAsync<SteamAPIResponse<PlayerAppUsage>>(
 				string.Format(
 					"{0}/IPlayerService/GetRecentlyPlayedGames/v1/?key={1}&steamid={2}&count={3}",
 					API_URL, key, steamid, count
@@ -34,7 +34,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="include_played_free_games">Free games are excluded by default. If this is set, free games the user has played will be returned.</param>
 		/// <returns></returns>
 		public async Task<IList<PlayerAppUsageItem>> GetOwnedGames(string key, ulong steamid, bool include_appinfo, bool include_played_free_games) {
-			return (await this.Get<SteamAPIResponse<PlayerAppUsage>>(
+			return (await this.GetAsync<SteamAPIResponse<PlayerAppUsage>>(
 				string.Format(
 					"{0}/IPlayerService/GetOwnedGames/v1/?key={1}&steamid={2}&include_appinfo={3}&include_played_free_games={4}",
 					API_URL, key, steamid, include_appinfo, include_played_free_games
@@ -49,7 +49,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="steamid">The player we're asking about</param>
 		/// <returns></returns>
 		public async Task<uint> GetSteamLevel(string key, ulong steamid) {
-			return (await this.Get<SteamAPIResponse<PlayerLevel>>(
+			return (await this.GetAsync<SteamAPIResponse<PlayerLevel>>(
 				string.Format(
 					"{0}/IPlayerService/GetSteamLevel/v1/?key={1}&steamid={2}",
 					API_URL, key, steamid
@@ -64,7 +64,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="steamid">The player we're asking about</param>
 		/// <returns></returns>
 		public async Task<IList<Badge>> GetBadges(string key, ulong steamid) {
-			return (await this.Get<SteamAPIResponse<BadgesList>>(
+			return (await this.GetAsync<SteamAPIResponse<BadgesList>>(
 				string.Format(
 					"{0}/IPlayerService/GetBadges/v1/?key={1}&steamid={2}",
 					API_URL, key, steamid
@@ -85,7 +85,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				badgeidStr = "&badgeid=" + badgeid;
 			}
 
-			return (await this.Get<SteamAPIResponse<QuestList>>(
+			return (await this.GetAsync<SteamAPIResponse<QuestList>>(
 				string.Format(
 					"{0}/IPlayerService/GetCommunityBadgeProgress/v1/?key={1}&steamid={2}{3}",
 					API_URL, key, steamid, badgeidStr
@@ -101,7 +101,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid_playing">The game player is currently playing</param>
 		/// <returns></returns>
 		public async Task<string> IsPlayingSharedGame(string key, ulong steamid, uint appid_playing) {
-			return (await this.Get<SteamAPIResponse<SharingGame>>(
+			return (await this.GetAsync<SteamAPIResponse<SharingGame>>(
 				string.Format(
 					"{0}/IPlayerService/IsPlayingSharedGame/v1/?key={1}&steamid={2}&appid_playing={3}",
 					API_URL, key, steamid, appid_playing

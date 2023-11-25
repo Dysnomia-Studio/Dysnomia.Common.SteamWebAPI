@@ -80,7 +80,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				severityStr = "&severity=" + severity;
 			}
 
-			return await this.PostString(
+			return await this.PostStringAsync(
 				string.Format(
 					"{0}/ICheatReportingService/ReportPlayerCheating/v1/?key={1}&=steamid{2}&appid={3}{4}{5}{6}{7}{8}{9}{10}{11}{12}",
 					API_URL, key, steamid, appid, steamidreporterStr, appdataStr, heuristicStr, detectionStr, playerreportStr, noreportidStr, gamemodeStr, suspicionstarttimeStr, severityStr
@@ -144,7 +144,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				flagsStr = "&flags=" + flags;
 			}
 
-			return await this.PostString(
+			return await this.PostStringAsync(
 				string.Format(
 					"{0}/ICheatReportingService/RequestPlayerGameBan/v1/?key={1}&=steamid{2}&appid={3}{4}{5}{6}{7}{8}",
 					API_URL, key, steamid, appid, reportidStr, cheatDescriptionStr, durationStr, delaybanStr, flagsStr
@@ -176,7 +176,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 		/// <param name="appid">The appid of the game.</param>
 		/// <returns></returns>
 		public async Task<string> RemovePlayerGameBan(string key, ulong steamid, uint appid) {
-			return await this.PostString(
+			return await this.PostStringAsync(
 				string.Format(
 					"{0}/ICheatReportingService/RemovePlayerGameBan/v1/?key={1}&=steamid{2}&appid={3}",
 					API_URL, key, steamid, appid
@@ -215,7 +215,7 @@ namespace Dysnomia.Common.SteamWebAPI {
 				steamidStr = "&steamid=" + steamid;
 			}
 
-			return await this.GetString(
+			return await this.GetStringAsync(
 				string.Format(
 					"{0}/ICheatReportingService/GetCheatingReports/v1/?key={1}{2}&appid={3}&timeend={4}&timebegin={5}&reportidadmin={6}{7}{8}",
 					API_URL, key, steamidStr, appid, timeend, timebegin, reportidadmin, includereportsStr, includebansStr
