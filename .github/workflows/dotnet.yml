@@ -34,7 +34,7 @@ jobs:
         sudo apt install openjdk-11-jdk jq -y
 
     - name: Start sonarscanner
-      run: dotnet sonarscanner begin /k:"${{ env.SONAR_KEY }}" /d:sonar.host.url="${{ env.SONAR_HOST_URL }}" /d:sonar.login="${{ env.SONAR_TOKEN }}" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml /d:sonar.coverage.exclusions="**Test*.cs" /d:sonar.branch.name="${{github.ref_name}}"
+      run: dotnet sonarscanner begin /k:"${{ env.SONAR_KEY }}" /d:sonar.host.url="${{ env.SONAR_HOST_URL }}" /d:sonar.token="${{ env.SONAR_TOKEN }}" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml /d:sonar.coverage.exclusions="**Test*.cs" /d:sonar.branch.name="${{github.ref_name}}"
 
     - name: Set Version in csproj
       if: startsWith(github.event.ref, 'refs/tags/')
@@ -55,7 +55,7 @@ jobs:
         dotnet-coverage collect 'dotnet test --no-build --verbosity normal' -f xml  -o 'coverage.xml'
 
     - name: End sonarscanner
-      run: dotnet sonarscanner end /d:sonar.login="${{ env.SONAR_TOKEN }}"
+      run: dotnet sonarscanner end /d:sonar.token="${{ env.SONAR_TOKEN }}"
 
     - name: Pack
       run: dotnet pack ${{ env.CSPROJ }} -c Release -o out 
