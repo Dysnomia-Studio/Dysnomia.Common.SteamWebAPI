@@ -23,15 +23,18 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
     - name: Setup sonarscanner
       run: |
         dotnet tool install --global dotnet-sonarscanner
-        sudo apt-get update
-        sudo mkdir -p /usr/share/man/man1
-        sudo apt install openjdk-11-jdk jq -y
 
     - name: Start sonarscanner
       run: dotnet sonarscanner begin /k:"${{ env.SONAR_KEY }}" /d:sonar.host.url="${{ env.SONAR_HOST_URL }}" /d:sonar.token="${{ env.SONAR_TOKEN }}" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml /d:sonar.coverage.exclusions="**Test*.cs" /d:sonar.branch.name="${{github.ref_name}}"
