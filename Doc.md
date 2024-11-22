@@ -73,6 +73,7 @@
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
 - [ISteamCommunity](#T-Dysnomia-Common-SteamWebAPI-ISteamCommunity 'Dysnomia.Common.SteamWebAPI.ISteamCommunity')
+  - [GetAppGroupMemberListAsync(appId,page)](#M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-GetAppGroupMemberListAsync-System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamCommunity.GetAppGroupMemberListAsync(System.UInt64,System.UInt32)')
   - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
 - [ISteamLeaderboard](#T-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard')
   - [GetLeaderboardEntries(key,appid,leaderboardid,datarequest,rangestart,rangeend,steamid)](#M-Dysnomia-Common-SteamWebAPI-ISteamLeaderboard-GetLeaderboardEntries-System-String,System-UInt32,System-Int32,System-UInt32,System-Int32,System-Int32,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})')
@@ -138,6 +139,7 @@
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
 - [SteamCommunity](#T-Dysnomia-Common-SteamWebAPI-SteamCommunity 'Dysnomia.Common.SteamWebAPI.SteamCommunity')
+  - [GetAppGroupMemberListAsync(appId,page)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-GetAppGroupMemberListAsync-System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.GetAppGroupMemberListAsync(System.UInt64,System.UInt32)')
   - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
 - [SteamCommunityProfile](#T-Dysnomia-Common-SteamWebAPI-SteamCommunityProfile 'Dysnomia.Common.SteamWebAPI.SteamCommunityProfile')
 - [SteamLeaderboard](#T-Dysnomia-Common-SteamWebAPI-SteamLeaderboard 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard')
@@ -189,6 +191,26 @@
   - [type](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails-type 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.type')
 - [StoreAppDetailsPricePackageGroup](#T-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup')
   - [display_type](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup-display_type 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup.display_type')
+- [memberList](#T-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList')
+  - [currentPage](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-currentPage 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.currentPage')
+  - [groupDetails](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-groupDetails 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.groupDetails')
+  - [groupID64](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-groupID64 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.groupID64')
+  - [memberCount](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-memberCount 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.memberCount')
+  - [members](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-members 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.members')
+  - [startingMember](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-startingMember 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.startingMember')
+  - [totalPages](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-totalPages 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.totalPages')
+- [memberListGroupDetails](#T-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails')
+  - [avatarFull](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-avatarFull 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.avatarFull')
+  - [avatarIcon](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-avatarIcon 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.avatarIcon')
+  - [avatarMedium](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-avatarMedium 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.avatarMedium')
+  - [groupName](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-groupName 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.groupName')
+  - [groupURL](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-groupURL 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.groupURL')
+  - [headline](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-headline 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.headline')
+  - [memberCount](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-memberCount 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.memberCount')
+  - [membersInChat](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-membersInChat 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.membersInChat')
+  - [membersInGame](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-membersInGame 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.membersInGame')
+  - [membersOnline](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-membersOnline 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.membersOnline')
+  - [summary](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-summary 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.summary')
 
 <a name='T-Dysnomia-Common-SteamWebAPI-BroadcastService'></a>
 ## BroadcastService `type`
@@ -1193,6 +1215,25 @@ Dysnomia.Common.SteamWebAPI
 
 Provides restricted access to Steam Community features.
 https://partner.steamgames.com/doc/webapi/ISteamCommunity
+and access to https://steamcommunity.com/ APIs
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-GetAppGroupMemberListAsync-System-UInt64,System-UInt32-'></a>
+### GetAppGroupMemberListAsync(appId,page) `method`
+
+##### Summary
+
+Get an app group member list, it can be used to get the follower count of an app for example
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appId | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | AppID to query |
+| page | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Page to query |
 
 <a name='M-Dysnomia-Common-SteamWebAPI-ISteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}-'></a>
 ### ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid) `method`
@@ -2387,6 +2428,25 @@ Dysnomia.Common.SteamWebAPI
 
 Provides restricted access to Steam Community features.
 https://partner.steamgames.com/doc/webapi/ISteamCommunity
+and access to https://steamcommunity.com/ APIs
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamCommunity-GetAppGroupMemberListAsync-System-UInt64,System-UInt32-'></a>
+### GetAppGroupMemberListAsync(appId,page) `method`
+
+##### Summary
+
+Get an app group member list, it can be used to get the follower count of an app for example
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appId | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | AppID to query |
+| page | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Page to query |
 
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}-'></a>
 ### ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid) `method`
@@ -3258,3 +3318,139 @@ Old rules:
 0 - list subs as seperate purchase blocks.
 1 - list subs in a dropdown box, contained within a single purchase block for the package group
 default - ???
+
+<a name='T-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList'></a>
+## memberList `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList
+
+##### Remarks
+
+Root object for memberlist call on SteamCommunity XML api
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-currentPage'></a>
+### currentPage `property`
+
+##### Remarks
+
+Memberlist current page
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-groupDetails'></a>
+### groupDetails `property`
+
+##### Remarks
+
+Group details
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-groupID64'></a>
+### groupID64 `property`
+
+##### Remarks
+
+64 bits id of this steam group
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-memberCount'></a>
+### memberCount `property`
+
+##### Remarks
+
+Group member count
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-members'></a>
+### members `property`
+
+##### Remarks
+
+Member list
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-startingMember'></a>
+### startingMember `property`
+
+##### Remarks
+
+Memberlist starting member counter
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-totalPages'></a>
+### totalPages `property`
+
+##### Remarks
+
+Memberlist page count
+
+<a name='T-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails'></a>
+## memberListGroupDetails `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList
+
+##### Remarks
+
+
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-avatarFull'></a>
+### avatarFull `property`
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-avatarIcon'></a>
+### avatarIcon `property`
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-avatarMedium'></a>
+### avatarMedium `property`
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-groupName'></a>
+### groupName `property`
+
+##### Remarks
+
+Group name
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-groupURL'></a>
+### groupURL `property`
+
+##### Remarks
+
+Group id in URL (can be different from 64 bit id)
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-headline'></a>
+### headline `property`
+
+##### Remarks
+
+Group headline (empty if it's the group containing followers)
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-memberCount'></a>
+### memberCount `property`
+
+##### Remarks
+
+Group member count
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-membersInChat'></a>
+### membersInChat `property`
+
+##### Remarks
+
+How many group members are in the chat
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-membersInGame'></a>
+### membersInGame `property`
+
+##### Remarks
+
+How many group members are in a game
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-membersOnline'></a>
+### membersOnline `property`
+
+##### Remarks
+
+How many group members are online
+
+<a name='P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberListGroupDetails-summary'></a>
+### summary `property`
+
+##### Remarks
+
+Group summary ("No information given" if it's the group containing followers)

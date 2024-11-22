@@ -575,6 +575,7 @@
             <summary>
             Provides restricted access to Steam Community features.
             https://partner.steamgames.com/doc/webapi/ISteamCommunity
+            and access to https://steamcommunity.com/ APIs
             </summary>
         </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.ISteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})">
@@ -589,6 +590,14 @@
             <param name="contentType">Content type code</param>
             <param name="description">Narrative from user</param>
             <param name="gid">GID of related record (depends on content type)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamCommunity.GetAppGroupMemberListAsync(System.UInt64,System.UInt32)">
+            <summary>
+            Get an app group member list, it can be used to get the follower count of an app for example
+            </summary>
+            <param name="appId">AppID to query</param>
+            <param name="page">Page to query</param>
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.ISteamLeaderboard">
@@ -976,6 +985,66 @@
             <param name="values">Dictionnary listing "Stat name" => "Value"</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList">
+            <remarks>Root object for memberlist call on SteamCommunity XML api</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.groupID64">
+            <remarks>64 bits id of this steam group</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.groupDetails">
+            <remarks>Group details</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.memberCount">
+            <remarks>Group member count</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.totalPages">
+            <remarks>Memberlist page count</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.currentPage">
+            <remarks>Memberlist current page</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.startingMember">
+            <remarks>Memberlist starting member counter</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.members">
+            <remarks>Member list</remarks>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails">
+            <remarks/>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.groupName">
+            <remarks>Group name</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.groupURL">
+            <remarks>Group id in URL (can be different from 64 bit id)</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.headline">
+            <remarks>Group headline (empty if it's the group containing followers)</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.summary">
+            <remarks>Group summary ("No information given" if it's the group containing followers)</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.avatarIcon">
+            <remark>Group small avatar</remark>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.avatarMedium">
+            <remark>Group medium avatar</remark>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.avatarFull">
+            <remark>Group large avatar</remark>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.memberCount">
+            <remarks>Group member count</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.membersInChat">
+            <remarks>How many group members are in the chat</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.membersInGame">
+            <remarks>How many group members are in a game</remarks>
+        </member>
+        <member name="P:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberListGroupDetails.membersOnline">
+            <remarks>How many group members are online</remarks>
+        </member>
         <member name="P:Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.type">
             <summary>
             Observed values: "game", "dlc", "demo", "advertising", "mod", "video".
@@ -1173,6 +1242,7 @@
             <summary>
             Provides restricted access to Steam Community features.
             https://partner.steamgames.com/doc/webapi/ISteamCommunity
+            and access to https://steamcommunity.com/ APIs
             </summary>
         </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})">
@@ -1187,6 +1257,14 @@
             <param name="contentType">Content type code (see ECommunityContentType enum)</param>
             <param name="description">Narrative from user</param>
             <param name="gid">GID of related record (depends on content type)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamCommunity.GetAppGroupMemberListAsync(System.UInt64,System.UInt32)">
+            <summary>
+            Get an app group member list, it can be used to get the follower count of an app for example
+            </summary>
+            <param name="appId">AppID to query</param>
+            <param name="page">Page to query</param>
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamCommunityProfile">
