@@ -717,6 +717,55 @@
             <param name="appid">AppID to retrieve news for</param>
             <returns></returns>
         </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.ISteamPartner">
+            <summary>
+            Provide methods to call https://partner.steampowered.com/ APIs
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamPartner.QueryPackageSalesAsCSVStringAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)">
+            <summary>
+            Get package sale data from partner.steampowered.com website as a CSV string
+            </summary>
+            <param name="packageId">Package id to look at (it is DIFFERENT from app id)</param>
+            <param name="packageName">Package name (game or bundle name)</param>
+            <param name="dateStart">Min date for data (included)</param>
+            <param name="dateEnd">Max date for data (included)</param>
+            <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamPartner.QueryPackageSalesAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)">
+            <summary>
+            Get package sale data from partner.steampowered.com website as a list
+            </summary>
+            <param name="packageId">Package id to look at (it is DIFFERENT from app id)</param>
+            <param name="packageName">Package name (game or bundle name)</param>
+            <param name="dateStart">Min date for data (included)</param>
+            <param name="dateEnd">Max date for data (included)</param>
+            <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamPartner.QueryWishlistActionsAsCSVStringAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)">
+            <summary>
+            Get wishlist actions data from partner.steampowered.com website as a CSV string
+            </summary>
+            <param name="appId">App Id</param>
+            <param name="packageName">Package name (game or bundle name)</param>
+            <param name="dateStart">Min date for data (included)</param>
+            <param name="dateEnd">Max date for data (included)</param>
+            <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamPartner.QueryWishlistActionsAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)">
+            <summary>
+            Get package sale data from partner.steampowered.com website as a list
+            </summary>
+            <param name="appId">App Id</param>
+            <param name="packageName">Package name (game or bundle name)</param>
+            <param name="dateStart">Min date for data (included)</param>
+            <param name="dateEnd">Max date for data (included)</param>
+            <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
+            <returns></returns>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.ISteamStore">
             <summary>
             This class is using steam store API (https://store.steampowered.com/api/)
@@ -1387,6 +1436,33 @@
             </summary>
             <param name="key">Steamworks Web API publisher authentication key.</param>
             <param name="appid">AppID to retrieve news for</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.SteamPartner">
+            <summary>
+            Provide methods to call https://partner.steampowered.com/ APIs
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamPartner.QueryPackageSalesAsCSVStringAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)">
+            <summary>
+            Get package sale data from partner.steampowered.com website as a CSV string
+            </summary>
+            <param name="packageId">Package id to look at (it is DIFFERENT from app id)</param>
+            <param name="packageName">Package name (game or bundle name)</param>
+            <param name="dateStart">Min date for data (included)</param>
+            <param name="dateEnd">Max date for data (included)</param>
+            <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamPartner.QueryPackageSalesAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)">
+            <summary>
+            Get package sale data from partner.steampowered.com website as a CSV string
+            </summary>
+            <param name="packageId">Package id to look at (it is DIFFERENT from app id)</param>
+            <param name="packageName">Package name (game or bundle name)</param>
+            <param name="dateStart">Min date for data (included)</param>
+            <param name="dateEnd">Max date for data (included)</param>
+            <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamStore">

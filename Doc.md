@@ -87,6 +87,11 @@
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamNews-GetNewsForAppAuthed-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamNews.GetNewsForAppAuthed(System.String,System.UInt32)')
+- [ISteamPartner](#T-Dysnomia-Common-SteamWebAPI-ISteamPartner 'Dysnomia.Common.SteamWebAPI.ISteamPartner')
+  - [QueryPackageSalesAsCSVStringAsync(packageId,packageName,dateStart,dateEnd,cookie)](#M-Dysnomia-Common-SteamWebAPI-ISteamPartner-QueryPackageSalesAsCSVStringAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamPartner.QueryPackageSalesAsCSVStringAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)')
+  - [QueryPackageSalesAsync(packageId,packageName,dateStart,dateEnd,cookie)](#M-Dysnomia-Common-SteamWebAPI-ISteamPartner-QueryPackageSalesAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamPartner.QueryPackageSalesAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)')
+  - [QueryWishlistActionsAsCSVStringAsync(appId,packageName,dateStart,dateEnd,cookie)](#M-Dysnomia-Common-SteamWebAPI-ISteamPartner-QueryWishlistActionsAsCSVStringAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamPartner.QueryWishlistActionsAsCSVStringAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)')
+  - [QueryWishlistActionsAsync(appId,packageName,dateStart,dateEnd,cookie)](#M-Dysnomia-Common-SteamWebAPI-ISteamPartner-QueryWishlistActionsAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamPartner.QueryWishlistActionsAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)')
 - [ISteamStore](#T-Dysnomia-Common-SteamWebAPI-ISteamStore 'Dysnomia.Common.SteamWebAPI.ISteamStore')
 - [ISteamUser](#T-Dysnomia-Common-SteamWebAPI-ISteamUser 'Dysnomia.Common.SteamWebAPI.ISteamUser')
   - [CheckAppOwnership(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUser.CheckAppOwnership(System.String,System.UInt64,System.UInt32)')
@@ -154,6 +159,9 @@
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32)')
+- [SteamPartner](#T-Dysnomia-Common-SteamWebAPI-SteamPartner 'Dysnomia.Common.SteamWebAPI.SteamPartner')
+  - [QueryPackageSalesAsCSVStringAsync(packageId,packageName,dateStart,dateEnd,cookie)](#M-Dysnomia-Common-SteamWebAPI-SteamPartner-QueryPackageSalesAsCSVStringAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String- 'Dysnomia.Common.SteamWebAPI.SteamPartner.QueryPackageSalesAsCSVStringAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)')
+  - [QueryPackageSalesAsync(packageId,packageName,dateStart,dateEnd,cookie)](#M-Dysnomia-Common-SteamWebAPI-SteamPartner-QueryPackageSalesAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String- 'Dysnomia.Common.SteamWebAPI.SteamPartner.QueryPackageSalesAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)')
 - [SteamStore](#T-Dysnomia-Common-SteamWebAPI-SteamStore 'Dysnomia.Common.SteamWebAPI.SteamStore')
 - [SteamUser](#T-Dysnomia-Common-SteamWebAPI-SteamUser 'Dysnomia.Common.SteamWebAPI.SteamUser')
   - [CheckAppOwnership(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.CheckAppOwnership(System.String,System.UInt64,System.UInt32)')
@@ -1488,6 +1496,101 @@ Get the news for the specified app. Publisher only version that can return info 
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to retrieve news for |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-ISteamPartner'></a>
+## ISteamPartner `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Provide methods to call https://partner.steampowered.com/ APIs
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamPartner-QueryPackageSalesAsCSVStringAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String-'></a>
+### QueryPackageSalesAsCSVStringAsync(packageId,packageName,dateStart,dateEnd,cookie) `method`
+
+##### Summary
+
+Get package sale data from partner.steampowered.com website as a CSV string
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| packageId | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Package id to look at (it is DIFFERENT from app id) |
+| packageName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Package name (game or bundle name) |
+| dateStart | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Min date for data (included) |
+| dateEnd | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Max date for data (included) |
+| cookie | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;" |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamPartner-QueryPackageSalesAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String-'></a>
+### QueryPackageSalesAsync(packageId,packageName,dateStart,dateEnd,cookie) `method`
+
+##### Summary
+
+Get package sale data from partner.steampowered.com website as a list
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| packageId | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Package id to look at (it is DIFFERENT from app id) |
+| packageName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Package name (game or bundle name) |
+| dateStart | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Min date for data (included) |
+| dateEnd | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Max date for data (included) |
+| cookie | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;" |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamPartner-QueryWishlistActionsAsCSVStringAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String-'></a>
+### QueryWishlistActionsAsCSVStringAsync(appId,packageName,dateStart,dateEnd,cookie) `method`
+
+##### Summary
+
+Get wishlist actions data from partner.steampowered.com website as a CSV string
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appId | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | App Id |
+| packageName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Package name (game or bundle name) |
+| dateStart | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Min date for data (included) |
+| dateEnd | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Max date for data (included) |
+| cookie | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;" |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamPartner-QueryWishlistActionsAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String-'></a>
+### QueryWishlistActionsAsync(appId,packageName,dateStart,dateEnd,cookie) `method`
+
+##### Summary
+
+Get package sale data from partner.steampowered.com website as a list
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| appId | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | App Id |
+| packageName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Package name (game or bundle name) |
+| dateStart | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Min date for data (included) |
+| dateEnd | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Max date for data (included) |
+| cookie | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;" |
+
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamStore'></a>
 ## ISteamStore `type`
 
@@ -2711,6 +2814,59 @@ Get the news for the specified app. Publisher only version that can return info 
 | ---- | ---- | ----------- |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | AppID to retrieve news for |
+
+<a name='T-Dysnomia-Common-SteamWebAPI-SteamPartner'></a>
+## SteamPartner `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+Provide methods to call https://partner.steampowered.com/ APIs
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamPartner-QueryPackageSalesAsCSVStringAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String-'></a>
+### QueryPackageSalesAsCSVStringAsync(packageId,packageName,dateStart,dateEnd,cookie) `method`
+
+##### Summary
+
+Get package sale data from partner.steampowered.com website as a CSV string
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| packageId | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Package id to look at (it is DIFFERENT from app id) |
+| packageName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Package name (game or bundle name) |
+| dateStart | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Min date for data (included) |
+| dateEnd | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Max date for data (included) |
+| cookie | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;" |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamPartner-QueryPackageSalesAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String-'></a>
+### QueryPackageSalesAsync(packageId,packageName,dateStart,dateEnd,cookie) `method`
+
+##### Summary
+
+Get package sale data from partner.steampowered.com website as a CSV string
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| packageId | [System.UInt64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt64 'System.UInt64') | Package id to look at (it is DIFFERENT from app id) |
+| packageName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Package name (game or bundle name) |
+| dateStart | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Min date for data (included) |
+| dateEnd | [System.DateOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateOnly 'System.DateOnly') | Max date for data (included) |
+| cookie | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;" |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamStore'></a>
 ## SteamStore `type`
