@@ -14,6 +14,7 @@
 		<FileVersion>1.0.0</FileVersion>
 		<DocumentationFile>Dysnomia.Common.SteamWebAPI.xml</DocumentationFile>
 		<DocumentationMarkdown>..\Doc.md</DocumentationMarkdown>
+		<Configurations>Debug;Release;Local</Configurations>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -26,7 +27,11 @@
 	<ItemGroup>
 		<PackageReference Include="Dysnomia.Common.WebAPIWrapper" Version="1.6.0" />
 		<PackageReference Include="System.Text.Json" Version="9.0.1" />
-		<PackageReference Include="Vsxmd" Version="1.4.5">
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)'=='Local'">
+		<PackageReference Include="Vsxmd">
+			<Version>1.4.5</Version>
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>

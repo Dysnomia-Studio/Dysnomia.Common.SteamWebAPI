@@ -5,6 +5,7 @@
 
 		<IsPackable>false</IsPackable>
 		<UserSecretsId>4506f2e7-eeba-45f7-955a-0cfe9ff5cab7</UserSecretsId>
+		<Configurations>Debug;Release;Local</Configurations>
 	</PropertyGroup>
 
 	<ItemGroup>
