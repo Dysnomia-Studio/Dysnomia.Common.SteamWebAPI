@@ -23,6 +23,7 @@ namespace Dysnomia.Common.SteamWebAPI.Models {
         public string Currency { get; set; }
         public decimal USDGrossSteamSales { get; set; }
         public decimal USDChargebackAndReturns { get; set; }
+        public decimal USDVATTaxes { get; set; }
         public decimal USDNetSteamSales { get; set; }
         public string Tag { get; set; }
 
@@ -48,8 +49,9 @@ namespace Dysnomia.Common.SteamWebAPI.Models {
                 Currency = cells[16],
                 USDGrossSteamSales = decimal.Parse(cells[17], CultureInfo.InvariantCulture),
                 USDChargebackAndReturns = decimal.Parse(cells[18], CultureInfo.InvariantCulture),
-                USDNetSteamSales = decimal.Parse(cells[19], CultureInfo.InvariantCulture),
-                Tag = cells[20],
+                USDVATTaxes = decimal.Parse(cells[19], CultureInfo.InvariantCulture),
+                USDNetSteamSales = decimal.Parse(cells[20], CultureInfo.InvariantCulture),
+                Tag = cells[21],
             };
         }
     }
