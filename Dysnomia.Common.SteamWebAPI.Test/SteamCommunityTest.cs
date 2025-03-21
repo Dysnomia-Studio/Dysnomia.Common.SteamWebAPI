@@ -13,7 +13,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         [Theory]
         [InlineData(1730540, "Alchemistry")]
         [InlineData(1299430, "Extortion")]
-        [InlineData(271590, "Grand Theft Auto V")]
+        [InlineData(271590, "Grand Theft Auto V Legacy")]
         public async Task GetAppGroupMemberListAsync_OK(uint app, string name) {
             var res = await steamCommunity.GetAppGroupMemberListAsync(app);
 
