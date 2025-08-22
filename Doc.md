@@ -112,7 +112,7 @@
   - [RevokePackage(key,steamid,packageid,revokereason)](#M-Dysnomia-Common-SteamWebAPI-ISteamUser-RevokePackage-System-String,System-UInt64,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUser.RevokePackage(System.String,System.UInt64,System.UInt32,System.String)')
 - [ISteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-ISteamUserAuth 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
-  - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
+  - [AuthenticateUserTicket(key,appid,ticket,identity)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String,System.String)')
 - [ISteamUserStats](#T-Dysnomia-Common-SteamWebAPI-ISteamUserStats 'Dysnomia.Common.SteamWebAPI.ISteamUserStats')
   - [GetGlobalAchievementPercentagesForApp(gameid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetGlobalAchievementPercentagesForApp-System-UInt64- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)')
   - [GetGlobalStatsForGame(appid,names,startdate,enddate)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
@@ -181,8 +181,9 @@
   - [ResolveVanityURL(key,vanityurl,url_type)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-ResolveVanityURL-System-String,System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.ResolveVanityURL(System.String,System.String,System.UInt32)')
   - [RevokePackage(key,steamid,packageid,revokereason)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-RevokePackage-System-String,System-UInt64,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUser.RevokePackage(System.String,System.UInt64,System.UInt32,System.String)')
 - [SteamUserAuth](#T-Dysnomia-Common-SteamWebAPI-SteamUserAuth 'Dysnomia.Common.SteamWebAPI.SteamUserAuth')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.#ctor(System.Net.Http.IHttpClientFactory)')
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
-  - [AuthenticateUserTicket(key,appid,ticket)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String)')
+  - [AuthenticateUserTicket(key,appid,ticket,identity)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String,System.String)')
 - [SteamUserStats](#T-Dysnomia-Common-SteamWebAPI-SteamUserStats 'Dysnomia.Common.SteamWebAPI.SteamUserStats')
   - [GetGlobalAchievementPercentagesForApp(gameid)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalAchievementPercentagesForApp-System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)')
   - [GetGlobalStatsForGame(appid,names,startdate,enddate)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
@@ -1958,12 +1959,12 @@ https://partner.steamgames.com/doc/webapi/ISteamUserAuth
 | sessionkey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Should be a 32 byte random blob of data, which is then encrypted with RSA using the Steam system's public key. Randomness is important here for security. |
 | encrypted_loginkey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Should be the users hashed loginkey, AES encrypted with the sessionkey. |
 
-<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String-'></a>
-### AuthenticateUserTicket(key,appid,ticket) `method`
+<a name='M-Dysnomia-Common-SteamWebAPI-ISteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String,System-String-'></a>
+### AuthenticateUserTicket(key,appid,ticket,identity) `method`
 
 ##### Summary
 
-
+Authenticate the user ticket against Valve APIs, used to validate tickets emited from ISteamUser::GetAuthTicketForWebApi() on clientside
 
 ##### Returns
 
@@ -1976,6 +1977,7 @@ The user's 64-bit SteamID if the user's ticket is valid
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
 | ticket | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter. |
+| identity | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Identifying string passed as a parameter to GetAuthTicketForWebApi when the ticket was created, used to identify the entity calling this webapi. If this identity string is passed, only tickets created with that parameter will successfully authenticate. |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-ISteamUserStats'></a>
 ## ISteamUserStats `type`
@@ -3216,6 +3218,18 @@ Dysnomia.Common.SteamWebAPI
 Used to access information about users.
 https://partner.steamgames.com/doc/webapi/ISteamUserAuth
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Used to access information about users.
+https://partner.steamgames.com/doc/webapi/ISteamUserAuth
+
+##### Parameters
+
+This constructor has no parameters.
+
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String-'></a>
 ### AuthenticateUser(steamid,sessionkey,encrypted_loginkey) `method`
 
@@ -3235,12 +3249,12 @@ https://partner.steamgames.com/doc/webapi/ISteamUserAuth
 | sessionkey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Should be a 32 byte random blob of data, which is then encrypted with RSA using the Steam system's public key. Randomness is important here for security. |
 | encrypted_loginkey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Should be the users hashed loginkey, AES encrypted with the sessionkey. |
 
-<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String-'></a>
-### AuthenticateUserTicket(key,appid,ticket) `method`
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String,System-String-'></a>
+### AuthenticateUserTicket(key,appid,ticket,identity) `method`
 
 ##### Summary
 
-
+Authenticate the user ticket against Valve APIs, used to validate tickets emited from ISteamUser::GetAuthTicketForWebApi() on clientside
 
 ##### Returns
 
@@ -3253,6 +3267,7 @@ The user's 64-bit SteamID if the user's ticket is valid
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
 | ticket | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Convert the ticket from GetAuthSessionTicket from binary to hex into an appropriately sized byte character array and pass the result in as this ticket parameter. |
+| identity | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Identifying string passed as a parameter to GetAuthTicketForWebApi when the ticket was created, used to identify the entity calling this webapi. If this identity string is passed, only tickets created with that parameter will successfully authenticate. |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamUserStats'></a>
 ## SteamUserStats `type`
