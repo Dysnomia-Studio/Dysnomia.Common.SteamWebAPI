@@ -1035,6 +1035,29 @@
             <param name="values">Dictionnary listing "Stat name" => "Value"</param>
             <returns></returns>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IStoreService.GetAppList(System.String,System.Nullable{System.UInt32},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt32},System.Nullable{System.UInt32})">
+            <summary>
+            Gets a list of apps available on the Steam Store.
+            </summary>
+            <param name="key">Steamworks Web API authentication key.</param>
+            <param name="if_modified_since">Return only items that have been modified since this date.</param>
+            <param name="have_description_language">Return only items that have a description in this language.</param>
+            <param name="include_games">Include games (defaults to enabled)</param>
+            <param name="include_dlc">Include DLC</param>
+            <param name="include_software">Include software items</param>
+            <param name="include_videos">Include videos and series</param>
+            <param name="include_hardware">Include hardware</param>
+            <param name="last_appId">For continuations, this is the last appid returned from the previous call.</param>
+            <param name="max_results">Number of results to return at a time. Default 10000, max 50000.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.IStoreService.GetAppList(System.String)">
+            <summary>
+            Gets a list of apps available on the Steam Store.
+            </summary>
+            <param name="key">Steamworks Web API authentication key.</param>
+            <returns></returns>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList">
             <remarks>Root object for memberlist call on SteamCommunity XML api</remarks>
         </member>
@@ -1748,6 +1771,33 @@
             WARNING: if you recieve multiple error returned by https://partner.steam-api.com/ your IP might be banned by the firewall for a while.
             See https://partner.steamgames.com/doc/webapi_overview#addresses for more informations
             </summary>
+        </member>
+        <member name="T:Dysnomia.Common.SteamWebAPI.StoreService">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.StoreService.GetAppList(System.String,System.Nullable{System.UInt32},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt32},System.Nullable{System.UInt32})">
+            <summary>
+            Gets a list of apps available on the Steam Store.
+            </summary>
+            <param name="key">Steamworks Web API authentication key.</param>
+            <param name="if_modified_since">Return only items that have been modified since this date.</param>
+            <param name="have_description_language">Return only items that have a description in this language.</param>
+            <param name="include_games">Include games (defaults to enabled)</param>
+            <param name="include_dlc">Include DLC</param>
+            <param name="include_software">Include software items</param>
+            <param name="include_videos">Include videos and series</param>
+            <param name="include_hardware">Include hardware</param>
+            <param name="last_appId">For continuations, this is the last appid returned from the previous call.</param>
+            <param name="max_results">Number of results to return at a time. Default 10000, max 50000.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.StoreService.GetAppList(System.String)">
+            <summary>
+            Gets a list of apps available on the Steam Store.
+            </summary>
+            <param name="key">Steamworks Web API authentication key.</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

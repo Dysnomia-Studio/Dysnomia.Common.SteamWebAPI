@@ -1,4 +1,4 @@
-﻿using Dysnomia.Common.SteamWebAPI.Models;
+using Dysnomia.Common.SteamWebAPI.Models;
 
 using System;
 using System.Collections.Generic;
@@ -7,13 +7,13 @@ using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SteamWebAPI {
-	/// <summary>
-	/// Used to access data about applications on Steam.
-	/// https://partner.steamgames.com/doc/webapi/ISteamApps
-	/// </summary>
-	public class SteamApps : SteamWebAPIQuerier, ISteamApps {
-		public SteamApps(IHttpClientFactory clientFactory) : base(clientFactory) {
-		}
+    /// <summary>
+    /// Used to access data about applications on Steam.
+    /// https://partner.steamgames.com/doc/webapi/ISteamApps
+    /// </summary>
+    public class SteamApps : SteamWebAPIQuerier, ISteamApps {
+        public SteamApps(IHttpClientFactory clientFactory) : base(clientFactory) {
+        }
 
 		/// <summary>
 		/// Gets all of the beta branches for the specified application.
@@ -69,24 +69,24 @@ namespace Dysnomia.Common.SteamWebAPI {
 			return (await this.GetAsync<AppListRoot>(API_URL + "/ISteamApps/GetAppList/v2/")).applist.apps;
 		}
 
-		/// <summary>
-		/// Get a list of cheating reports submitted for this app.
-		/// </summary>
-		/// <param name="key">Steamworks Web API publisher authentication key.</param>
-		/// <param name="appid">AppID of game</param>
-		/// <param name="timebegin">Time range begin</param>
-		/// <param name="timeend">Time range end</param>
-		/// <param name="includereports">include reports that were not bans</param>
-		/// <param name="includebans">include reports that were bans</param>
-		/// <param name="reportidmin">minimum report id</param>
-		/// <returns></returns>
-		public async Task<string> GetCheatingReports(string key, uint appid, uint timebegin, uint timeend, bool includereports, bool includebans, ulong? reportidmin = null) {
-			// TODO: re-test later to format this method as the other ones. When I tried, I got an internal server error :/
+        /// <summary>
+        /// Get a list of cheating reports submitted for this app.
+        /// </summary>
+        /// <param name="key">Steamworks Web API publisher authentication key.</param>
+        /// <param name="appid">AppID of game</param>
+        /// <param name="timebegin">Time range begin</param>
+        /// <param name="timeend">Time range end</param>
+        /// <param name="includereports">include reports that were not bans</param>
+        /// <param name="includebans">include reports that were bans</param>
+        /// <param name="reportidmin">minimum report id</param>
+        /// <returns></returns>
+        public async Task<string> GetCheatingReports(string key, uint appid, uint timebegin, uint timeend, bool includereports, bool includebans, ulong? reportidmin = null) {
+            // TODO: re-test later to format this method as the other ones. When I tried, I got an internal server error :/
 
-			string reportidminStr = "";
-			if (reportidmin != null) {
-				reportidminStr = "&reportidmin=" + reportidmin;
-			}
+            string reportidminStr = "";
+            if (reportidmin != null) {
+                reportidminStr = "&reportidmin=" + reportidmin;
+            }
 
 			return await this.GetStringAsync(
 				string.Format(
@@ -97,20 +97,20 @@ namespace Dysnomia.Common.SteamWebAPI {
 		}
 
 
-		/// <summary>
-		/// Get a list of cheating reports submitted for this app.
-		/// </summary>
-		/// <param name="key">Steamworks Web API publisher authentication key.</param>
-		/// <param name="appid">AppID of game</param>
-		/// <param name="timebegin">Time range begin</param>
-		/// <param name="timeend">Time range end</param>
-		/// <param name="includereports">include reports that were not bans</param>
-		/// <param name="includebans">include reports that were bans</param>
-		/// <param name="reportidmin">minimum report id</param>
-		/// <returns></returns>
-		public async Task<string> GetCheatingReports(string key, uint appid, DateTime timebegin, DateTime timeend, bool includereports, bool includebans, ulong? reportidmin = null) {
-			return await GetCheatingReports(key, appid, (uint)((DateTimeOffset)timebegin).ToUnixTimeSeconds(), (uint)((DateTimeOffset)timeend).ToUnixTimeSeconds(), includereports, includebans, reportidmin);
-		}
+        /// <summary>
+        /// Get a list of cheating reports submitted for this app.
+        /// </summary>
+        /// <param name="key">Steamworks Web API publisher authentication key.</param>
+        /// <param name="appid">AppID of game</param>
+        /// <param name="timebegin">Time range begin</param>
+        /// <param name="timeend">Time range end</param>
+        /// <param name="includereports">include reports that were not bans</param>
+        /// <param name="includebans">include reports that were bans</param>
+        /// <param name="reportidmin">minimum report id</param>
+        /// <returns></returns>
+        public async Task<string> GetCheatingReports(string key, uint appid, DateTime timebegin, DateTime timeend, bool includereports, bool includebans, ulong? reportidmin = null) {
+            return await GetCheatingReports(key, appid, (uint)((DateTimeOffset)timebegin).ToUnixTimeSeconds(), (uint)((DateTimeOffset)timeend).ToUnixTimeSeconds(), includereports, includebans, reportidmin);
+        }
 
 		/// <summary>
 		/// Get a list of appIDs associated with a WebAPI key. Type_filter can used to specify certain app types to be returned.
@@ -143,23 +143,23 @@ namespace Dysnomia.Common.SteamWebAPI {
 			));
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="key">Steamworks Web API publisher authentication key.</param>
-		/// <param name="filter">Query filter string</param>
-		/// <param name="limit">Limit number of servers in the response</param>
-		/// <returns></returns>
-		public async Task<ServerList> GetServerList(string key, string filter = null, uint? limit = null) {
-			string filterStr = "";
-			if (filter != null) {
-				filterStr = "&filter=" + filter;
-			}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key">Steamworks Web API publisher authentication key.</param>
+        /// <param name="filter">Query filter string</param>
+        /// <param name="limit">Limit number of servers in the response</param>
+        /// <returns></returns>
+        public async Task<ServerList> GetServerList(string key, string filter = null, uint? limit = null) {
+            string filterStr = "";
+            if (filter != null) {
+                filterStr = "&filter=" + filter;
+            }
 
-			string limitStr = "";
-			if (limit != null) {
-				limitStr = "&limit=" + limit;
-			}
+            string limitStr = "";
+            if (limit != null) {
+                limitStr = "&limit=" + limit;
+            }
 
 			return (await this.GetAsync<ServerList>(
 				string.Format(

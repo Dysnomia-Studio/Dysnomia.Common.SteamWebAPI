@@ -21,6 +21,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
             services.AddTransient<ISteamUser, SteamUser>();
             services.AddTransient<ISteamUserAuth, SteamUserAuth>();
             services.AddTransient<ISteamUserStats, SteamUserStats>();
+            services.AddTransient<IStoreService, StoreService>();
 
             services.AddHttpClient();
         }

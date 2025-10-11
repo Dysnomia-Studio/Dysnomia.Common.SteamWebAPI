@@ -122,6 +122,9 @@
   - [GetSchemaForGame(key,appid,l)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetSchemaForGame-System-String,System-UInt32,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetSchemaForGame(System.String,System.UInt32,System.String)')
   - [GetUserStatsForGame(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-GetUserStatsForGame-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.GetUserStatsForGame(System.String,System.UInt64,System.UInt32)')
   - [SetUserStatsForGame(key,steamid,appid,values)](#M-Dysnomia-Common-SteamWebAPI-ISteamUserStats-SetUserStatsForGame-System-String,System-UInt64,System-UInt32,System-Collections-Generic-Dictionary{System-String,System-UInt32}- 'Dysnomia.Common.SteamWebAPI.ISteamUserStats.SetUserStatsForGame(System.String,System.UInt64,System.UInt32,System.Collections.Generic.Dictionary{System.String,System.UInt32})')
+- [IStoreService](#T-Dysnomia-Common-SteamWebAPI-IStoreService 'Dysnomia.Common.SteamWebAPI.IStoreService')
+  - [GetAppList(key,if_modified_since,have_description_language,include_games,include_dlc,include_software,include_videos,include_hardware,last_appId,max_results)](#M-Dysnomia-Common-SteamWebAPI-IStoreService-GetAppList-System-String,System-Nullable{System-UInt32},System-String,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.IStoreService.GetAppList(System.String,System.Nullable{System.UInt32},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
+  - [GetAppList(key)](#M-Dysnomia-Common-SteamWebAPI-IStoreService-GetAppList-System-String- 'Dysnomia.Common.SteamWebAPI.IStoreService.GetAppList(System.String)')
 - [PlayerService](#T-Dysnomia-Common-SteamWebAPI-PlayerService 'Dysnomia.Common.SteamWebAPI.PlayerService')
   - [GetBadges(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetBadges-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetBadges(System.String,System.UInt64)')
   - [GetCommunityBadgeProgress(key,steamid,badgeid)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetCommunityBadgeProgress-System-String,System-UInt64,System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetCommunityBadgeProgress(System.String,System.UInt64,System.Nullable{System.UInt32})')
@@ -200,6 +203,9 @@
   - [type](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetails-type 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetails.type')
 - [StoreAppDetailsPricePackageGroup](#T-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup')
   - [display_type](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup-display_type 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup.display_type')
+- [StoreService](#T-Dysnomia-Common-SteamWebAPI-StoreService 'Dysnomia.Common.SteamWebAPI.StoreService')
+  - [GetAppList(key,if_modified_since,have_description_language,include_games,include_dlc,include_software,include_videos,include_hardware,last_appId,max_results)](#M-Dysnomia-Common-SteamWebAPI-StoreService-GetAppList-System-String,System-Nullable{System-UInt32},System-String,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.StoreService.GetAppList(System.String,System.Nullable{System.UInt32},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
+  - [GetAppList(key)](#M-Dysnomia-Common-SteamWebAPI-StoreService-GetAppList-System-String- 'Dysnomia.Common.SteamWebAPI.StoreService.GetAppList(System.String)')
 - [memberList](#T-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList')
   - [currentPage](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-currentPage 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.currentPage')
   - [groupDetails](#P-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList-groupDetails 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList.groupDetails')
@@ -2145,6 +2151,56 @@ Sets a stat for the specified user for the game.
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | appid of game |
 | values | [System.Collections.Generic.Dictionary{System.String,System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.UInt32}') | Dictionnary listing "Stat name" => "Value" |
 
+<a name='T-Dysnomia-Common-SteamWebAPI-IStoreService'></a>
+## IStoreService `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+<a name='M-Dysnomia-Common-SteamWebAPI-IStoreService-GetAppList-System-String,System-Nullable{System-UInt32},System-String,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32}-'></a>
+### GetAppList(key,if_modified_since,have_description_language,include_games,include_dlc,include_software,include_videos,include_hardware,last_appId,max_results) `method`
+
+##### Summary
+
+Gets a list of apps available on the Steam Store.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API authentication key. |
+| if_modified_since | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Return only items that have been modified since this date. |
+| have_description_language | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Return only items that have a description in this language. |
+| include_games | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include games (defaults to enabled) |
+| include_dlc | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include DLC |
+| include_software | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include software items |
+| include_videos | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include videos and series |
+| include_hardware | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include hardware |
+| last_appId | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | For continuations, this is the last appid returned from the previous call. |
+| max_results | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Number of results to return at a time. Default 10000, max 50000. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-IStoreService-GetAppList-System-String-'></a>
+### GetAppList(key) `method`
+
+##### Summary
+
+Gets a list of apps available on the Steam Store.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API authentication key. |
+
 <a name='T-Dysnomia-Common-SteamWebAPI-PlayerService'></a>
 ## PlayerService `type`
 
@@ -3489,6 +3545,60 @@ Old rules:
 0 - list subs as seperate purchase blocks.
 1 - list subs in a dropdown box, contained within a single purchase block for the package group
 default - ???
+
+<a name='T-Dysnomia-Common-SteamWebAPI-StoreService'></a>
+## StoreService `type`
+
+##### Namespace
+
+Dysnomia.Common.SteamWebAPI
+
+##### Summary
+
+
+
+<a name='M-Dysnomia-Common-SteamWebAPI-StoreService-GetAppList-System-String,System-Nullable{System-UInt32},System-String,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32}-'></a>
+### GetAppList(key,if_modified_since,have_description_language,include_games,include_dlc,include_software,include_videos,include_hardware,last_appId,max_results) `method`
+
+##### Summary
+
+Gets a list of apps available on the Steam Store.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API authentication key. |
+| if_modified_since | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Return only items that have been modified since this date. |
+| have_description_language | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Return only items that have a description in this language. |
+| include_games | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include games (defaults to enabled) |
+| include_dlc | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include DLC |
+| include_software | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include software items |
+| include_videos | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include videos and series |
+| include_hardware | [System.Nullable{System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Boolean}') | Include hardware |
+| last_appId | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | For continuations, this is the last appid returned from the previous call. |
+| max_results | [System.Nullable{System.UInt32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.UInt32}') | Number of results to return at a time. Default 10000, max 50000. |
+
+<a name='M-Dysnomia-Common-SteamWebAPI-StoreService-GetAppList-System-String-'></a>
+### GetAppList(key) `method`
+
+##### Summary
+
+Gets a list of apps available on the Steam Store.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API authentication key. |
 
 <a name='T-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList'></a>
 ## memberList `type`
