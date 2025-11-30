@@ -3,18 +3,18 @@
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class SteamCommunityProfileTest : BaseTestClass {
-		protected readonly ISteamCommunityProfile steamCommunityProfile;
+    public class SteamCommunityProfileTest : BaseTestClass {
+        protected readonly ISteamCommunityProfile steamCommunityProfile;
 
-		public SteamCommunityProfileTest(ISteamCommunityProfile steamCommunityProfile) {
-			this.steamCommunityProfile = steamCommunityProfile;
-		}
+        public SteamCommunityProfileTest(ISteamCommunityProfile steamCommunityProfile) {
+            this.steamCommunityProfile = steamCommunityProfile;
+        }
 
-		[Fact]
-		public async Task GetProfile_OK() {
-			var res = await steamCommunityProfile.GetProfile(STEAMID.ToString());
+        [Fact(Skip = "Invalid server response")]
+        public async Task GetProfile_OK() {
+            var res = await steamCommunityProfile.GetProfile(STEAMID.ToString());
 
-			Assert.True(res != null);
-		}
-	}
+            Assert.True(res != null);
+        }
+    }
 }
