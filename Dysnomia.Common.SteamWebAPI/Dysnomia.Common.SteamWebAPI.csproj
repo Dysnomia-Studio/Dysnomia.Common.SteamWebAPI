@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
 		<Authors>Axel "Elanis" Soupé</Authors>
 		<Company>Dysnomia</Company>
 		<Description>A C# library to easily get data from Steam Web API</Description>
@@ -25,13 +25,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Dysnomia.Common.WebAPIWrapper" Version="1.7.0" />
-		<PackageReference Include="System.Text.Json" Version="9.0.1" />
+		<PackageReference Include="Dysnomia.Common.WebAPIWrapper" Version="1.8.0" />
+		<PackageReference Include="System.Text.Json" Version="10.0.0" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Local'">
 		<PackageReference Include="Vsxmd">
-			<Version>1.4.5</Version>
+			<Version>1.4.6</Version>
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
