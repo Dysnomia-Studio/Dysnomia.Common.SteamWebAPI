@@ -83,13 +83,6 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         }
 
         [Fact(Skip = "Invalid server response")]
-        public async Task GetAppList() {
-            var res = await steamAppsQuerier.GetAppList();
-
-            Assert.True(res.Count > 0);
-        }
-
-        [Fact(Skip = "Invalid server response")]
         public async Task GetCheatingReports_OK() {
             await steamAppsQuerier.GetCheatingReports(PUBLISHER_KEY, PUBLISHER_APPID, new DateTime(2020, 01, 01), DateTime.Now, true, true);
         }

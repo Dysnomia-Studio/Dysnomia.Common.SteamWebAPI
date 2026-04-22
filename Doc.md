@@ -4,8 +4,10 @@
 ## Contents
 
 - [BroadcastService](#T-Dysnomia-Common-SteamWebAPI-BroadcastService 'Dysnomia.Common.SteamWebAPI.BroadcastService')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-BroadcastService-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.BroadcastService.#ctor(System.Net.Http.IHttpClientFactory)')
   - [PostGameDataFrame(key,appid,steamid,broadcast_id,frame_data)](#M-Dysnomia-Common-SteamWebAPI-BroadcastService-PostGameDataFrame-System-String,System-UInt32,System-UInt64,System-UInt64,System-String- 'Dysnomia.Common.SteamWebAPI.BroadcastService.PostGameDataFrame(System.String,System.UInt32,System.UInt64,System.UInt64,System.String)')
 - [CheatReportingService](#T-Dysnomia-Common-SteamWebAPI-CheatReportingService 'Dysnomia.Common.SteamWebAPI.CheatReportingService')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.#ctor(System.Net.Http.IHttpClientFactory)')
   - [GetCheatingReports(key,appid,timeend,timebegin,reportidadmin,includereports,includebans,steamid)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-UInt64,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt64,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt64})')
   - [RemovePlayerGameBan(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-RemovePlayerGameBan-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.RemovePlayerGameBan(System.String,System.UInt64,System.UInt32)')
   - [ReportPlayerCheating(key,steamid,appid,steamidreporter,appdata,heuristic,detection,playerreport,noreportid,gamemode,suspicionstarttime,severity)](#M-Dysnomia-Common-SteamWebAPI-CheatReportingService-ReportPlayerCheating-System-String,System-UInt64,System-UInt32,System-Nullable{System-UInt64},System-Nullable{System-UInt64},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.CheatReportingService.ReportPlayerCheating(System.String,System.UInt64,System.UInt32,System.Nullable{System.UInt64},System.Nullable{System.UInt64},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
@@ -62,7 +64,6 @@
   - [GetAppBetas(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppBetas-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppBetas(System.String,System.UInt32)')
   - [GetAppBuilds(key,appid,count)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppBuilds-System-String,System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppBuilds(System.String,System.UInt32,System.UInt32)')
   - [GetAppDepotVersions(key,appid)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppDepotVersions-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppDepotVersions(System.String,System.UInt32)')
-  - [GetAppList()](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppList 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppList')
   - [GetCheatingReports(key,appid,timebegin,timeend,includereports,includebans,reportidmin)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-Boolean,System-Boolean,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.Boolean,System.Boolean,System.Nullable{System.UInt64})')
   - [GetCheatingReports(key,appid,timebegin,timeend,includereports,includebans,reportidmin)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetCheatingReports-System-String,System-UInt32,System-DateTime,System-DateTime,System-Boolean,System-Boolean,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetCheatingReports(System.String,System.UInt32,System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Nullable{System.UInt64})')
   - [GetPartnerAppListForWebAPIKey(key,type_filter)](#M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetPartnerAppListForWebAPIKey-System-String,System-String- 'Dysnomia.Common.SteamWebAPI.ISteamApps.GetPartnerAppListForWebAPIKey(System.String,System.String)')
@@ -133,10 +134,10 @@
   - [GetSteamLevel(key,steamid)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-GetSteamLevel-System-String,System-UInt64- 'Dysnomia.Common.SteamWebAPI.PlayerService.GetSteamLevel(System.String,System.UInt64)')
   - [IsPlayingSharedGame(key,steamid,appid_playing)](#M-Dysnomia-Common-SteamWebAPI-PlayerService-IsPlayingSharedGame-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.PlayerService.IsPlayingSharedGame(System.String,System.UInt64,System.UInt32)')
 - [SteamApps](#T-Dysnomia-Common-SteamWebAPI-SteamApps 'Dysnomia.Common.SteamWebAPI.SteamApps')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamApps-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamApps.#ctor(System.Net.Http.IHttpClientFactory)')
   - [GetAppBetas(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetAppBetas-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetAppBetas(System.String,System.UInt32)')
   - [GetAppBuilds(key,appid,count)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetAppBuilds-System-String,System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetAppBuilds(System.String,System.UInt32,System.UInt32)')
   - [GetAppDepotVersions(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetAppDepotVersions-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetAppDepotVersions(System.String,System.UInt32)')
-  - [GetAppList()](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetAppList 'Dysnomia.Common.SteamWebAPI.SteamApps.GetAppList')
   - [GetCheatingReports(key,appid,timebegin,timeend,includereports,includebans,reportidmin)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-Boolean,System-Boolean,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.Boolean,System.Boolean,System.Nullable{System.UInt64})')
   - [GetCheatingReports(key,appid,timebegin,timeend,includereports,includebans,reportidmin)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetCheatingReports-System-String,System-UInt32,System-DateTime,System-DateTime,System-Boolean,System-Boolean,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetCheatingReports(System.String,System.UInt32,System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Nullable{System.UInt64})')
   - [GetPartnerAppListForWebAPIKey(key,type_filter)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-GetPartnerAppListForWebAPIKey-System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.GetPartnerAppListForWebAPIKey(System.String,System.String)')
@@ -147,15 +148,19 @@
   - [SetAppBuildLive(key,appid,buildid,betakey,description)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-SetAppBuildLive-System-String,System-UInt32,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamApps.SetAppBuildLive(System.String,System.UInt32,System.UInt32,System.String,System.String)')
   - [UpToDateCheck(appid,version)](#M-Dysnomia-Common-SteamWebAPI-SteamApps-UpToDateCheck-System-UInt32,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamApps.UpToDateCheck(System.UInt32,System.UInt32)')
 - [SteamCommunity](#T-Dysnomia-Common-SteamWebAPI-SteamCommunity 'Dysnomia.Common.SteamWebAPI.SteamCommunity')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.#ctor(System.Net.Http.IHttpClientFactory)')
   - [GetAppGroupMemberListAsync(appId,page)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-GetAppGroupMemberListAsync-System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.GetAppGroupMemberListAsync(System.UInt64,System.UInt32)')
   - [ReportAbuse(key,steamidActor,steamidTarget,appid,abuseType,contentType,description,gid)](#M-Dysnomia-Common-SteamWebAPI-SteamCommunity-ReportAbuse-System-String,System-UInt64,System-UInt64,System-UInt32,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportType,Dysnomia-Common-SteamWebAPI-Enums-EAbuseReportContentType,System-String,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})')
 - [SteamCommunityProfile](#T-Dysnomia-Common-SteamWebAPI-SteamCommunityProfile 'Dysnomia.Common.SteamWebAPI.SteamCommunityProfile')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamCommunityProfile-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamCommunityProfile.#ctor(System.Net.Http.IHttpClientFactory)')
 - [SteamLeaderboard](#T-Dysnomia-Common-SteamWebAPI-SteamLeaderboard 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.#ctor(System.Net.Http.IHttpClientFactory)')
   - [GetLeaderboardEntries(key,appid,leaderboardid,datarequest,rangestart,rangeend,steamid)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardEntries-System-String,System-UInt32,System-Int32,System-UInt32,System-Int32,System-Int32,System-Nullable{System-UInt64}- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardEntries(System.String,System.UInt32,System.Int32,System.UInt32,System.Int32,System.Int32,System.Nullable{System.UInt64})')
   - [GetLeaderboardsForGame(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardsForGame-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.GetLeaderboardsForGame(System.String,System.UInt32)')
   - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,Dysnomia-Common-SteamWebAPI-Enums-ScoreMethod- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,Dysnomia.Common.SteamWebAPI.Enums.ScoreMethod)')
   - [SetLeaderboardScore(key,appid,leaderboardid,steamid,score,scoremethod)](#M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-SetLeaderboardScore-System-String,System-UInt32,System-UInt32,System-UInt64,System-Int32,System-String- 'Dysnomia.Common.SteamWebAPI.SteamLeaderboard.SetLeaderboardScore(System.String,System.UInt32,System.UInt32,System.UInt64,System.Int32,System.String)')
 - [SteamNews](#T-Dysnomia-Common-SteamWebAPI-SteamNews 'Dysnomia.Common.SteamWebAPI.SteamNews')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamNews-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamNews.#ctor(System.Net.Http.IHttpClientFactory)')
   - [GetNewsForApp(appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.String)')
   - [GetNewsForApp(appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
   - [GetNewsForApp(appid)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForApp-System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForApp(System.UInt32)')
@@ -163,10 +168,13 @@
   - [GetNewsForAppAuthed(key,appid,maxlength,enddate,count,feeds)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32,System-Nullable{System-UInt32},System-DateTime,System-Nullable{System-UInt32},System-String- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32,System.Nullable{System.UInt32},System.DateTime,System.Nullable{System.UInt32},System.String)')
   - [GetNewsForAppAuthed(key,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForAppAuthed-System-String,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamNews.GetNewsForAppAuthed(System.String,System.UInt32)')
 - [SteamPartner](#T-Dysnomia-Common-SteamWebAPI-SteamPartner 'Dysnomia.Common.SteamWebAPI.SteamPartner')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamPartner-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamPartner.#ctor(System.Net.Http.IHttpClientFactory)')
   - [QueryPackageSalesAsCSVStringAsync(packageId,packageName,dateStart,dateEnd,cookie)](#M-Dysnomia-Common-SteamWebAPI-SteamPartner-QueryPackageSalesAsCSVStringAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String- 'Dysnomia.Common.SteamWebAPI.SteamPartner.QueryPackageSalesAsCSVStringAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)')
   - [QueryPackageSalesAsync(packageId,packageName,dateStart,dateEnd,cookie)](#M-Dysnomia-Common-SteamWebAPI-SteamPartner-QueryPackageSalesAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String- 'Dysnomia.Common.SteamWebAPI.SteamPartner.QueryPackageSalesAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)')
 - [SteamStore](#T-Dysnomia-Common-SteamWebAPI-SteamStore 'Dysnomia.Common.SteamWebAPI.SteamStore')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamStore-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamStore.#ctor(System.Net.Http.IHttpClientFactory)')
 - [SteamUser](#T-Dysnomia-Common-SteamWebAPI-SteamUser 'Dysnomia.Common.SteamWebAPI.SteamUser')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamUser-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamUser.#ctor(System.Net.Http.IHttpClientFactory)')
   - [CheckAppOwnership(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.CheckAppOwnership(System.String,System.UInt64,System.UInt32)')
   - [GetAppPriceInfo(key,steamid,appid)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetAppPriceInfo(System.String,System.UInt64,System.UInt32)')
   - [GetAppPriceInfo(key,steamid,appids)](#M-Dysnomia-Common-SteamWebAPI-SteamUser-GetAppPriceInfo-System-String,System-UInt64,System-UInt32[]- 'Dysnomia.Common.SteamWebAPI.SteamUser.GetAppPriceInfo(System.String,System.UInt64,System.UInt32[])')
@@ -188,6 +196,7 @@
   - [AuthenticateUser(steamid,sessionkey,encrypted_loginkey)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUser-System-UInt64,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUser(System.UInt64,System.String,System.String)')
   - [AuthenticateUserTicket(key,appid,ticket,identity)](#M-Dysnomia-Common-SteamWebAPI-SteamUserAuth-AuthenticateUserTicket-System-String,System-UInt32,System-String,System-String- 'Dysnomia.Common.SteamWebAPI.SteamUserAuth.AuthenticateUserTicket(System.String,System.UInt32,System.String,System.String)')
 - [SteamUserStats](#T-Dysnomia-Common-SteamWebAPI-SteamUserStats 'Dysnomia.Common.SteamWebAPI.SteamUserStats')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.#ctor(System.Net.Http.IHttpClientFactory)')
   - [GetGlobalAchievementPercentagesForApp(gameid)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalAchievementPercentagesForApp-System-UInt64- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)')
   - [GetGlobalStatsForGame(appid,names,startdate,enddate)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
   - [GetGlobalStatsForGame(appid,names,startdate,enddate)](#M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalStatsForGame-System-UInt32,System-String[],System-DateTime,System-DateTime- 'Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalStatsForGame(System.UInt32,System.String[],System.DateTime,System.DateTime)')
@@ -204,6 +213,7 @@
 - [StoreAppDetailsPricePackageGroup](#T-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup')
   - [display_type](#P-Dysnomia-Common-SteamWebAPI-Models-StoreAppDetailsPricePackageGroup-display_type 'Dysnomia.Common.SteamWebAPI.Models.StoreAppDetailsPricePackageGroup.display_type')
 - [StoreService](#T-Dysnomia-Common-SteamWebAPI-StoreService 'Dysnomia.Common.SteamWebAPI.StoreService')
+  - [#ctor()](#M-Dysnomia-Common-SteamWebAPI-StoreService-#ctor-System-Net-Http-IHttpClientFactory- 'Dysnomia.Common.SteamWebAPI.StoreService.#ctor(System.Net.Http.IHttpClientFactory)')
   - [GetAppList(key,if_modified_since,have_description_language,include_games,include_dlc,include_software,include_videos,include_hardware,last_appId,max_results)](#M-Dysnomia-Common-SteamWebAPI-StoreService-GetAppList-System-String,System-Nullable{System-UInt32},System-String,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32}- 'Dysnomia.Common.SteamWebAPI.StoreService.GetAppList(System.String,System.Nullable{System.UInt32},System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.UInt32},System.Nullable{System.UInt32})')
   - [GetAppList(key)](#M-Dysnomia-Common-SteamWebAPI-StoreService-GetAppList-System-String- 'Dysnomia.Common.SteamWebAPI.StoreService.GetAppList(System.String)')
 - [memberList](#T-Dysnomia-Common-SteamWebAPI-Models-SteamCommunityGroupMemberList-memberList 'Dysnomia.Common.SteamWebAPI.Models.SteamCommunityGroupMemberList.memberList')
@@ -238,6 +248,18 @@ Dysnomia.Common.SteamWebAPI
 
 Provides access to Steam broadcasts.
 https://partner.steamgames.com/doc/webapi/IBroadcastService
+
+<a name='M-Dysnomia-Common-SteamWebAPI-BroadcastService-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Provides access to Steam broadcasts.
+https://partner.steamgames.com/doc/webapi/IBroadcastService
+
+##### Parameters
+
+This constructor has no parameters.
 
 <a name='M-Dysnomia-Common-SteamWebAPI-BroadcastService-PostGameDataFrame-System-String,System-UInt32,System-UInt64,System-UInt64,System-String-'></a>
 ### PostGameDataFrame(key,appid,steamid,broadcast_id,frame_data) `method`
@@ -275,6 +297,22 @@ This service allows your game to report cheats and cheaters to the VAC system an
 To use this interface you must first opt in to VAC support. This can be done from the Anti-Cheat Configuration page in the App Admin panel.
 
 https://partner.steamgames.com/doc/webapi/ICheatReportingService
+
+<a name='M-Dysnomia-Common-SteamWebAPI-CheatReportingService-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+This service allows your game to report cheats and cheaters to the VAC system and provides the toolset behind the Game Bans system. It enables two independent workflows for detecting and managing cheating in your game:
+- Gather community reports of cheating and request bans/suspensions based upon this information.
+- Submit detailed information about known cheat software to the VAC system. Once processed, this information will be used to automatically detect and ban players using known cheats.
+To use this interface you must first opt in to VAC support. This can be done from the Anti-Cheat Configuration page in the App Admin panel.
+
+https://partner.steamgames.com/doc/webapi/ICheatReportingService
+
+##### Parameters
+
+This constructor has no parameters.
 
 <a name='M-Dysnomia-Common-SteamWebAPI-CheatReportingService-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-UInt64,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt64}-'></a>
 ### GetCheatingReports(key,appid,timeend,timebegin,reportidadmin,includereports,includebans,steamid) `method`
@@ -1028,21 +1066,6 @@ Gets all the versions of all the depots for the specified application.
 | ---- | ---- | ----------- |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The App ID to get the depot versions for. |
-
-<a name='M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetAppList'></a>
-### GetAppList() `method`
-
-##### Summary
-
-Gets the complete list of public apps.
-
-##### Returns
-
-
-
-##### Parameters
-
-This method has no parameters.
 
 <a name='M-Dysnomia-Common-SteamWebAPI-ISteamApps-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-Boolean,System-Boolean,System-Nullable{System-UInt64}-'></a>
 ### GetCheatingReports(key,appid,timebegin,timeend,includereports,includebans,reportidmin) `method`
@@ -2333,6 +2356,18 @@ Dysnomia.Common.SteamWebAPI
 Used to access data about applications on Steam.
 https://partner.steamgames.com/doc/webapi/ISteamApps
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamApps-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Used to access data about applications on Steam.
+https://partner.steamgames.com/doc/webapi/ISteamApps
+
+##### Parameters
+
+This constructor has no parameters.
+
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamApps-GetAppBetas-System-String,System-UInt32-'></a>
 ### GetAppBetas(key,appid) `method`
 
@@ -2387,21 +2422,6 @@ Gets all the versions of all the depots for the specified application.
 | ---- | ---- | ----------- |
 | key | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Steamworks Web API publisher authentication key. |
 | appid | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | The App ID to get the depot versions for. |
-
-<a name='M-Dysnomia-Common-SteamWebAPI-SteamApps-GetAppList'></a>
-### GetAppList() `method`
-
-##### Summary
-
-Gets the complete list of public apps.
-
-##### Returns
-
-
-
-##### Parameters
-
-This method has no parameters.
 
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamApps-GetCheatingReports-System-String,System-UInt32,System-UInt32,System-UInt32,System-Boolean,System-Boolean,System-Nullable{System-UInt64}-'></a>
 ### GetCheatingReports(key,appid,timebegin,timeend,includereports,includebans,reportidmin) `method`
@@ -2591,6 +2611,19 @@ Provides restricted access to Steam Community features.
 https://partner.steamgames.com/doc/webapi/ISteamCommunity
 and access to https://steamcommunity.com/ APIs
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamCommunity-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Provides restricted access to Steam Community features.
+https://partner.steamgames.com/doc/webapi/ISteamCommunity
+and access to https://steamcommunity.com/ APIs
+
+##### Parameters
+
+This constructor has no parameters.
+
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamCommunity-GetAppGroupMemberListAsync-System-UInt64,System-UInt32-'></a>
 ### GetAppGroupMemberListAsync(appId,page) `method`
 
@@ -2644,6 +2677,17 @@ Dysnomia.Common.SteamWebAPI
 
 Used to get data directly from profile in steamcommunity.com website
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamCommunityProfile-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Used to get data directly from profile in steamcommunity.com website
+
+##### Parameters
+
+This constructor has no parameters.
+
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamLeaderboard'></a>
 ## SteamLeaderboard `type`
 
@@ -2654,6 +2698,17 @@ Dysnomia.Common.SteamWebAPI
 ##### Summary
 
 Used to access Steam leaderboards.
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Used to access Steam leaderboards.
+
+##### Parameters
+
+This constructor has no parameters.
 
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamLeaderboard-GetLeaderboardEntries-System-String,System-UInt32,System-Int32,System-UInt32,System-Int32,System-Int32,System-Nullable{System-UInt64}-'></a>
 ### GetLeaderboardEntries(key,appid,leaderboardid,datarequest,rangestart,rangeend,steamid) `method`
@@ -2751,6 +2806,18 @@ Dysnomia.Common.SteamWebAPI
 
 Provides access to the Steam News functionality.
 https://partner.steamgames.com/doc/webapi/ISteamNews
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamNews-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Provides access to the Steam News functionality.
+https://partner.steamgames.com/doc/webapi/ISteamNews
+
+##### Parameters
+
+This constructor has no parameters.
 
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamNews-GetNewsForApp-System-UInt32,System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-Nullable{System-UInt32},System-String-'></a>
 ### GetNewsForApp(appid,maxlength,enddate,count,feeds) `method`
@@ -2884,6 +2951,17 @@ Dysnomia.Common.SteamWebAPI
 
 Provide methods to call https://partner.steampowered.com/ APIs
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamPartner-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Provide methods to call https://partner.steampowered.com/ APIs
+
+##### Parameters
+
+This constructor has no parameters.
+
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamPartner-QueryPackageSalesAsCSVStringAsync-System-UInt64,System-String,System-DateOnly,System-DateOnly,System-String-'></a>
 ### QueryPackageSalesAsCSVStringAsync(packageId,packageName,dateStart,dateEnd,cookie) `method`
 
@@ -2937,6 +3015,17 @@ Dysnomia.Common.SteamWebAPI
 
 This class is using steam store API (https://store.steampowered.com/api/)
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamStore-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+This class is using steam store API (https://store.steampowered.com/api/)
+
+##### Parameters
+
+This constructor has no parameters.
+
 <a name='T-Dysnomia-Common-SteamWebAPI-SteamUser'></a>
 ## SteamUser `type`
 
@@ -2950,6 +3039,20 @@ Used to access information and interact with users.
 See IPlayerService for additional methods.
 
 https://partner.steamgames.com/doc/webapi/ISteamUser
+
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Used to access information and interact with users.
+See IPlayerService for additional methods.
+
+https://partner.steamgames.com/doc/webapi/ISteamUser
+
+##### Parameters
+
+This constructor has no parameters.
 
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamUser-CheckAppOwnership-System-String,System-UInt64,System-UInt32-'></a>
 ### CheckAppOwnership(key,steamid,appid) `method`
@@ -3337,6 +3440,18 @@ Dysnomia.Common.SteamWebAPI
 Used to access information about users.
 https://partner.steamgames.com/doc/webapi/ISteamUserStats
 
+<a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Used to access information about users.
+https://partner.steamgames.com/doc/webapi/ISteamUserStats
+
+##### Parameters
+
+This constructor has no parameters.
+
 <a name='M-Dysnomia-Common-SteamWebAPI-SteamUserStats-GetGlobalAchievementPercentagesForApp-System-UInt64-'></a>
 ### GetGlobalAchievementPercentagesForApp(gameid) `method`
 
@@ -3556,6 +3671,17 @@ Dysnomia.Common.SteamWebAPI
 ##### Summary
 
 
+
+<a name='M-Dysnomia-Common-SteamWebAPI-StoreService-#ctor-System-Net-Http-IHttpClientFactory-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+
+
+##### Parameters
+
+This constructor has no parameters.
 
 <a name='M-Dysnomia-Common-SteamWebAPI-StoreService-GetAppList-System-String,System-Nullable{System-UInt32},System-String,System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-Boolean},System-Nullable{System-UInt32},System-Nullable{System-UInt32}-'></a>
 ### GetAppList(key,if_modified_since,have_description_language,include_games,include_dlc,include_software,include_videos,include_hardware,last_appId,max_results) `method`

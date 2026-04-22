@@ -10,6 +10,12 @@
             https://partner.steamgames.com/doc/webapi/IBroadcastService
             </summary>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.BroadcastService.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Provides access to Steam broadcasts.
+            https://partner.steamgames.com/doc/webapi/IBroadcastService
+            </summary>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.BroadcastService.PostGameDataFrame(System.String,System.UInt32,System.UInt64,System.UInt64,System.String)">
             <summary>
             Add a game meta data frame to broadcast
@@ -22,6 +28,16 @@
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.CheatReportingService">
+            <summary>
+            This service allows your game to report cheats and cheaters to the VAC system and provides the toolset behind the Game Bans system. It enables two independent workflows for detecting and managing cheating in your game:
+            - Gather community reports of cheating and request bans/suspensions based upon this information.
+            - Submit detailed information about known cheat software to the VAC system. Once processed, this information will be used to automatically detect and ban players using known cheats.
+            To use this interface you must first opt in to VAC support. This can be done from the Anti-Cheat Configuration page in the App Admin panel.
+            
+            https://partner.steamgames.com/doc/webapi/ICheatReportingService
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.CheatReportingService.#ctor(System.Net.Http.IHttpClientFactory)">
             <summary>
             This service allows your game to report cheats and cheaters to the VAC system and provides the toolset behind the Game Bans system. It enables two independent workflows for detecting and managing cheating in your game:
             - Gather community reports of cheating and request bans/suspensions based upon this information.
@@ -478,12 +494,6 @@
             </summary>
             <param name="key">Steamworks Web API publisher authentication key.</param>
             <param name="appid">The App ID to get the depot versions for.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetAppList">
-            <summary>
-            Gets the complete list of public apps.
-            </summary>
             <returns></returns>
         </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.ISteamApps.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.Boolean,System.Boolean,System.Nullable{System.UInt64})">
@@ -1195,6 +1205,12 @@
             https://partner.steamgames.com/doc/webapi/ISteamApps
             </summary>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Used to access data about applications on Steam.
+            https://partner.steamgames.com/doc/webapi/ISteamApps
+            </summary>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetAppBetas(System.String,System.UInt32)">
             <summary>
             Gets all of the beta branches for the specified application.
@@ -1218,12 +1234,6 @@
             </summary>
             <param name="key">Steamworks Web API publisher authentication key.</param>
             <param name="appid">The App ID to get the depot versions for.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetAppList">
-            <summary>
-            Gets the complete list of public apps.
-            </summary>
             <returns></returns>
         </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamApps.GetCheatingReports(System.String,System.UInt32,System.UInt32,System.UInt32,System.Boolean,System.Boolean,System.Nullable{System.UInt64})">
@@ -1318,6 +1328,13 @@
             and access to https://steamcommunity.com/ APIs
             </summary>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamCommunity.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Provides restricted access to Steam Community features.
+            https://partner.steamgames.com/doc/webapi/ISteamCommunity
+            and access to https://steamcommunity.com/ APIs
+            </summary>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamCommunity.ReportAbuse(System.String,System.UInt64,System.UInt64,System.UInt32,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportType,Dysnomia.Common.SteamWebAPI.Enums.EAbuseReportContentType,System.String,System.Nullable{System.UInt64})">
             <summary>
             Allows publishers to report users who are behaving badly on their community hub.
@@ -1345,7 +1362,17 @@
             Used to get data directly from profile in steamcommunity.com website
             </summary>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamCommunityProfile.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Used to get data directly from profile in steamcommunity.com website
+            </summary>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamLeaderboard">
+            <summary>
+            Used to access Steam leaderboards.
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamLeaderboard.#ctor(System.Net.Http.IHttpClientFactory)">
             <summary>
             Used to access Steam leaderboards.
             </summary>
@@ -1396,6 +1423,12 @@
             <returns></returns>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamNews">
+            <summary>
+            Provides access to the Steam News functionality.
+            https://partner.steamgames.com/doc/webapi/ISteamNews
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamNews.#ctor(System.Net.Http.IHttpClientFactory)">
             <summary>
             Provides access to the Steam News functionality.
             https://partner.steamgames.com/doc/webapi/ISteamNews
@@ -1467,6 +1500,11 @@
             Provide methods to call https://partner.steampowered.com/ APIs
             </summary>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamPartner.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Provide methods to call https://partner.steampowered.com/ APIs
+            </summary>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamPartner.QueryPackageSalesAsCSVStringAsync(System.UInt64,System.String,System.DateOnly,System.DateOnly,System.String)">
             <summary>
             Get package sale data from partner.steampowered.com website as a CSV string
@@ -1494,7 +1532,20 @@
             This class is using steam store API (https://store.steampowered.com/api/)
             </summary>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamStore.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            This class is using steam store API (https://store.steampowered.com/api/)
+            </summary>
+        </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.SteamUser">
+            <summary>
+            Used to access information and interact with users.
+            See IPlayerService for additional methods.
+            
+            https://partner.steamgames.com/doc/webapi/ISteamUser
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUser.#ctor(System.Net.Http.IHttpClientFactory)">
             <summary>
             Used to access information and interact with users.
             See IPlayerService for additional methods.
@@ -1690,6 +1741,12 @@
             https://partner.steamgames.com/doc/webapi/ISteamUserStats
             </summary>
         </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary>
+            Used to access information about users.
+            https://partner.steamgames.com/doc/webapi/ISteamUserStats
+            </summary>
+        </member>
         <member name="M:Dysnomia.Common.SteamWebAPI.SteamUserStats.GetGlobalAchievementPercentagesForApp(System.UInt64)">
             <summary>
             Retrieves the global achievement percentages for the specified app.
@@ -1773,6 +1830,10 @@
             </summary>
         </member>
         <member name="T:Dysnomia.Common.SteamWebAPI.StoreService">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Dysnomia.Common.SteamWebAPI.StoreService.#ctor(System.Net.Http.IHttpClientFactory)">
             <summary>
             </summary>
         </member>
