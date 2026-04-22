@@ -5,14 +5,10 @@ using System.Threading.Tasks;
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class SteamUserTest : BaseTestClass {
-		protected readonly ISteamUser steamAppsQuerier;
+	public class SteamUserTest(ISteamUser steamAppsQuerier) : BaseTestClass {
+		protected readonly ISteamUser steamAppsQuerier = steamAppsQuerier;
 
-		public SteamUserTest(ISteamUser steamAppsQuerier) {
-			this.steamAppsQuerier = steamAppsQuerier;
-		}
-
-		[Fact]
+        [Fact]
 		public async Task CheckAppOwnership_OK() {
 			var res = await steamAppsQuerier.CheckAppOwnership(PUBLISHER_KEY, STEAMID, PUBLISHER_APPID);
 

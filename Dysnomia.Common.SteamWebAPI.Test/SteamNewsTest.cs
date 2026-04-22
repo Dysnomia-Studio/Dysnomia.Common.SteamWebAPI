@@ -3,14 +3,10 @@
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class SteamNewsTest : BaseTestClass {
-		protected readonly ISteamNews steamNewsQuerier;
+	public class SteamNewsTest(ISteamNews steamNewsQuerier) : BaseTestClass {
+		protected readonly ISteamNews steamNewsQuerier = steamNewsQuerier;
 
-		public SteamNewsTest(ISteamNews steamNewsQuerier) {
-			this.steamNewsQuerier = steamNewsQuerier;
-		}
-
-		[Fact]
+        [Fact]
 		public async Task GetNewsForApp_OK_OneArg() {
 			var res = await steamNewsQuerier.GetNewsForApp(PUBLISHER_APPID);
 

@@ -11,17 +11,15 @@ namespace Dysnomia.Common.SteamWebAPI {
     /// Used to access data about applications on Steam.
     /// https://partner.steamgames.com/doc/webapi/ISteamApps
     /// </summary>
-    public class SteamApps : SteamWebAPIQuerier, ISteamApps {
-        public SteamApps(IHttpClientFactory clientFactory) : base(clientFactory) {
-        }
+    public class SteamApps(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), ISteamApps {
 
-		/// <summary>
-		/// Gets all of the beta branches for the specified application.
-		/// </summary>
-		/// <param name="key">Steamworks Web API publisher authentication key.</param>
-		/// <param name="appid">The App ID to get the betas of.</param>
-		/// <returns></returns>
-		public async Task<Dictionary<string, AppBetasBranch>> GetAppBetas(string key, uint appid) {
+        /// <summary>
+        /// Gets all of the beta branches for the specified application.
+        /// </summary>
+        /// <param name="key">Steamworks Web API publisher authentication key.</param>
+        /// <param name="appid">The App ID to get the betas of.</param>
+        /// <returns></returns>
+        public async Task<Dictionary<string, AppBetasBranch>> GetAppBetas(string key, uint appid) {
 			return (await this.GetAsync<SteamAPIResponse<AppBetas>>(
 				string.Format(
 					"{0}/ISteamApps/GetAppBetas/v1/?key={1}&appid={2}",

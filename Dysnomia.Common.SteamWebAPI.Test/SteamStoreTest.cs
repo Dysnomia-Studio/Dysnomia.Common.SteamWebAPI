@@ -3,14 +3,10 @@
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class SteamStoreTest : BaseTestClass {
-		protected readonly ISteamStore steamStore;
+	public class SteamStoreTest(ISteamStore steamStore) : BaseTestClass {
+		protected readonly ISteamStore steamStore = steamStore;
 
-		public SteamStoreTest(ISteamStore steamStore) {
-			this.steamStore = steamStore;
-		}
-
-		[Fact]
+        [Fact]
 		public async Task GetAppPrices() {
 			await steamStore.GetAppPrices(new string[] { "440", "10" }); // TF2, CS
 		}

@@ -10,16 +10,14 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// Used to access information about users.
 	/// https://partner.steamgames.com/doc/webapi/ISteamUserStats
 	/// </summary>
-	public class SteamUserStats : SteamWebAPIQuerier, ISteamUserStats {
-		public SteamUserStats(IHttpClientFactory clientFactory) : base(clientFactory) {
-		}
+	public class SteamUserStats(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), ISteamUserStats {
 
-		/// <summary>
-		/// Retrieves the global achievement percentages for the specified app.
-		/// </summary>
-		/// <param name="gameid">GameID to retrieve the achievement percentages for</param>
-		/// <returns></returns>
-		public async Task<IList<GlobalAchievementPercentages>> GetGlobalAchievementPercentagesForApp(ulong gameid) {
+        /// <summary>
+        /// Retrieves the global achievement percentages for the specified app.
+        /// </summary>
+        /// <param name="gameid">GameID to retrieve the achievement percentages for</param>
+        /// <returns></returns>
+        public async Task<IList<GlobalAchievementPercentages>> GetGlobalAchievementPercentagesForApp(ulong gameid) {
 			return (await this.GetAsync<GlobalAchievementPercentagesRoot>(
 				string.Format(
 					"{0}/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={1}",

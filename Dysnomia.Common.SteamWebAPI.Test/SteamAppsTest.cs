@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-    public class SteamAppsTest : BaseTestClass {
-        protected readonly ISteamApps steamAppsQuerier;
-
-        public SteamAppsTest(ISteamApps steamAppsQuerier) {
-            this.steamAppsQuerier = steamAppsQuerier;
-        }
+    public class SteamAppsTest(ISteamApps steamAppsQuerier) : BaseTestClass {
+        protected readonly ISteamApps steamAppsQuerier = steamAppsQuerier;
 
         [Fact]
         public async Task GetAppBetas_OK() {

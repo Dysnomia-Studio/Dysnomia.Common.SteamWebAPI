@@ -3,12 +3,8 @@
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-    public class SteamCommunityTest : BaseTestClass {
-        protected readonly ISteamCommunity steamCommunity;
-
-        public SteamCommunityTest(ISteamCommunity steamCommunity) {
-            this.steamCommunity = steamCommunity;
-        }
+    public class SteamCommunityTest(ISteamCommunity steamCommunity) : BaseTestClass {
+        protected readonly ISteamCommunity steamCommunity = steamCommunity;
 
         [Theory]
         [InlineData(1730540, "Alchemistry")]

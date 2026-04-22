@@ -14,9 +14,7 @@ namespace Dysnomia.Common.SteamWebAPI {
     /// https://partner.steamgames.com/doc/webapi/ISteamCommunity
     /// and access to https://steamcommunity.com/ APIs
     /// </summary>
-    public class SteamCommunity : SteamWebAPIQuerier, ISteamCommunity {
-        public SteamCommunity(IHttpClientFactory clientFactory) : base(clientFactory) {
-        }
+    public class SteamCommunity(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), ISteamCommunity {
 
         /// <summary>
         /// Allows publishers to report users who are behaving badly on their community hub.

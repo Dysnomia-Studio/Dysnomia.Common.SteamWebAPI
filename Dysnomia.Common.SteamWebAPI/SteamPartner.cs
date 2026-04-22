@@ -10,12 +10,8 @@ namespace Dysnomia.Common.SteamWebAPI {
     /// <summary>
     /// Provide methods to call https://partner.steampowered.com/ APIs
     /// </summary>
-    public class SteamPartner : SteamWebAPIQuerier, ISteamPartner {
-        private IHttpClientFactory _clientFactory;
-
-        public SteamPartner(IHttpClientFactory clientFactory) : base(clientFactory) {
-            _clientFactory = clientFactory;
-        }
+    public class SteamPartner(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), ISteamPartner {
+        private IHttpClientFactory _clientFactory = clientFactory;
 
         /// <summary>
         /// Get package sale data from partner.steampowered.com website as a CSV string

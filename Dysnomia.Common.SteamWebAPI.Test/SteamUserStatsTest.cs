@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class SteamUserStatsTest : BaseTestClass {
-		protected readonly ISteamUserStats steamUserStats;
+	public class SteamUserStatsTest(ISteamUserStats steamUserStats) : BaseTestClass {
+		protected readonly ISteamUserStats steamUserStats = steamUserStats;
 
-		public SteamUserStatsTest(ISteamUserStats steamUserStats) {
-			this.steamUserStats = steamUserStats;
-		}
-
-		[Fact]
+        [Fact]
 		public async Task GetGlobalAchievementPercentagesForApp() {
 			var res = await steamUserStats.GetGlobalAchievementPercentagesForApp(TF2_APPID);
 

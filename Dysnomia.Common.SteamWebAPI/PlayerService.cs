@@ -5,18 +5,16 @@ using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Dysnomia.Common.SteamWebAPI {
-	public class PlayerService : SteamWebAPIQuerier, IPlayerService {
-		public PlayerService(IHttpClientFactory clientFactory) : base(clientFactory) {
-		}
+	public class PlayerService(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), IPlayerService {
 
-		/// <summary>
-		/// Gets information about a player's recently played games
-		/// </summary>
-		/// <param name="key">Steamworks Web API user authentication key.</param>
-		/// <param name="steamid">The player we're asking about</param>
-		/// <param name="count">The number of games to return (0 = all)</param>
-		/// <returns></returns>
-		public async Task<IList<PlayerAppUsageItem>> GetRecentlyPlayedGames(string key, ulong steamid, uint count) {
+        /// <summary>
+        /// Gets information about a player's recently played games
+        /// </summary>
+        /// <param name="key">Steamworks Web API user authentication key.</param>
+        /// <param name="steamid">The player we're asking about</param>
+        /// <param name="count">The number of games to return (0 = all)</param>
+        /// <returns></returns>
+        public async Task<IList<PlayerAppUsageItem>> GetRecentlyPlayedGames(string key, ulong steamid, uint count) {
 			return (await this.GetAsync<SteamAPIResponse<PlayerAppUsage>>(
 				string.Format(
 					"{0}/IPlayerService/GetRecentlyPlayedGames/v1/?key={1}&steamid={2}&count={3}",

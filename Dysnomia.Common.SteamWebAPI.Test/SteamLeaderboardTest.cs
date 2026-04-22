@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class SteamLeaderboardTest : BaseTestClass {
-		protected readonly ISteamLeaderboard steamLeaderboard;
+	public class SteamLeaderboardTest(ISteamLeaderboard steamLeaderboard) : BaseTestClass {
+		protected readonly ISteamLeaderboard steamLeaderboard = steamLeaderboard;
 
-		public SteamLeaderboardTest(ISteamLeaderboard steamLeaderboard) {
-			this.steamLeaderboard = steamLeaderboard;
-		}
-
-		[Fact]
+        [Fact]
 		public async Task GetLeaderboardEntries_OK() {
 			var res = await steamLeaderboard.GetLeaderboardEntries(PUBLISHER_KEY, PUBLISHER_APPID_WITH_LEADERBOARD, (int)PUBLISHER_APP_LEADERBOARDID, 1);
 

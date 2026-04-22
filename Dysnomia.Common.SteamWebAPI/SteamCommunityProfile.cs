@@ -11,11 +11,8 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// <summary>
 	/// Used to get data directly from profile in steamcommunity.com website
 	/// </summary>
-	public class SteamCommunityProfile : SteamWebAPIQuerier, ISteamCommunityProfile {
-		public SteamCommunityProfile(IHttpClientFactory clientFactory) : base(clientFactory) {
-		}
-
-		public async Task<SteamCommunityProfileModel> GetProfile(string id) {
+	public class SteamCommunityProfile(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), ISteamCommunityProfile {
+        public async Task<SteamCommunityProfileModel> GetProfile(string id) {
 			var str = await this.GetStringAsync(
 				string.Format(
 					"https://steamcommunity.com/profiles/{0}/games?tab=all&xml=1",

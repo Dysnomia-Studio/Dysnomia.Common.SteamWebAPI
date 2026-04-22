@@ -10,31 +10,29 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// 
 	/// https://partner.steamgames.com/doc/webapi/ICheatReportingService
 	/// </summary>
-	public class CheatReportingService : SteamWebAPIQuerier, ICheatReportingService {
-		public CheatReportingService(IHttpClientFactory clientFactory) : base(clientFactory) {
-		}
+	public class CheatReportingService(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), ICheatReportingService {
 
-		/// <summary>
-		/// ReportPlayerCheating is designed to gather community reports of cheating, where one player reports another player within the game.
-		///
-		/// It is intended for unreliable data from peers in the game(semi-trusted sources). The back-end that reports the data should ensure that both parties are authenticated,
-		/// but the data in itself is treated as hearsay.Optional parameters may be used to encode the type of cheating that is suspected or additional evidence(an identifier pointing
-		/// to the match/demo for further review).
-		/// </summary>
-		/// <param name="key">Steamworks Web API publisher authentication key.</param>
-		/// <param name="steamid">The Steam ID of the user who is being reported for cheating.</param>
-		/// <param name="appid">The App ID for the game.</param>
-		/// <param name="steamidreporter">(Optional) The Steam ID of the user or game server who is reporting the cheating.</param>
-		/// <param name="appdata">(Optional) App specific data about the type of cheating set by developer. (ex 1 = Aimbot, 2 = Wallhack, 3 = Griefing)</param>
-		/// <param name="heuristic">(Optional) Extra information about the source of the cheating - was it a heuristic.</param>
-		/// <param name="detection">(Optional) Extra information about the source of the cheating - was it a detection.</param>
-		/// <param name="playerreport">(Optional) Extra information about the source of the cheating - was it a player report.</param>
-		/// <param name="noreportid">(Optional) Don't return reportid. This should only be passed if you don't intend to issue a ban based on this report.</param>
-		/// <param name="gamemode">(Optional) Extra information about state of game - was it a specific type of game play or game mode. (0 = generic)</param>
-		/// <param name="suspicionstarttime">(Optional) Extra information indicating how far back the game thinks is interesting for this user. Unix epoch time (time since Jan 1st, 1970).</param>
-		/// <param name="severity">(Optional) Level of severity of bad action being reported. Scale set by developer.</param>
-		/// <returns></returns>
-		public async Task<string> ReportPlayerCheating(string key, ulong steamid, uint appid, ulong? steamidreporter, ulong? appdata, bool? heuristic, bool? detection, bool? playerreport, bool? noreportid, uint? gamemode, uint? suspicionstarttime, uint? severity) {
+        /// <summary>
+        /// ReportPlayerCheating is designed to gather community reports of cheating, where one player reports another player within the game.
+        ///
+        /// It is intended for unreliable data from peers in the game(semi-trusted sources). The back-end that reports the data should ensure that both parties are authenticated,
+        /// but the data in itself is treated as hearsay.Optional parameters may be used to encode the type of cheating that is suspected or additional evidence(an identifier pointing
+        /// to the match/demo for further review).
+        /// </summary>
+        /// <param name="key">Steamworks Web API publisher authentication key.</param>
+        /// <param name="steamid">The Steam ID of the user who is being reported for cheating.</param>
+        /// <param name="appid">The App ID for the game.</param>
+        /// <param name="steamidreporter">(Optional) The Steam ID of the user or game server who is reporting the cheating.</param>
+        /// <param name="appdata">(Optional) App specific data about the type of cheating set by developer. (ex 1 = Aimbot, 2 = Wallhack, 3 = Griefing)</param>
+        /// <param name="heuristic">(Optional) Extra information about the source of the cheating - was it a heuristic.</param>
+        /// <param name="detection">(Optional) Extra information about the source of the cheating - was it a detection.</param>
+        /// <param name="playerreport">(Optional) Extra information about the source of the cheating - was it a player report.</param>
+        /// <param name="noreportid">(Optional) Don't return reportid. This should only be passed if you don't intend to issue a ban based on this report.</param>
+        /// <param name="gamemode">(Optional) Extra information about state of game - was it a specific type of game play or game mode. (0 = generic)</param>
+        /// <param name="suspicionstarttime">(Optional) Extra information indicating how far back the game thinks is interesting for this user. Unix epoch time (time since Jan 1st, 1970).</param>
+        /// <param name="severity">(Optional) Level of severity of bad action being reported. Scale set by developer.</param>
+        /// <returns></returns>
+        public async Task<string> ReportPlayerCheating(string key, ulong steamid, uint appid, ulong? steamidreporter, ulong? appdata, bool? heuristic, bool? detection, bool? playerreport, bool? noreportid, uint? gamemode, uint? suspicionstarttime, uint? severity) {
 			string steamidreporterStr = "";
 			if (steamidreporter != null) {
 				steamidreporterStr = "&reportidmin=" + steamidreporter;

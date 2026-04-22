@@ -3,12 +3,8 @@
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-    public class StoreServiceTest : BaseTestClass {
-        protected readonly IStoreService storeService;
-
-        public StoreServiceTest(IStoreService storeService) {
-            this.storeService = storeService;
-        }
+    public class StoreServiceTest(IStoreService storeService) : BaseTestClass {
+        protected readonly IStoreService storeService = storeService;
 
         [Fact]
         public async Task GetAppList() {

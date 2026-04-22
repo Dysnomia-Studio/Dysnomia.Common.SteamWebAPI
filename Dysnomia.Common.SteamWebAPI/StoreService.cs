@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 namespace Dysnomia.Common.SteamWebAPI {
     /// <summary>
     /// </summary>
-    public class StoreService : SteamWebAPIQuerier, IStoreService {
-        public StoreService(IHttpClientFactory clientFactory) : base(clientFactory) {
-        }
+    public class StoreService(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), IStoreService {
 
         // TODO: GetAppInfo
 

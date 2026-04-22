@@ -5,14 +5,10 @@ using System.Threading.Tasks;
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class PlayerServiceTest : BaseTestClass {
-		protected readonly IPlayerService playerServiceQuerier;
+	public class PlayerServiceTest(IPlayerService playerServiceQuerier) : BaseTestClass {
+		protected readonly IPlayerService playerServiceQuerier = playerServiceQuerier;
 
-		public PlayerServiceTest(IPlayerService playerServiceQuerier) {
-			this.playerServiceQuerier = playerServiceQuerier;
-		}
-
-		[Fact]
+        [Fact]
 		public async Task GetRecentlyPlayedGames_OK_NOLIMIT() {
 			var res = await playerServiceQuerier.GetRecentlyPlayedGames(WEBAPI_KEY, STEAMID, 0);
 

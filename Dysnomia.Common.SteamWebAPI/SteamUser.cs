@@ -11,18 +11,16 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// 
 	/// https://partner.steamgames.com/doc/webapi/ISteamUser
 	/// </summary>
-	public class SteamUser : SteamWebAPIQuerier, ISteamUser {
-		public SteamUser(IHttpClientFactory clientFactory) : base(clientFactory) {
-		}
+	public class SteamUser(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), ISteamUser {
 
-		/// <summary>
-		/// Checks if the specified user owns the app.
-		/// </summary>
-		/// <param name="key">Steamworks Web API publisher authentication key.</param>
-		/// <param name="steamid">SteamID of user</param>
-		/// <param name="appid">AppID to check for ownership</param>
-		/// <returns></returns>
-		public async Task<AppOwnership> CheckAppOwnership(string key, ulong steamid, uint appid) {
+        /// <summary>
+        /// Checks if the specified user owns the app.
+        /// </summary>
+        /// <param name="key">Steamworks Web API publisher authentication key.</param>
+        /// <param name="steamid">SteamID of user</param>
+        /// <param name="appid">AppID to check for ownership</param>
+        /// <returns></returns>
+        public async Task<AppOwnership> CheckAppOwnership(string key, ulong steamid, uint appid) {
 			return (await this.GetAsync<AppOwershipRoot>(
 				string.Format(
 					"{0}/ISteamUser/CheckAppOwnership/v2/?key={1}&steamid={2}&appid={3}",

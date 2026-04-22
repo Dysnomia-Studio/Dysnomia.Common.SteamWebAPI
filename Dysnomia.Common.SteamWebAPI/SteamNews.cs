@@ -9,20 +9,18 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// Provides access to the Steam News functionality.
 	/// https://partner.steamgames.com/doc/webapi/ISteamNews
 	/// </summary>
-	public class SteamNews : SteamWebAPIQuerier, ISteamNews {
-		public SteamNews(IHttpClientFactory clientFactory) : base(clientFactory) {
-		}
+	public class SteamNews(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), ISteamNews {
 
-		/// <summary>
-		/// Get the news for the specified app.
-		/// </summary>
-		/// <param name="appid">AppID to retrieve news for</param>
-		/// <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
-		/// <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
-		/// <param name="count"># of posts to retrieve (default 20)</param>
-		/// <param name="feeds">Comma-seperated list of feed names to return news for</param>
-		/// <returns></returns>
-		public async Task<AppNews> GetNewsForApp(uint appid, uint? maxlength, uint? enddate, uint? count, string feeds) {
+        /// <summary>
+        /// Get the news for the specified app.
+        /// </summary>
+        /// <param name="appid">AppID to retrieve news for</param>
+        /// <param name="maxlength">Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.</param>
+        /// <param name="enddate">Retrieve posts earlier than this date (unix epoch timestamp)</param>
+        /// <param name="count"># of posts to retrieve (default 20)</param>
+        /// <param name="feeds">Comma-seperated list of feed names to return news for</param>
+        /// <returns></returns>
+        public async Task<AppNews> GetNewsForApp(uint appid, uint? maxlength, uint? enddate, uint? count, string feeds) {
 			var maxLengthStr = "";
 			if (maxlength != null) {
 				maxLengthStr = "&maxlength=" + maxlength;

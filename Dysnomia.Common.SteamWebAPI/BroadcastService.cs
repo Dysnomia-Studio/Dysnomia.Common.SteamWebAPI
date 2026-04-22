@@ -6,20 +6,18 @@ namespace Dysnomia.Common.SteamWebAPI {
 	/// Provides access to Steam broadcasts.
 	/// https://partner.steamgames.com/doc/webapi/IBroadcastService
 	/// </summary>
-	public class BroadcastService : SteamWebAPIQuerier, IBroadcastService {
-		public BroadcastService(IHttpClientFactory clientFactory) : base(clientFactory) {
-		}
+	public class BroadcastService(IHttpClientFactory clientFactory) : SteamWebAPIQuerier(clientFactory), IBroadcastService {
 
-		/// <summary>
-		/// Add a game meta data frame to broadcast
-		/// </summary>
-		/// <param name="key">Steamworks Web API publisher authentication key.</param>
-		/// <param name="appid"></param>
-		/// <param name="steamid"></param>
-		/// <param name="broadcast_id"></param>
-		/// <param name="frame_data"></param>
-		/// <returns></returns>
-		public async Task<string> PostGameDataFrame(string key, uint appid, ulong steamid, ulong broadcast_id, string frame_data) {
+        /// <summary>
+        /// Add a game meta data frame to broadcast
+        /// </summary>
+        /// <param name="key">Steamworks Web API publisher authentication key.</param>
+        /// <param name="appid"></param>
+        /// <param name="steamid"></param>
+        /// <param name="broadcast_id"></param>
+        /// <param name="frame_data"></param>
+        /// <returns></returns>
+        public async Task<string> PostGameDataFrame(string key, uint appid, ulong steamid, ulong broadcast_id, string frame_data) {
 			return await this.PostStringAsync(
 				string.Format(
 					"{0}/IBroadcastService/PostGameDataFrame/v1/?key={1}&appid={2}&steamid={3}&broadcast_id={4}&frame_data={5}",

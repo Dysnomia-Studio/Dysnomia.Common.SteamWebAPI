@@ -3,12 +3,8 @@
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-    public class SteamPartnerTest : BaseTestClass {
-        protected readonly ISteamPartner steamPartner;
-
-        public SteamPartnerTest(ISteamPartner steamPartner) {
-            this.steamPartner = steamPartner;
-        }
+    public class SteamPartnerTest(ISteamPartner steamPartner) : BaseTestClass {
+        protected readonly ISteamPartner steamPartner = steamPartner;
 
         [Theory(Skip = "No cookie on CI")]
         [InlineData(453273, "Extortion")]
