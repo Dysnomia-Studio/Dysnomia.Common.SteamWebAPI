@@ -26,7 +26,6 @@
 
 	<ItemGroup>
 		<PackageReference Include="Dysnomia.Common.WebAPIWrapper" Version="1.8.2" />
-		<PackageReference Include="System.Text.Json" Version="10.0.7" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Local'">
