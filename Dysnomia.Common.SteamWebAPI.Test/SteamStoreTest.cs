@@ -80,5 +80,10 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         public async Task GetAppDetails_XSS() { // This one has some weird data as well
             await steamStore.GetAppDetails("331840");
         }
+
+        [Fact]
+        public async Task GetAppDetails_InvalidPercentSaving() {
+            await steamStore.GetAppDetails("1451150");
+        }
     }
 }

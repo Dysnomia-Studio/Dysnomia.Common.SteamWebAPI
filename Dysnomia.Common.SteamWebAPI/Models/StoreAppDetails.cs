@@ -115,7 +115,7 @@ namespace Dysnomia.Common.SteamWebAPI.Models {
     public class StoreAppDetailsPricePackageGroupSubscription {
         public ulong packageid { get; set; }
         public string percent_savings_text { get; set; }
-        public uint percent_savings { get; set; }
+        public int percent_savings { get; set; }
         public string option_text { get; set; }
         public string option_description { get; set; }
         public string can_get_free_license { get; set; }
