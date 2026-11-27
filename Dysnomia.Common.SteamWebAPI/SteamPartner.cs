@@ -20,6 +20,7 @@ namespace Dysnomia.Common.SteamWebAPI {
         /// <param name="dateEnd">Max date for data (included)</param>
         /// <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
         /// <returns></returns>
+        [Obsolete("Use IPartnerFinancialsService.GetDetailedSales() instead")]
         public async Task<string> QueryPackageSalesAsCSVStringAsync(ulong packageId, string packageName, DateOnly dateStart, DateOnly dateEnd, string cookie) {
             var url = $"https://partner.steampowered.com/report_csv.php?file={packageName}&params=query=QueryPackageSalesForCSV^pkgID={packageId}^dateStart={dateStart:yyyy-MM-dd}^dateEnd={dateEnd:yyyy-MM-dd}^HasDivisions=0^interpreter=PartnerSalesReportInterpreter";
 
@@ -37,6 +38,7 @@ namespace Dysnomia.Common.SteamWebAPI {
         /// <param name="dateEnd">Max date for data (included)</param>
         /// <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
         /// <returns></returns>
+        [Obsolete("Use IPartnerFinancialsService.GetDetailedSales() instead")]
         public async Task<IEnumerable<PackageSales>> QueryPackageSalesAsync(ulong packageId, string packageName, DateOnly dateStart, DateOnly dateEnd, string cookie) {
             var csvString = await QueryPackageSalesAsCSVStringAsync(packageId, packageName, dateStart, dateEnd, cookie);
             var csvLines = csvString.Split('\n').ToList();
@@ -63,6 +65,7 @@ namespace Dysnomia.Common.SteamWebAPI {
             return result;
         }
 
+        [Obsolete("Use IPartnerFinancialsService.GetAppWishlistReporting() instead")]
         public async Task<string> QueryWishlistActionsAsCSVStringAsync(ulong appId, string packageName, DateOnly dateStart, DateOnly dateEnd, string cookie) {
             var url = $"https://partner.steampowered.com/report_csv.php?file={packageName}&params=query=QueryWishlistActionsForCSV^appID={appId}^dateStart={dateStart:yyyy-MM-dd}^dateEnd={dateEnd:yyyy-MM-dd}^interpreter=WishlistReportInterpreter";
 
@@ -71,6 +74,7 @@ namespace Dysnomia.Common.SteamWebAPI {
             });
         }
 
+        [Obsolete("Use IPartnerFinancialsService.GetAppWishlistReporting() instead")]
         public async Task<IEnumerable<WishlistActions>> QueryWishlistActionsAsync(ulong appId, string packageName, DateOnly dateStart, DateOnly dateEnd, string cookie) {
             var csvString = await QueryWishlistActionsAsCSVStringAsync(appId, packageName, dateStart, dateEnd, cookie);
             var csvLines = csvString.Split('\n').ToList();

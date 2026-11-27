@@ -18,6 +18,7 @@ namespace Dysnomia.Common.SteamWebAPI {
         /// <param name="dateEnd">Max date for data (included)</param>
         /// <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
         /// <returns></returns>
+        [Obsolete("Use IPartnerFinancialsService.GetDetailedSales() instead")]
         Task<string> QueryPackageSalesAsCSVStringAsync(ulong packageId, string packageName, DateOnly dateStart, DateOnly dateEnd, string cookie);
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace Dysnomia.Common.SteamWebAPI {
         /// <param name="dateEnd">Max date for data (included)</param>
         /// <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
         /// <returns></returns>
+        [Obsolete("Use IPartnerFinancialsService.GetDetailedSales() instead")]
         Task<IEnumerable<PackageSales>> QueryPackageSalesAsync(ulong packageId, string packageName, DateOnly dateStart, DateOnly dateEnd, string cookie);
 
         /// <summary>
@@ -40,6 +42,7 @@ namespace Dysnomia.Common.SteamWebAPI {
         /// <param name="dateEnd">Max date for data (included)</param>
         /// <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
         /// <returns></returns>
+        [Obsolete("Use IPartnerFinancialsService.GetAppWishlistReporting() instead")]
         Task<string> QueryWishlistActionsAsCSVStringAsync(ulong appId, string packageName, DateOnly dateStart, DateOnly dateEnd, string cookie);
 
         /// <summary>
@@ -51,6 +54,7 @@ namespace Dysnomia.Common.SteamWebAPI {
         /// <param name="dateEnd">Max date for data (included)</param>
         /// <param name="cookie">Cookies for authentication following the format "steamLoginSecure=TOKEN; steamworksRunas=RUNAS;"</param>
         /// <returns></returns>
+        [Obsolete("Use IPartnerFinancialsService.GetAppWishlistReporting() instead")]
         Task<IEnumerable<WishlistActions>> QueryWishlistActionsAsync(ulong appId, string packageName, DateOnly dateStart, DateOnly dateEnd, string cookie);
     }
 }
