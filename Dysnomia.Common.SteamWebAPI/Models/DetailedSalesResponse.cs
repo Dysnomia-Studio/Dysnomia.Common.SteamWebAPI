@@ -10,6 +10,7 @@
         public App_Info[]? app_info { get; set; }
         public Bundle_Info[]? bundle_info { get; set; }
         public Combined_Discount_Info[]? combined_discount_info { get; set; }
+        public Discount_Info[]? discount_info { get; set; }
         public Game_Item_Info[]? game_item_info { get; set; }
         public Country_Info[]? country_info { get; set; }
         public string max_id { get; set; }
@@ -74,6 +75,14 @@
         public string combined_discount_name { get; set; }
         public int total_discount_percentage { get; set; }
         public int[] discount_ids { get; set; }
+    }
+
+    public class Discount_Info {
+        public int discountid { get; set; }
+        public string discount_description { get; set; }
+        public string discount_group { get; set; }
+        public int discount_percentage { get; set; }
+        public string discount_name { get; set; }
     }
 
     public class Game_Item_Info {
