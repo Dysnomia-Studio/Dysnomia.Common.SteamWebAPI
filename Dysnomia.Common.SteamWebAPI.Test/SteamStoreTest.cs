@@ -8,7 +8,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
         [Fact]
         public async Task GetAppPrices() {
-            await steamStore.GetAppPrices(new string[] { "440", "10" }); // TF2, CS
+            await steamStore.GetAppPrices(["440", "10"]); // TF2, CS
         }
 
         [Fact]

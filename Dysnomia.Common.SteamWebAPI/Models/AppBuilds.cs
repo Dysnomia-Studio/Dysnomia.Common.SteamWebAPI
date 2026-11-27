@@ -2,7 +2,7 @@
 
 namespace Dysnomia.Common.SteamWebAPI.Models {
 	public class AppBuilds {
-		public Dictionary<string, AppBuild> builds { get; set; } = new Dictionary<string, AppBuild>();
+		public Dictionary<string, AppBuild> builds { get; set; } = [];
 	}
 
 	public class AppBuild {
@@ -10,7 +10,7 @@ namespace Dysnomia.Common.SteamWebAPI.Models {
 		public ulong CreationTime { get; set; }
 		public string Description { get; set; }
 		public ulong AccountIDCreator { get; set; }
-		public Dictionary<string, AppBuildDepot> depots { get; set; } = new Dictionary<string, AppBuildDepot>();
+		public Dictionary<string, AppBuildDepot> depots { get; set; } = [];
 	}
 
 	public class AppBuildDepot {

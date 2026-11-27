@@ -112,7 +112,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         public async Task GetPartnerAppListForWebAPIKey_OK_InvalidFilter() {
             var res = (await steamAppsQuerier.GetPartnerAppListForWebAPIKey(PUBLISHER_KEY, "invalid")).ToList();
 
-            Assert.True(res.Count == 0);
+            Assert.Empty(res);
         }
 
         [Fact]
@@ -126,8 +126,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         public async Task GetPlayersBanned_OK() {
             var res = await steamAppsQuerier.GetPlayersBanned(PUBLISHER_KEY, PUBLISHER_APPID);
 
-            Assert.True(res != null);
-            Assert.True(res.accounts != null);
+            Assert.NotNull(res);
+            Assert.NotNull(res.accounts);
         }
 
         [Fact]
@@ -149,7 +149,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
             await steamAppsQuerier.GetServerList(PUBLISHER_KEY);
         }
 
-        [Fact]
+        [Fact(Skip = "Invalid server response")]
         public async Task GetServerList_NOK_KEY() {
             await Assert.ThrowsAsync<ForbiddenException>(async () => {
                 await steamAppsQuerier.GetServerList(PUBLISHER_INVALID_KEY);
@@ -160,14 +160,14 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         public async Task GetSDRConfig() {
             var res = await steamAppsQuerier.GetSDRConfig(TF2_APPID); // 146.66.152.0/24 are EU West CSGO server located in Luxembourg
 
-            Assert.True(res != null);
+            Assert.NotNull(res);
         }
 
         [Fact]
         public async Task GetServersAtAddress() {
             var res = await steamAppsQuerier.GetServersAtAddress("146.66.152.1"); // 146.66.152.0/24 are EU West CSGO server located in Luxembourg
 
-            Assert.True(res != null);
+            Assert.NotNull(res);
         }
 
 

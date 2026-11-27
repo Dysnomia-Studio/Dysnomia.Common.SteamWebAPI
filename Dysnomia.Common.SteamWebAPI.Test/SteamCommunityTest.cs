@@ -11,6 +11,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         [InlineData(1299430, "Extortion")]
         [InlineData(271590, "Grand Theft Auto V Legacy")]
         public async Task GetAppGroupMemberListAsync_OK(uint app, string name) {
+            await Task.Delay(1000, TestContext.Current.CancellationToken); // We can easily get rate-limited here
+
             var res = await steamCommunity.GetAppGroupMemberListAsync(app);
 
             Assert.True(res.memberCount > 0, res.memberCount.ToString());

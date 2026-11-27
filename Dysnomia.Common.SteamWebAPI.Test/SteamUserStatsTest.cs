@@ -20,7 +20,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         public async Task GetGlobalStatsForGame_1() {
             var stat_name = "global.map.emp_isle";
 
-            var res = await steamUserStats.GetGlobalStatsForGame(17740, new string[] { stat_name });
+            var res = await steamUserStats.GetGlobalStatsForGame(17740, [stat_name]);
 
             Assert.True(res.globalstats.Count == 1, res.globalstats.Count.ToString());
 
@@ -31,7 +31,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         public async Task GetGlobalStatsForGame_1_With_Dates() {
             var stat_name = "global.map.emp_isle";
 
-            var res = await steamUserStats.GetGlobalStatsForGame(17740, new string[] { stat_name }, DateTime.Now.AddDays(-40), DateTime.Now);
+            var res = await steamUserStats.GetGlobalStatsForGame(17740, [stat_name], DateTime.Now.AddDays(-40), DateTime.Now);
 
             Assert.True(res.globalstats.Count == 1, res.globalstats.Count.ToString());
 
@@ -42,11 +42,11 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
         public async Task GetGlobalStatsForGame_1_With_Too_Large_Dates() {
             var stat_name = "global.map.emp_isle";
 
-            var res = await steamUserStats.GetGlobalStatsForGame(17740, new string[] { stat_name }, DateTime.Now.AddYears(-10), DateTime.Now);
+            var res = await steamUserStats.GetGlobalStatsForGame(17740, [stat_name], DateTime.Now.AddYears(-10), DateTime.Now);
 
-            Assert.True(res.globalstats == null);
-            Assert.True(res.result == 8);
-            Assert.True(res.error == "Too many days of history requested. Max is 60");
+            Assert.Null(res.globalstats);
+            Assert.Equal(8, res.result);
+            Assert.Equal("Too many days of history requested. Max is 60", res.error);
         }
 
         [Fact]
@@ -68,8 +68,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
             var res = await steamUserStats.GetPlayerAchievements(WEBAPI_KEY, STEAMID, TF2_APPID);
 
             Assert.True(res.achievements.Count > 0, res.ToString());
-            Assert.True(res.achievements[0].apiname != null);
-            Assert.True(res.achievements[0].description == null);
+            Assert.NotNull(res.achievements[0].apiname);
+            Assert.Null(res.achievements[0].description);
         }
 
         [Fact]
@@ -77,8 +77,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
             var res = await steamUserStats.GetPlayerAchievements(WEBAPI_KEY, STEAMID, TF2_APPID, "french");
 
             Assert.True(res.achievements.Count > 0, res.ToString());
-            Assert.True(res.achievements[0].apiname != null);
-            Assert.True(res.achievements[0].description != null);
+            Assert.NotNull(res.achievements[0].apiname);
+            Assert.NotNull(res.achievements[0].description);
         }
 
         [Fact]
@@ -94,8 +94,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
             Assert.True(res.availableGameStats.achievements.Count > 0);
             Assert.True(res.availableGameStats.stats.Count > 0);
-            Assert.True(res.availableGameStats.achievements[0].description != null);
-            Assert.True(res.availableGameStats.stats[0].displayName != null);
+            Assert.NotNull(res.availableGameStats.achievements[0].description);
+            Assert.NotNull(res.availableGameStats.stats[0].displayName);
         }
 
         [Fact]
@@ -104,8 +104,8 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
 
             Assert.True(res.availableGameStats.achievements.Count > 0);
             Assert.True(res.availableGameStats.stats.Count > 0);
-            Assert.True(res.availableGameStats.achievements[0].description != null);
-            Assert.True(res.availableGameStats.stats[0].displayName != null);
+            Assert.NotNull(res.availableGameStats.achievements[0].description);
+            Assert.NotNull(res.availableGameStats.stats[0].displayName);
         }
 
         [Fact]
@@ -120,7 +120,7 @@ namespace Dysnomia.Common.SteamWebAPI.Test {
             var res = await steamUserStats.GetUserStatsForGame(WEBAPI_KEY, STEAMID, TF2_APPID);
 
             Assert.True(res.achievements.Count > 0, res.ToString());
-            Assert.True(res.achievements[0].name != null);
+            Assert.NotNull(res.achievements[0].name);
         }
 
         [Fact]

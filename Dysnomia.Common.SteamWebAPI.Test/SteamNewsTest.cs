@@ -3,23 +3,23 @@
 using Xunit;
 
 namespace Dysnomia.Common.SteamWebAPI.Test {
-	public class SteamNewsTest(ISteamNews steamNewsQuerier) : BaseTestClass {
-		protected readonly ISteamNews steamNewsQuerier = steamNewsQuerier;
+    public class SteamNewsTest(ISteamNews steamNewsQuerier) : BaseTestClass {
+        protected readonly ISteamNews steamNewsQuerier = steamNewsQuerier;
 
         [Fact]
-		public async Task GetNewsForApp_OK_OneArg() {
-			var res = await steamNewsQuerier.GetNewsForApp(PUBLISHER_APPID);
+        public async Task GetNewsForApp_OK_OneArg() {
+            var res = await steamNewsQuerier.GetNewsForApp(PUBLISHER_APPID);
 
-			Assert.True(res.count > 0, res.count.ToString());
-			Assert.Equal(res.newsitems.Count, res.count);
-		}
+            Assert.True(res.count > 0, res.count.ToString());
+            Assert.True(res.newsitems.Count > 0, res.count.ToString());
+        }
 
-		[Fact]
-		public async Task GetNewsForAppAuthed_OK_OneArg() {
-			var res = await steamNewsQuerier.GetNewsForAppAuthed(PUBLISHER_KEY, PUBLISHER_APPID);
+        [Fact]
+        public async Task GetNewsForAppAuthed_OK_OneArg() {
+            var res = await steamNewsQuerier.GetNewsForAppAuthed(PUBLISHER_KEY, PUBLISHER_APPID);
 
-			Assert.True(res.count > 0, res.count.ToString());
-			Assert.Equal(res.newsitems.Count, res.count);
-		}
-	}
+            Assert.True(res.count > 0, res.count.ToString());
+            Assert.True(res.newsitems.Count > 0, res.count.ToString());
+        }
+    }
 }

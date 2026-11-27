@@ -50,7 +50,7 @@ namespace Dysnomia.Common.SteamWebAPI {
         /// <returns></returns>
         public async Task<memberList> GetAppGroupMemberListAsync(ulong appId, uint page = 1) {
             var xmlContent = await this.GetStringAsync($"https://steamcommunity.com/games/{appId}/memberslistxml/?xml=1&p={page}");
-            XmlSerializer serializer = new XmlSerializer(typeof(memberList));
+            XmlSerializer serializer = new(typeof(memberList));
             using TextReader reader = new StringReader(xmlContent);
 
             return (memberList)serializer.Deserialize(reader);
